@@ -22,3 +22,7 @@ Run any local server to serve the static files:
 python3 -m http.server 3000
 ```
 Then navigate to `localhost:3000` in your browser.
+
+
+---
+*Made by Team Lazy Loopers for the SIT Lonavala Hackathon Morpheous*
