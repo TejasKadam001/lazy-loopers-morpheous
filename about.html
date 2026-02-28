@@ -128,6 +128,26 @@
       font-family: sans-serif !important;
     }
   </style>
+  <style>
+    .navbar12_link,
+    .navbar12_menu-links a {
+      text-decoration: none !important;
+    }
+
+    .navbar12_link-label {
+      transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+      text-decoration: none !important;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .navbar12_link:hover .navbar12_link-label,
+    .navbar12_menu-links a:hover .navbar12_link-label {
+      text-shadow: 0 0 .5px #fff, 0 0 .5px #fff !important;
+      font-weight: 400 !important;
+      text-decoration: none !important;
+    }
+  </style>
 </head>
 
 <body>
@@ -404,7 +424,7 @@
           style="background-color: transparent;">
           <div class="navbar12_menu-links">
             <a class="navbar12_link w-inline-block" href="solutions.html">
-              <div class="navbar12_link-label" style="color: #fff;">Solutions &amp; Features</div>
+              <div class="navbar12_link-label" style="color: #fff;">AI Consult</div>
             </a>
             <a class="navbar12_link w-inline-block" href="wellbeing.html">
               <div class="navbar12_link-label" style="color: #fff;">Knowledge Hub</div>
@@ -412,12 +432,14 @@
             <a class="navbar12_link w-inline-block" href="about.html">
               <div class="navbar12_link-label" style="color: #fff;">About Us</div>
             </a>
+            <a class="navbar12_link w-inline-block" href="symptom-checker.html">
+              <div class="navbar12_link-label" style="color: #fff;">Symptom Checker</div>
+            </a>
           </div>
-          <div class="navbar12_menu-buttons" style="margin-left: 1rem;">
-            <a class="c-button w-button" data-wf--c-button--variant="white" href="#"
-              style="background-color: #fff; color: #000; border-radius: 9999px; padding: 0.5rem 1rem;">Provider
-              Portal</a>
-          </div>
+          <div class="navbar12_menu-buttons" style="margin-left: 1rem;"><a class="c-button w-button"
+              data-wf--c-button--variant="white" href="signup.html"
+              style="background-color: #fff; color: #000; border-radius: 9999px; padding: 0.5rem 1rem; text-decoration: none; font-family: sans-serif; font-size: 14px; font-weight: 500; text-transform: none !important;">Sign
+              Up</a></div>
         </nav>
         <div class="navbar12_menu-button w-nav-button">
           <div class="menu-icon1">
@@ -491,11 +513,11 @@
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
             <div
               style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; transition: transform 0.2s; cursor: pointer;">
-              <img alt="Tejas Kadam" src="images/698a39f53eea950d493dc631_IMG_7464.webp"
+              <img alt="Tejas Kadam" src="images/tejpatta.jpeg"
                 style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px;" />
               <div>
                 <h4 style="font-size: 1.25rem; font-weight: 600; margin: 0;">Tejas Kadam</h4>
-                <p style="font-size: 0.95rem; color: #c4c4c4; margin: 0.25rem 0 1rem 0;">Founder &amp; CEO</p>
+                <p style="font-size: 0.95rem; color: #c4c4c4; margin: 0.25rem 0 1rem 0;"></p>
                 <p style="font-size: 0.9rem; color: #9a9a9a; line-height: 1.5; margin: 0;">Leading the charge at Sero to
                   revolutionize medical triage and build instantaneous AI systems for clinical diagnostics.</p>
               </div>
@@ -506,7 +528,7 @@
                 style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px;" />
               <div>
                 <h4 style="font-size: 1.25rem; font-weight: 600; margin: 0;">Shruti Panchal</h4>
-                <p style="font-size: 0.95rem; color: #c4c4c4; margin: 0.25rem 0 1rem 0;">Founding Team</p>
+                <p style="font-size: 0.95rem; color: #c4c4c4; margin: 0.25rem 0 1rem 0;"></p>
                 <p style="font-size: 0.9rem; color: #9a9a9a; line-height: 1.5; margin: 0;">Core architect designing
                   Sero's intuitive interfaces and ensuring seamless interactions for clinical providers.</p>
               </div>
@@ -517,7 +539,7 @@
                 style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px;" />
               <div>
                 <h4 style="font-size: 1.25rem; font-weight: 600; margin: 0;">Vaibhav Marne</h4>
-                <p style="font-size: 0.95rem; color: #c4c4c4; margin: 0.25rem 0 1rem 0;">Founding Team</p>
+                <p style="font-size: 0.95rem; color: #c4c4c4; margin: 0.25rem 0 1rem 0;"></p>
                 <p style="font-size: 0.9rem; color: #9a9a9a; line-height: 1.5; margin: 0;">Systems engineer optimizing
                   clinical data pathways, integrations, and platform reliability.</p>
               </div>
@@ -528,40 +550,12 @@
                 style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px;" />
               <div>
                 <h4 style="font-size: 1.25rem; font-weight: 600; margin: 0;">Gayatri Yadav</h4>
-                <p style="font-size: 0.95rem; color: #c4c4c4; margin: 0.25rem 0 1rem 0;">Founding Team</p>
+                <p style="font-size: 0.95rem; color: #c4c4c4; margin: 0.25rem 0 1rem 0;"></p>
                 <p style="font-size: 0.9rem; color: #9a9a9a; line-height: 1.5; margin: 0;">Medical researcher validating
                   diagnostic algorithms and bridging the gap between clinical intent and AI execution.</p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-      <section class="section_company-investor">
-        <div class="section-inner-white">
-          <div class="container">
-            <div class="company-investor-wrapper">
-              <div class="company-investor-left">
-                <h2>Investor</h2>
-                <p class="t-paragraph-18 text-color-7d7d7d">Backed by a16z Speedrun, Andreessen Horowitz's flagship
-                  program for next-generation AI-native companies.</p>
-              </div><img alt="" class="company-investor-a16z" loading="lazy"
-                src="images/6984e6f921e8400818706530_a16z.svg" />
-            </div>
-          </div>
-          <div class="video-gradient-background w-background-video w-background-video-atom" data-autoplay="true"
-            data-loop="true"
-            data-poster-url="https://cdn.prod.website-files.com/6981490c51c1e151d4cb9219%2F6984e7be33a905d742d33d1f_web-gradient_poster.0000000.jpg"
-            data-video-urls="https://cdn.prod.website-files.com/6981490c51c1e151d4cb9219%2F6984e7be33a905d742d33d1f_web-gradient_mp4.mp4,https://cdn.prod.website-files.com/6981490c51c1e151d4cb9219%2F6984e7be33a905d742d33d1f_web-gradient_webm.webm"
-            data-wf-ignore="true"><video
-              6981490c51c1e151d4cb9219%2f6984e7be33a905d742d33d1f_web-gradient_poster.0000000.jpg")"="" autoplay=""
-              cdn.prod.website-files.com="" data-object-fit="cover" data-wf-ignore="true" https:=""
-              id="33b9f3dc-adec-c5f7-7e28-60fd2d50de08-video" loop="" muted="" playsinline=""
-              style="background-image:url(">
-              <source data-wf-ignore="true"
-                src="media/6981490c51c1e151d4cb9219%252F6984e7be33a905d742d33d1f_web-gradient_mp4.mp4" />
-              <source data-wf-ignore="true"
-                src="media/6981490c51c1e151d4cb9219%252F6984e7be33a905d742d33d1f_web-gradient_webm.webm" />
-            </video></div>
         </div>
       </section>
       <section class="section_company-careers" id="careers">
@@ -570,135 +564,6 @@
             <div class="company-careers-wrapper">
               <div class="company-careers-top">
                 <div class="company-careers-top_content">
-                  <h2>Join Us</h2>
-                  <p class="t-paragraph-18 text-color-7d7d7d">We're a small team building essential infrastructure for
-                    regulated industries. The problems are hard. The customers are demanding. The work matters.</p>
-                </div><a class="c-button-link w-inline-block" href="https://www.linkedin.com/company/zerodrift/jobs/"
-                  target="_blank">
-                  <div class="t-paragraph-16 font-family-fono text-weight-medium">VIEW ALL ROLES</div>
-                  <div class="icon-embed-xxsmall w-embed"><svg aria-hidden="true" fill="none" height="100%"
-                      preserveaspectratio="xMidYMid meet" role="img" style="" viewbox="0 0 16 16" width="100%"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M14.0306 8.53074L9.53063 13.0307C9.38973 13.1716 9.19863 13.2508 8.99938 13.2508C8.80012 13.2508 8.60902 13.1716 8.46813 13.0307C8.32723 12.8898 8.24807 12.6987 8.24807 12.4995C8.24807 12.3002 8.32723 12.1091 8.46813 11.9682L11.6875 8.75011H2.5C2.30109 8.75011 2.11032 8.67109 1.96967 8.53044C1.82902 8.38979 1.75 8.19902 1.75 8.00011C1.75 7.8012 1.82902 7.61043 1.96967 7.46978C2.11032 7.32913 2.30109 7.25011 2.5 7.25011H11.6875L8.46937 4.03011C8.32848 3.88921 8.24932 3.69812 8.24932 3.49886C8.24932 3.2996 8.32848 3.10851 8.46937 2.96761C8.61027 2.82671 8.80137 2.74756 9.00062 2.74756C9.19988 2.74756 9.39098 2.82671 9.53187 2.96761L14.0319 7.46761C14.1018 7.53738 14.1573 7.62028 14.1951 7.71155C14.2329 7.80281 14.2523 7.90065 14.2522 7.99943C14.252 8.09822 14.2324 8.19601 14.1944 8.28718C14.1564 8.37836 14.1007 8.46113 14.0306 8.53074Z"
-                        fill="currentColor"></path>
-                    </svg></div>
-                </a>
-              </div>
-              <div class="developers-build-grid is--security">
-                <div class="developers-build-item">
-                  <div class="developers-build-item_content">
-                    <div class="icon-embed-56px w-embed"><svg fill="none" height="100%" style="" viewbox="0 0 64 64"
-                        width="100%" xmlns="http://www.w3.org/2000/svg">
-                        <rect fill="white" height="64" rx="8" width="64"></rect>
-                        <path
-                          d="M24.6397 27.7688L19.5622 32L24.6397 36.2313C24.7435 36.3144 24.8297 36.4173 24.8932 36.5342C24.9568 36.651 24.9964 36.7793 25.0097 36.9116C25.0231 37.0439 25.0099 37.1775 24.971 37.3047C24.932 37.4318 24.8681 37.5499 24.783 37.6521C24.6979 37.7542 24.5933 37.8384 24.4752 37.8996C24.3572 37.9609 24.2281 37.9979 24.0956 38.0087C23.9631 38.0194 23.8297 38.0036 23.7034 37.9622C23.577 37.9208 23.4602 37.8546 23.3597 37.7675L17.3597 32.7675C17.2471 32.6737 17.1565 32.5562 17.0944 32.4235C17.0322 32.2908 17 32.146 17 31.9994C17 31.8528 17.0322 31.7081 17.0944 31.5753C17.1565 31.4426 17.2471 31.3251 17.3597 31.2313L23.3597 26.2313C23.5636 26.0615 23.8265 25.9798 24.0907 26.0039C24.3549 26.028 24.5987 26.1561 24.7685 26.36C24.9382 26.5639 25.02 26.8269 24.9958 27.0911C24.9717 27.3553 24.8436 27.599 24.6397 27.7688ZM46.6397 31.2313L40.6397 26.2313C40.5387 26.1472 40.4222 26.0839 40.2968 26.0449C40.1714 26.0059 40.0395 25.9919 39.9087 26.0039C39.7778 26.0159 39.6507 26.0535 39.5344 26.1146C39.4181 26.1757 39.315 26.2591 39.231 26.36C39.0612 26.5639 38.9794 26.8269 39.0036 27.0911C39.0277 27.3553 39.1558 27.599 39.3597 27.7688L44.4372 32L39.3597 36.2313C39.2559 36.3144 39.1697 36.4173 39.1062 36.5342C39.0426 36.651 39.003 36.7793 38.9897 36.9116C38.9764 37.0439 38.9895 37.1775 39.0284 37.3047C39.0674 37.4318 39.1313 37.5499 39.2164 37.6521C39.3015 37.7542 39.4061 37.8384 39.5242 37.8996C39.6422 37.9609 39.7713 37.9979 39.9038 38.0087C40.0363 38.0194 40.1697 38.0036 40.296 37.9622C40.4224 37.9208 40.5392 37.8546 40.6397 37.7675L46.6397 32.7675C46.7523 32.6737 46.8429 32.5562 46.905 32.4235C46.9672 32.2908 46.9994 32.146 46.9994 31.9994C46.9994 31.8528 46.9672 31.7081 46.905 31.5753C46.8429 31.4426 46.7523 31.3251 46.6397 31.2313ZM36.341 20.06C36.2175 20.0152 36.0864 19.9952 35.9552 20.001C35.8241 20.0068 35.6953 20.0384 35.5763 20.094C35.4573 20.1496 35.3505 20.2281 35.2618 20.325C35.1732 20.4219 35.1045 20.5353 35.0597 20.6588L27.0597 42.6588C27.0147 42.7823 26.9945 42.9135 27.0002 43.0448C27.006 43.1761 27.0375 43.3051 27.0931 43.4242C27.1488 43.5433 27.2273 43.6503 27.3243 43.739C27.4213 43.8277 27.5349 43.8965 27.6584 43.9413C27.768 43.9802 27.8834 44.0001 27.9997 44C28.2051 44 28.4054 43.9368 28.5736 43.819C28.7418 43.7011 28.8696 43.5343 28.9397 43.3413L36.9397 21.3413C36.9845 21.2178 37.0046 21.0868 36.9987 20.9556C36.9929 20.8244 36.9613 20.6956 36.9057 20.5766C36.8501 20.4577 36.7716 20.3508 36.6747 20.2622C36.5778 20.1735 36.4644 20.1048 36.341 20.06Z"
-                          fill="black"></path>
-                      </svg></div>
-                    <div class="spacer-16"></div>
-                    <div class="t-paragraph-20 text-weight-medium">Engineering</div>
-                    <div class="spacer-4"></div>
-                    <p class="text-color-7d7d7d">San Francisco, CA · Full-time</p>
-                    <div class="developers-build-item_spacer is-careers"></div><a class="c-button w-button"
-                      data-wf--c-button--variant="dark" href="https://www.linkedin.com/company/zerodrift/jobs/"
-                      target="_blank">Apply Now</a>
-                  </div>
-                  <div class="developers-build-item_gradient w-background-video w-background-video-atom"
-                    data-autoplay="true" data-loop="true"
-                    data-poster-url="https://cdn.prod.website-files.com/6981490c51c1e151d4cb9219%2F6983c6e1bc25517c80707e31_one-to-rule-them-all_poster.0000000.jpg"
-                    data-video-urls="https://cdn.prod.website-files.com/6981490c51c1e151d4cb9219%2F6983c6e1bc25517c80707e31_one-to-rule-them-all_mp4.mp4,https://cdn.prod.website-files.com/6981490c51c1e151d4cb9219%2F6983c6e1bc25517c80707e31_one-to-rule-them-all_webm.webm"
-                    data-wf-ignore="true"><video
-                      6981490c51c1e151d4cb9219%2f6983c6e1bc25517c80707e31_one-to-rule-them-all_poster.0000000.jpg")"=""
-                      autoplay="" cdn.prod.website-files.com="" data-object-fit="cover" data-wf-ignore="true" https:=""
-                      id="9d2e8e9a-7cb7-a207-f9b2-1f94a962839b-video" loop="" muted="" playsinline=""
-                      style="background-image:url(">
-                      <source data-wf-ignore="true"
-                        src="media/6981490c51c1e151d4cb9219%252F6983c6e1bc25517c80707e31_one-to-rule-them-all_mp4.mp4" />
-                      <source data-wf-ignore="true"
-                        src="media/6981490c51c1e151d4cb9219%252F6983c6e1bc25517c80707e31_one-to-rule-them-all_webm.webm" />
-                    </video></div>
-                </div>
-                <div class="developers-build-item">
-                  <div class="developers-build-item_content">
-                    <div class="icon-embed-56px w-embed"><svg fill="none" height="100%" style="" viewbox="0 0 64 64"
-                        width="100%" xmlns="http://www.w3.org/2000/svg">
-                        <rect fill="white" height="64" rx="8" width="64"></rect>
-                        <path
-                          d="M47 27.5859C47.0008 27.3232 46.9494 27.0629 46.8488 26.8202C46.7481 26.5775 46.6002 26.3572 46.4137 26.1722L37.8287 17.5859C37.643 17.4002 37.4225 17.2528 37.1798 17.1523C36.9371 17.0517 36.677 17 36.4143 17C36.1516 17 35.8915 17.0517 35.6489 17.1523C35.4062 17.2528 35.1857 17.4002 35 17.5859L31.4462 21.1397L24.1962 23.8609C23.8667 23.9838 23.5753 24.1911 23.3511 24.462C23.1269 24.733 22.9778 25.058 22.9187 25.4047L20.0137 42.8359C19.9897 42.9792 19.9973 43.126 20.0358 43.2661C20.0743 43.4062 20.1429 43.5362 20.2368 43.6471C20.3306 43.758 20.4475 43.8471 20.5793 43.9082C20.7111 43.9693 20.8547 44.0009 21 44.0009C21.0552 44.0007 21.1104 43.9961 21.165 43.9872L38.595 41.0822C38.9412 41.0244 39.2661 40.8765 39.5371 40.6534C39.8081 40.4302 40.0156 40.1397 40.1387 39.8109L42.86 32.5609L46.4137 29.0009C46.6003 28.8157 46.7483 28.5952 46.8489 28.3523C46.9495 28.1094 47.0009 27.8489 47 27.5859ZM38.2662 39.1097L23.915 41.5009L29.8362 35.5797C30.5758 35.9794 31.4345 36.0995 32.2553 35.9182C33.0762 35.7368 33.8044 35.2661 34.3067 34.592C34.809 33.918 35.052 33.0856 34.9911 32.2472C34.9302 31.4087 34.5696 30.6202 33.9752 30.0257C33.3807 29.4313 32.5922 29.0707 31.7538 29.0098C30.9153 28.9489 30.0829 29.1919 29.4089 29.6942C28.7348 30.1965 28.2641 30.9247 28.0827 31.7456C27.9014 32.5664 28.0215 33.4251 28.4212 34.1647L22.5 40.0884L24.8912 25.7334L31.75 23.1622L40.8375 32.2509L38.2662 39.1097ZM30 32.5009C30 32.2043 30.0879 31.9143 30.2528 31.6676C30.4176 31.4209 30.6518 31.2287 30.9259 31.1151C31.2 31.0016 31.5016 30.9719 31.7926 31.0298C32.0836 31.0876 32.3508 31.2305 32.5606 31.4403C32.7704 31.6501 32.9133 31.9173 32.9711 32.2083C33.029 32.4993 32.9993 32.8009 32.8858 33.075C32.7722 33.3491 32.58 33.5833 32.3333 33.7482C32.0866 33.913 31.7966 34.0009 31.5 34.0009C31.1021 34.0009 30.7206 33.8429 30.4393 33.5616C30.158 33.2803 30 32.8988 30 32.5009ZM42 30.5859L33.4137 22.0009L36.4137 19.0009L45 27.5859L42 30.5859Z"
-                          fill="black"></path>
-                      </svg></div>
-                    <div class="spacer-16"></div>
-                    <div class="t-paragraph-20 text-weight-medium">Product</div>
-                    <div class="spacer-4"></div>
-                    <p class="text-color-7d7d7d">San Francisco, CA · Full-time</p>
-                    <div class="developers-build-item_spacer is-careers"></div><a class="c-button w-button"
-                      data-wf--c-button--variant="dark" href="https://www.linkedin.com/company/zerodrift/jobs/"
-                      target="_blank">Apply Now</a>
-                  </div>
-                  <div class="developers-build-item_gradient w-background-video w-background-video-atom"
-                    data-autoplay="true" data-loop="true"
-                    data-poster-url="https://cdn.prod.website-files.com/6981490c51c1e151d4cb9219%2F6983c6e1bc25517c80707e31_one-to-rule-them-all_poster.0000000.jpg"
-                    data-video-urls="https://cdn.prod.website-files.com/6981490c51c1e151d4cb9219%2F6983c6e1bc25517c80707e31_one-to-rule-them-all_mp4.mp4,https://cdn.prod.website-files.com/6981490c51c1e151d4cb9219%2F6983c6e1bc25517c80707e31_one-to-rule-them-all_webm.webm"
-                    data-wf-ignore="true"><video
-                      6981490c51c1e151d4cb9219%2f6983c6e1bc25517c80707e31_one-to-rule-them-all_poster.0000000.jpg")"=""
-                      autoplay="" cdn.prod.website-files.com="" data-object-fit="cover" data-wf-ignore="true" https:=""
-                      id="9d2e8e9a-7cb7-a207-f9b2-1f94a96283a5-video" loop="" muted="" playsinline=""
-                      style="background-image:url(">
-                      <source data-wf-ignore="true"
-                        src="media/6981490c51c1e151d4cb9219%252F6983c6e1bc25517c80707e31_one-to-rule-them-all_mp4.mp4" />
-                      <source data-wf-ignore="true"
-                        src="media/6981490c51c1e151d4cb9219%252F6983c6e1bc25517c80707e31_one-to-rule-them-all_webm.webm" />
-                    </video></div>
-                </div>
-                <div class="developers-build-item">
-                  <div class="developers-build-item_content">
-                    <div class="icon-embed-56px w-embed"><svg fill="none" height="100%" style="" viewbox="0 0 64 64"
-                        width="100%" xmlns="http://www.w3.org/2000/svg">
-                        <rect fill="white" height="64" rx="8" width="64"></rect>
-                        <path
-                          d="M44 41H43V21C43 20.7348 42.8946 20.4804 42.7071 20.2929C42.5196 20.1054 42.2652 20 42 20H35C34.7348 20 34.4804 20.1054 34.2929 20.2929C34.1054 20.4804 34 20.7348 34 21V26H28C27.7348 26 27.4804 26.1054 27.2929 26.2929C27.1054 26.4804 27 26.7348 27 27V32H22C21.7348 32 21.4804 32.1054 21.2929 32.2929C21.1054 32.4804 21 32.7348 21 33V41H20C19.7348 41 19.4804 41.1054 19.2929 41.2929C19.1054 41.4804 19 41.7348 19 42C19 42.2652 19.1054 42.5196 19.2929 42.7071C19.4804 42.8946 19.7348 43 20 43H44C44.2652 43 44.5196 42.8946 44.7071 42.7071C44.8946 42.5196 45 42.2652 45 42C45 41.7348 44.8946 41.4804 44.7071 41.2929C44.5196 41.1054 44.2652 41 44 41ZM36 22H41V41H36V22ZM29 28H34V41H29V28ZM23 34H27V41H23V34Z"
-                          fill="black"></path>
-                      </svg></div>
-                    <div class="spacer-16"></div>
-                    <div class="t-paragraph-20 text-weight-medium">Sales</div>
-                    <div class="spacer-4"></div>
-                    <p class="text-color-7d7d7d">San Francisco, CA · Full-time</p>
-                    <div class="developers-build-item_spacer is-careers"></div><a class="c-button w-button"
-                      data-wf--c-button--variant="dark" href="https://www.linkedin.com/company/zerodrift/jobs/"
-                      target="_blank">Apply Now</a>
-                  </div>
-                  <div class="developers-build-item_gradient w-background-video w-background-video-atom"
-                    data-autoplay="true" data-loop="true"
-                    data-poster-url="https://cdn.prod.website-files.com/6981490c51c1e151d4cb9219%2F6983c6e1bc25517c80707e31_one-to-rule-them-all_poster.0000000.jpg"
-                    data-video-urls="https://cdn.prod.website-files.com/6981490c51c1e151d4cb9219%2F6983c6e1bc25517c80707e31_one-to-rule-them-all_mp4.mp4,https://cdn.prod.website-files.com/6981490c51c1e151d4cb9219%2F6983c6e1bc25517c80707e31_one-to-rule-them-all_webm.webm"
-                    data-wf-ignore="true"><video
-                      6981490c51c1e151d4cb9219%2f6983c6e1bc25517c80707e31_one-to-rule-them-all_poster.0000000.jpg")"=""
-                      autoplay="" cdn.prod.website-files.com="" data-object-fit="cover" data-wf-ignore="true" https:=""
-                      id="9d2e8e9a-7cb7-a207-f9b2-1f94a96283af-video" loop="" muted="" playsinline=""
-                      style="background-image:url(">
-                      <source data-wf-ignore="true"
-                        src="media/6981490c51c1e151d4cb9219%252F6983c6e1bc25517c80707e31_one-to-rule-them-all_mp4.mp4" />
-                      <source data-wf-ignore="true"
-                        src="media/6981490c51c1e151d4cb9219%252F6983c6e1bc25517c80707e31_one-to-rule-them-all_webm.webm" />
-                    </video></div>
-                </div>
-                <div class="developers-build-item">
-                  <div class="developers-build-item_content">
-                    <div class="icon-embed-56px w-embed"><svg fill="none" height="100%" style="" viewbox="0 0 64 64"
-                        width="100%" xmlns="http://www.w3.org/2000/svg">
-                        <rect fill="white" height="64" rx="8" width="64"></rect>
-                        <path
-                          d="M45.9288 32.625L41.9288 22.625C41.8407 22.4047 41.6772 22.2229 41.4674 22.1121C41.2577 22.0013 41.0154 21.9686 40.7838 22.02L33 23.75V21C33 20.7348 32.8947 20.4804 32.7071 20.2929C32.5196 20.1054 32.2652 20 32 20C31.7348 20 31.4804 20.1054 31.2929 20.2929C31.1054 20.4804 31 20.7348 31 21V24.1975L22.7825 26.0238C22.6241 26.0587 22.4765 26.1318 22.3526 26.2365C22.2287 26.3413 22.1321 26.4746 22.0713 26.625V26.6325L18.0713 36.625C18.0234 36.7442 17.9992 36.8716 18 37C18 39.9137 21.0675 41 23 41C24.9325 41 28 39.9137 28 37C28.0008 36.8716 27.9766 36.7442 27.9288 36.625L24.365 27.7212L31 26.25V42H29C28.7348 42 28.4804 42.1054 28.2929 42.2929C28.1054 42.4804 28 42.7348 28 43C28 43.2652 28.1054 43.5196 28.2929 43.7071C28.4804 43.8946 28.7348 44 29 44H35C35.2652 44 35.5196 43.8946 35.7071 43.7071C35.8947 43.5196 36 43.2652 36 43C36 42.7348 35.8947 42.4804 35.7071 42.2929C35.5196 42.1054 35.2652 42 35 42H33V25.8025L39.375 24.3875L36.0713 32.625C36.0234 32.7442 35.9992 32.8716 36 33C36 35.9137 39.0675 37 41 37C42.9325 37 46 35.9137 46 33C46.0008 32.8716 45.9766 32.7442 45.9288 32.625ZM23 39C22.0588 39 20.155 38.5487 20.0088 37.17L23 29.6925L25.9913 37.17C25.845 38.5487 23.9413 39 23 39ZM41 35C40.0588 35 38.155 34.5487 38.0088 33.17L41 25.6925L43.9913 33.17C43.845 34.5487 41.9413 35 41 35Z"
-                          fill="black"></path>
-                      </svg></div>
-                    <div class="spacer-16"></div>
-                    <div class="t-paragraph-20 text-weight-medium">AI Research</div>
-                    <div class="spacer-4"></div>
-                    <p class="text-color-7d7d7d">San Francisco, CA · Full-time</p>
-                    <div class="developers-build-item_spacer is-careers"></div><a class="c-button w-button"
-                      data-wf--c-button--variant="dark" href="https://www.linkedin.com/company/zerodrift/jobs/"
-                      target="_blank">Apply Now</a>
-                  </div>
                   <div class="developers-build-item_gradient w-background-video w-background-video-atom"
                     data-autoplay="true" data-loop="true"
                     data-poster-url="https://cdn.prod.website-files.com/6981490c51c1e151d4cb9219%2F6983c6e1bc25517c80707e31_one-to-rule-them-all_poster.0000000.jpg"
@@ -720,7 +585,7 @@
                     <div class="company-careers-more_content">
                       <h4>What we value</h4>
                       <h3 class="t-heading-2">Velocity. Precision. Design. Obsession.</h3>
-                    </div><a class="footer-link is-careers" href="mailto:careers@zerodrift.ai">careers@zerodrift.ai</a>
+                    </div><a class="footer-link is-careers" href="mailto:[EMAIL_ADDRESS]">seroai@gmail.com</a>
                   </div>
                   <div class="video-gradient-background w-background-video w-background-video-atom" data-autoplay="true"
                     data-loop="true"
@@ -785,7 +650,8 @@
               <a href="/index.html"
                 style="color: #a1a1a1; text-decoration: none; font-size: 0.95rem; transition: color 0.2s;">Home</a>
               <a href="/solutions.html"
-                style="color: #a1a1a1; text-decoration: none; font-size: 0.95rem; transition: color 0.2s;">Solutions</a>
+                style="color: #a1a1a1; text-decoration: none; font-size: 0.95rem; transition: color 0.2s;">AI
+                Consult</a>
             </div>
           </div>
           <!-- Column 3: Resources -->
@@ -932,6 +798,7 @@
       window.getUtmParams = getStoredUtms;
     })();
   </script>
+  <script type="module" src="js/auth-navbar.js"></script>
 </body>
 
 </html>

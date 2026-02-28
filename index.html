@@ -200,6 +200,54 @@
       box-shadow: none !important;
     }
   </style>
+  <style>
+    .navbar12_link,
+    .navbar12_menu-links a {
+      text-decoration: none !important;
+    }
+
+    .navbar12_link-label {
+      transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+      text-decoration: none !important;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .navbar12_link:hover .navbar12_link-label,
+    .navbar12_menu-links a:hover .navbar12_link-label {
+      text-shadow: 0 0 .5px #fff, 0 0 .5px #fff !important;
+      font-weight: 400 !important;
+      text-decoration: none !important;
+    }
+
+    /* Mobile menu background fix */
+    @media screen and (max-width: 991px) {
+      .navbar12_menu {
+        background-color: #000 !important;
+        border-radius: 20px;
+        padding: 1.5rem;
+        margin-top: 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      }
+
+      .navbar12_menu-links {
+        gap: 1rem !important;
+        padding-bottom: 1rem;
+      }
+
+      .navbar12_menu-buttons {
+        margin-left: 0 !important;
+        width: 100%;
+      }
+
+      .navbar12_menu-buttons .c-button {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -483,7 +531,7 @@
           style="background-color: transparent;">
           <div class="navbar12_menu-links">
             <a class="navbar12_link w-inline-block" href="solutions.html">
-              <div class="navbar12_link-label" style="color: #fff;">Solutions &amp; Features</div>
+              <div class="navbar12_link-label" style="color: #fff;">AI Consult</div>
             </a>
             <a class="navbar12_link w-inline-block" href="wellbeing.html">
               <div class="navbar12_link-label" style="color: #fff;">Knowledge Hub</div>
@@ -491,12 +539,14 @@
             <a class="navbar12_link w-inline-block" href="about.html">
               <div class="navbar12_link-label" style="color: #fff;">About Us</div>
             </a>
+            <a class="navbar12_link w-inline-block" href="symptom-checker.html">
+              <div class="navbar12_link-label" style="color: #fff;">Symptom Checker</div>
+            </a>
           </div>
-          <div class="navbar12_menu-buttons" style="margin-left: 1rem;">
-            <a class="c-button w-button" data-wf--c-button--variant="white" href="#"
-              style="background-color: #fff; color: #000; border-radius: 9999px; padding: 0.5rem 1rem;">Provider
-              Portal</a>
-          </div>
+          <div class="navbar12_menu-buttons" style="margin-left: 1rem;"><a class="c-button w-button"
+              data-wf--c-button--variant="white" href="signup.html"
+              style="background-color: #fff; color: #000; border-radius: 9999px; padding: 0.5rem 1rem; text-decoration: none; font-family: sans-serif; font-size: 14px; font-weight: 500; text-transform: none !important;">Sign
+              Up</a></div>
         </nav>
         <div class="navbar12_menu-button w-nav-button">
           <div class="menu-icon1">
@@ -513,8 +563,7 @@
       <section class="section_home-hero">
         <div class="home-hero-wrapper">
           <div class="home-hero-top">
-            <div class="home-hero-sr w-embed"><svg <defs="" fill="none" height="100%" style="" viewbox="0 0 159 22"
-                width="100%">
+            <div class="home-hero-sr w-embed"><svg fill="none" height="100%" style="" viewbox="0 0 159 22" width="100%">
                 <clippath id="clip0_241_503">
                   <rect fill="currentColor" height="10" width="159"></rect>
                 </clippath>
@@ -522,16 +571,21 @@
           </div>
           <div class="spacer-16"></div>
           <div class="max-width _85ch">
-            <h1 class="t-heading-96px" gsap-type=""><span class_="text-color-7d7d7d"></span><br />The Clinical
+            <h1 class="t-heading-96px" style="color: black;" gsap-type=""><span
+                class_="text-color-7d7d7d"></span><br />The Clinical
               AI<br />Diagnostic Engine</h1>
           </div>
           <div class="spacer-48"></div>
           <div class="button-group"><a class="c-button w-variant-54c72ea8-cd45-620c-43b7-80c6f7436b78 w-button"
-              data-wf--c-button--variant="white" href="/contact">Start Symptom Check</a></div>
+              data-wf--c-button--variant="dark-outlined"
+              style="color: black !important; border-color: black !important; background-color: transparent !important;"
+              href="/symptom-checker.html">Start Symptom Check</a></div>
           <div class="spacer-fill is-home-hero"></div>
           <div class="home-hero-bottom">
             <div class="max-width _55ch">
-              <p class="t-paragraph-18" gsap-type="">Sero analyzes patient symptoms, medical documents, and real-time
+              <p class="t-paragraph-18" id="home-hero-bottom-text" style="color: black;" gsap-type="">Sero analyzes
+                patient symptoms, medical
+                documents, and real-time
                 records to provide instant clinical triage. Your medical team gets actionable insights before the
                 patient even arrives. Better data, faster care.
               </p>
@@ -539,17 +593,15 @@
           </div>
           <div class="video-gradient-background inverted w-background-video w-background-video-atom"
             data-autoplay="true" data-loop="true"
-            data-poster-url="https://cdn.prod.website-files.com/6981490c51c1e151d4cb9219%2F6983902256e7c4da0df2ff82_orange-gradient_poster.0000000.jpg"
-            data-video-urls="https://cdn.prod.website-files.com/6981490c51c1e151d4cb9219%2F6983902256e7c4da0df2ff82_orange-gradient_mp4.mp4,https://cdn.prod.website-files.com/6981490c51c1e151d4cb9219%2F6983902256e7c4da0df2ff82_orange-gradient_webm.webm"
-            data-wf-ignore="true"><video
-              6981490c51c1e151d4cb9219%2f6983902256e7c4da0df2ff82_orange-gradient_poster.0000000.jpg")"="" autoplay=""
-              cdn.prod.website-files.com="" data-object-fit="cover" data-wf-ignore="true" https:=""
+            data-poster-url="https://cdn.prod.website-files.com/6981490c51c1e151d4cb9219%2F69839085edb11a12b2ad6a95_blocker-gradient_poster.0000000.jpg"
+            data-video-urls="https://cdn.prod.website-files.com/6981490c51c1e151d4cb9219%2F69839085edb11a12b2ad6a95_blocker-gradient_mp4.mp4,https://cdn.prod.website-files.com/6981490c51c1e151d4cb9219%2F69839085edb11a12b2ad6a95_blocker-gradient_webm.webm"
+            data-wf-ignore="true"><video autoplay="" data-object-fit="cover" data-wf-ignore="true"
               id="f5ef8c50-3758-478b-a876-e8ffd8bc4839-video" loop="" muted="" playsinline=""
-              style="background-image:url(">
+              style="background-image:url(&quot;https://cdn.prod.website-files.com/6981490c51c1e151d4cb9219%2F69839085edb11a12b2ad6a95_blocker-gradient_poster.0000000.jpg&quot;)">
               <source data-wf-ignore="true"
-                src="media/6981490c51c1e151d4cb9219%252F6983902256e7c4da0df2ff82_orange-gradient_mp4.mp4" />
+                src="media/6981490c51c1e151d4cb9219%252F69839085edb11a12b2ad6a95_blocker-gradient_mp4.mp4" />
               <source data-wf-ignore="true"
-                src="media/6981490c51c1e151d4cb9219%252F6983902256e7c4da0df2ff82_orange-gradient_webm.webm" />
+                src="media/6981490c51c1e151d4cb9219%252F69839085edb11a12b2ad6a95_blocker-gradient_webm.webm" />
             </video></div>
           <div class="mini-showreel" data-mini-showreel-player="showreel-2" data-mini-showreel-status="not-active">
             <div class="mini-showreel__card">
@@ -558,8 +610,7 @@
                   <div class="mini-showreel__before"></div>
                   <div class="w-embed"><video autoplay="" class="mini-showreel__cover-image" loop=""
                       mini-showreel="video" muted="" playsinline="">
-                      <source src="media/1080-%2051892-zerodrift-hero-90s-16x9-10976572661-v3_2_v10%20%281080p%29.mp4"
-                        type="video/mp4" />
+                      <source src="media/symp.mov" type="video/mp4" />
                     </video></div><svg class="mini-showreel__play-svg" fill="none" viewbox="0 0 40 40" width="100%"
                     xmlns="http://www.w3.org/2000/svg">
                     <rect fill="var(--_colors---white)" height="40" rx="20" width="40"></rect>
@@ -574,82 +625,7 @@
           </div>
         </div>
       </section>
-      <section class="section_home-trusted">
-        <div class="container">
-          <div class="home-trusted-wrapper">
-            <div class="t-paragraph-20 font-family-fono">Hackathon Winners &amp; Leaders By</div>
-            <div class="marquee-1_component">
-              <div class="marquee-1_embed w-embed">
-                <style>
-                  @keyframes marquee-1-timeline {
-                    from {
-                      transform: translateX(0%);
-                    }
 
-                    to {
-                      transform: translateX(-50%);
-                    }
-                  }
-                </style>
-              </div>
-              <div class="marquee-1_layout">
-                <div class="marquee-1_track">
-                  <div class="marquee-1_panel">
-                    <div class="marquee-1_list">
-                      <div class="marquee-1_item"><img alt="" class="marquee-1_logo inverted" loading="lazy"
-                          src="images/6984e4b05ba88fef9658ee3f_Google_2015_logo.avif" /></div>
-                      <div class="marquee-1_item"><img alt="" class="marquee-1_logo inverted" loading="lazy"
-                          src="images/6984e4b02ef70a3378fb669c_Microsoft_logo_%282012%29.avif" /></div>
-                      <div class="marquee-1_item"><img alt="" class="marquee-1_logo inverted" loading="lazy"
-                          src="images/6984e4b0e31a385443d1dac3_Mask%20group.avif" /></div>
-                      <div class="marquee-1_item"><img alt="" class="marquee-1_logo inverted" loading="lazy"
-                          src="images/6984e4b0c6ee26f63cbd82a0_goldman-sachs-2.avif" /></div>
-                      <div class="marquee-1_item"><img alt="" class="marquee-1_logo" loading="lazy"
-                          src="images/69850876bf88c52505917c3e_ibm.svg" /></div>
-                      <div class="marquee-1_item"><img alt="" class="marquee-1_logo inverted" loading="lazy"
-                          src="images/6984e4b05ba88fef9658ee3f_Google_2015_logo.avif" /></div>
-                      <div class="marquee-1_item"><img alt="" class="marquee-1_logo" loading="lazy"
-                          src="images/69850876bf88c52505917c3e_ibm.svg" /></div>
-                      <div class="marquee-1_item"><img alt="" class="marquee-1_logo inverted" loading="lazy"
-                          src="images/6984e4b02ef70a3378fb669c_Microsoft_logo_%282012%29.avif" /></div>
-                      <div class="marquee-1_item"><img alt="" class="marquee-1_logo inverted" loading="lazy"
-                          src="images/6984e4b0c6ee26f63cbd82a0_goldman-sachs-2.avif" /></div>
-                      <div class="marquee-1_item"><img alt="" class="marquee-1_logo inverted" loading="lazy"
-                          src="images/6984e4b0e31a385443d1dac3_Mask%20group.avif" /></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="marquee-1_track">
-                  <div class="marquee-1_panel">
-                    <div class="marquee-1_list">
-                      <div class="marquee-1_item"><img alt="" class="marquee-1_logo inverted" loading="lazy"
-                          src="images/6984e4b05ba88fef9658ee3f_Google_2015_logo.avif" /></div>
-                      <div class="marquee-1_item"><img alt="" class="marquee-1_logo inverted" loading="lazy"
-                          src="images/6984e4b02ef70a3378fb669c_Microsoft_logo_%282012%29.avif" /></div>
-                      <div class="marquee-1_item"><img alt="" class="marquee-1_logo inverted" loading="lazy"
-                          src="images/6984e4b0e31a385443d1dac3_Mask%20group.avif" /></div>
-                      <div class="marquee-1_item"><img alt="" class="marquee-1_logo inverted" loading="lazy"
-                          src="images/6984e4b0c6ee26f63cbd82a0_goldman-sachs-2.avif" /></div>
-                      <div class="marquee-1_item"><img alt="" class="marquee-1_logo" loading="lazy"
-                          src="images/69850876bf88c52505917c3e_ibm.svg" /></div>
-                      <div class="marquee-1_item"><img alt="" class="marquee-1_logo inverted" loading="lazy"
-                          src="images/6984e4b05ba88fef9658ee3f_Google_2015_logo.avif" /></div>
-                      <div class="marquee-1_item"><img alt="" class="marquee-1_logo" loading="lazy"
-                          src="images/69850876bf88c52505917c3e_ibm.svg" /></div>
-                      <div class="marquee-1_item"><img alt="" class="marquee-1_logo inverted" loading="lazy"
-                          src="images/6984e4b02ef70a3378fb669c_Microsoft_logo_%282012%29.avif" /></div>
-                      <div class="marquee-1_item"><img alt="" class="marquee-1_logo inverted" loading="lazy"
-                          src="images/6984e4b0c6ee26f63cbd82a0_goldman-sachs-2.avif" /></div>
-                      <div class="marquee-1_item"><img alt="" class="marquee-1_logo inverted" loading="lazy"
-                          src="images/6984e4b0e31a385443d1dac3_Mask%20group.avif" /></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
       <section class="section_home-layers">
         <div class="section-inner-white bg-grid custom-solutions-bg">
           <div class="container">
@@ -672,23 +648,23 @@
                     <p class="t-paragraph-20 font-color-7d7d7d">Patients describe their symptoms via text, voice, or by
                       securely uploading medical documents (like ECGs or pathology reports). The language barrier is
                       eliminated seamlessly.</p>
-                  </div><a class="c-button w-button" data-wf--c-button--variant="dark" href="/platform#compose">Learn
+                  </div><a class="c-button w-button" data-wf--c-button--variant="dark" href="/solutions.html">Learn
                     More</a>
                 </div>
-                <div class="c-lottie-animation no-background" data-animation-type="lottie" data-autoplay="1"
-                  data-default-duration="0" data-direction="1" data-duration="0" data-is-ix2-target="0" data-loop="1"
-                  data-renderer="svg"
-                  data-src="https://cdn.prod.website-files.com/69653993e6f554fe004325fb/6977f2dbabe3ddda7af9b0f5_Animation%2004.lottie"
-                  data-w-id="28f96f4a-06b4-2c16-461f-219caba12757"
-                  id="w-node-_28f96f4a-06b4-2c16-461f-219caba12757-d4cb9273"></div>
+                <div class="w-embed" style="display: flex; justify-content: center; align-items: center;"
+                  id="w-node-_28f96f4a-06b4-2c16-461f-219caba12757-d4cb9273">
+                  <video autoplay loop muted playsinline style="width: 100%; height: auto; border-radius: 12px;">
+                    <source src="media/multimodal.mov" />
+                  </video>
+                </div>
               </div>
               <div class="w-layout-grid solutions-tabs-grid is-guard" id="layer-guard">
-                <div class="c-lottie-animation no-background" data-animation-type="lottie" data-autoplay="1"
-                  data-default-duration="0" data-direction="1" data-duration="0" data-is-ix2-target="0" data-loop="1"
-                  data-renderer="svg"
-                  data-src="https://cdn.prod.website-files.com/69653993e6f554fe004325fb/6977f2dcf4734b770a4f05d3_956eb9112feb2c4cabcf9ffbe12ad4a3_Animation%2028%20from%20LottieFiles.lottie"
-                  data-w-id="6a0f54e4-8c5e-3210-ef0c-be6910b6ccd8"
-                  id="w-node-_6a0f54e4-8c5e-3210-ef0c-be6910b6ccd8-d4cb9273"></div>
+                <div class="w-embed" style="display: flex; justify-content: center; align-items: center;"
+                  id="w-node-_6a0f54e4-8c5e-3210-ef0c-be6910b6ccd8-d4cb9273">
+                  <video autoplay loop muted playsinline style="width: 100%; height: auto; border-radius: 12px;">
+                    <source src="media/cnn.mov" />
+                  </video>
+                </div>
                 <div class="solutions-tabs-grid_left is-home-layers is-guard"
                   id="w-node-_6a0f54e4-8c5e-3210-ef0c-be6910b6ccd0-d4cb9273">
                   <div class="solutions-tabs-grid_left-group">
@@ -696,18 +672,18 @@
                     <p class="t-paragraph-20 font-color-7d7d7d">Our ensemble models classify urgency indices instantly.
                       Critical anomalies surface through U-Net architectures, minimizing false negatives and
                       prioritizing real emergencies.</p>
-                  </div><a class="c-button w-button" data-wf--c-button--variant="dark" href="/platform#guard">Learn
+                  </div><a class="c-button w-button" data-wf--c-button--variant="dark" href="/solutions.html">Learn
                     More</a>
                 </div>
               </div>
               <div class="w-layout-grid solutions-tabs-grid" id="layer-command">
                 <div class="solutions-tabs-grid_left is-home-layers is-command">
                   <div class="solutions-tabs-grid_left-group">
-                    <h3 class="text-weight-medium">Smart Bed Routing &amp; Hospital Referrals</h3>
-                    <p class="t-paragraph-20 font-color-7d7d7d">Zero latency routing directs critical patients to the
-                      nearest hospital with availability. Non-critical patients receive at-home care instructions via
-                      our SLM assistant.</p>
-                  </div><a class="c-button w-button" data-wf--c-button--variant="dark" href="/platform#command">Learn
+                    <h3 class="text-weight-medium">Blockchain-Based Medical Data Storage</h3>
+                    <p class="t-paragraph-20 font-color-7d7d7d">Secure, decentralized storage for health records,
+                      including DICOM (DCM) formats for medical files. Ensure zero-tamper integrity and frictionless
+                      access across the clinical ecosystem.</p>
+                  </div><a class="c-button w-button" data-wf--c-button--variant="dark" href="/about.html">Learn
                     More</a>
                 </div>
                 <div class="c-lottie-animation no-background" data-animation-type="lottie" data-autoplay="1"
@@ -743,8 +719,8 @@
                         <source data-wf-ignore="true"
                           src="media/6981490c51c1e151d4cb9219%252F6983f430668f6310d8391151_dev-illus_webm.webm" />
                       </video></div><img alt="" class="developers-build-illu is--home" loading="lazy" sizes="216px"
-                      src="images/698a9a9489b318db90f91ecd_home-illu-1.png"
-                      srcset="images/698a9a9489b318db90f91ecd_home-illu-1-p-500.png 500w, images/698a9a9489b318db90f91ecd_home-illu-1-p-800.png 800w, images/698a9a9489b318db90f91ecd_home-illu-1-p-1080.png 1080w, images/698a9a9489b318db90f91ecd_home-illu-1.png 1296w"
+                      src="images/edit.png"
+                      srcset="images/edit.png 500w, images/698a9a9489b318db90f91ecd_home-illu-1-p-800.png 800w, images/698a9a9489b318db90f91ecd_home-illu-1-p-1080.png 1080w, images/698a9a9489b318db90f91ecd_home-illu-1.png 1296w"
                       width="216" />
                   </div>
                   <div class="spacer-24"></div>
@@ -828,10 +804,8 @@
                   cdn.prod.website-files.com="" data-object-fit="cover" data-wf-ignore="true" https:=""
                   id="153ef955-ad77-4f9b-cc47-a8bb5ecc172d-video" loop="" muted="" playsinline=""
                   style="background-image:url(">
-                  <source data-wf-ignore="true"
-                    src="media/6981490c51c1e151d4cb9219%252F698a2c65de3709d7e9a5188b_guard_mp4.mp4" />
-                  <source data-wf-ignore="true"
-                    src="media/6981490c51c1e151d4cb9219%252F698a2c65de3709d7e9a5188b_guard_webm.webm" />
+                  <source data-wf-ignore="true" src="media/juju.mov" />
+                  <source data-wf-ignore="true" src="media/juju.webm" />
                 </video></div>
             </div>
           </div><a class="c-button white home-see w-button" href="#" see-element="button">PAUSE</a>
@@ -893,30 +867,10 @@
                     href="/solutions/by-workflow?tab=email">
                     <div class="w-layout-hflex icon-flex">
                       <div class="social-icon">
-                        <div class="icon-1x1-xxlarge w-embed"><svg fill="none" height="100%" style=""
-                            viewbox="0 0 64 64" width="100%" xmlns="http://www.w3.org/2000/svg">
-                            <rect fill="white" height="64" rx="8" width="64"></rect>
-                            <g clip-path="url(#IconContainer_clip0-2123-1003)">
-                              <path
-                                d="M18.1818 43.9979H23.2727V31.6342L16 26.1797V41.8161C16 43.0233 16.9782 43.9979 18.1818 43.9979Z"
-                                fill="#4285F4"></path>
-                              <path
-                                d="M40.7266 43.9979H45.8175C47.0247 43.9979 47.9993 43.0197 47.9993 41.8161V26.1797L40.7266 31.6342"
-                                fill="#34A853"></path>
-                              <path
-                                d="M40.7266 22.1802V31.6347L47.9993 26.1802V23.2711C47.9993 20.5729 44.9193 19.0347 42.7629 20.6529"
-                                fill="#FBBC04"></path>
-                              <path d="M23.2734 31.6342V22.1797L32.0007 28.7251L40.728 22.1797V31.6342L32.0007 38.1797"
-                                fill="#EA4335"></path>
-                              <path
-                                d="M16 23.2711V26.1802L23.2727 31.6347V22.1802L21.2364 20.6529C19.0764 19.0347 16 20.5729 16 23.2711Z"
-                                fill="#C5221F"></path>
-                            </g>
-                            <defs>
-                              <clippath id="IconContainer_clip0-2123-1003">
-                                <rect fill="white" height="24" transform="translate(16 20)" width="32"></rect>
-                              </clippath>
-                            </defs>
+                        <div class="icon-1x1-xxlarge w-embed"><svg xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 256 256" width="100%" height="100%">
+                            <path fill="#EE4C2C"
+                              d="M125.7 13.9C104.9 3.5 83.2 24.3 84.6 47.9c.4 7.2 2.9 14 7 19.9l31.4-17.5c2.4-1.3 5.4 0 5.4 2.8v34.1h.4V53.2c0-2.8 3-4.1 5.4-2.8l31.4 17.5c4.1-5.9 6.6-12.7 7-19.9 1.4-23.6-20.3-44.4-41.1-34.1l-6-5.8zM240 76.7c-17.7-15.6-45.7-1.1-45 22.4.2 7.2 2.7 14 6.8 19.9l-31.4-17.5c-2.4-1.3-5.4 0-5.4 2.8v34.1h-.4V104.2c0-2.8-3-4.1-5.4-2.8l-31.4 17.5c-4.1-5.9-6.6-12.7-7-19.9-.7-23.5-28.7-38-46.4-22.4L64.2 82.2c16.5-16.8 44.4-4.8 44.2 19 .1-7.2-2.4-14-6.5-19.9l31.4 17.5c2.4 1.3 5.3 0 5.4-2.8V61.9h.4v34.1c0 2.8 3 4.1 5.3 2.8l31.4-17.5c4.1 5.9 6.6 12.7 6.5 19.9-.2-23.8 27.7-35.8 44.2-19l19.3-5.5zM140.2 243.6c20.8 10.4 42.5-10.4 41.1-34-.4-7.2-2.9-14-7-19.9l-31.4 17.5c-2.4 1.3-5.4 0-5.4-2.8v-34.1h-.4v34.1c0 2.8-3 4.1-5.4 2.8l-31.4-17.5c-4.1 5.9-6.6 12.7-7 19.9-1.4 23.6 20.3 44.4 41.1 34l6 5.8z" />
                           </svg></div>
                       </div>
                       <div class="social-icon">
@@ -1002,22 +956,17 @@
                   </a><a class="ticker-card w-inline-block" href="/solutions/by-workflow?tab=social">
                     <div class="w-layout-hflex icon-flex">
                       <div class="social-icon">
-                        <div class="icon-1x1-xxlarge w-embed"><svg fill="none" height="100%" style=""
-                            viewbox="0 0 64 64" width="100%" xmlns="http://www.w3.org/2000/svg">
-                            <rect fill="white" height="64" rx="8" width="64"></rect>
-                            <g clip-path="url(#IconContainer_clip0-2123-1038)">
-                              <path clip-rule="evenodd"
-                                d="M19.2196 48H44.1085C46.0722 48 47.6641 46.4081 47.6641 44.4444V19.5556C47.6641 17.5919 46.0722 16 44.1085 16H19.2196C17.2559 16 15.6641 17.5919 15.6641 19.5556V44.4444C15.6641 46.4081 17.2559 48 19.2196 48Z"
-                                fill="#007EBB" fill-rule="evenodd"></path>
-                              <path clip-rule="evenodd"
-                                d="M43.2205 43.5564H38.4719V35.4685C38.4719 33.251 37.6293 32.0118 35.8741 32.0118C33.9648 32.0118 32.9672 33.3014 32.9672 35.4685V43.5564H28.3909V28.149H32.9672V30.2244C32.9672 30.2244 34.3432 27.6783 37.6127 27.6783C40.8808 27.6783 43.2205 29.674 43.2205 33.8014V43.5564ZM22.9313 26.1315C21.3725 26.1315 20.1094 24.8585 20.1094 23.2884C20.1094 21.7184 21.3725 20.4453 22.9313 20.4453C24.4901 20.4453 25.7525 21.7184 25.7525 23.2884C25.7525 24.8585 24.4901 26.1315 22.9313 26.1315ZM20.5683 43.5564H25.3402V28.149H20.5683V43.5564Z"
-                                fill="white" fill-rule="evenodd"></path>
-                            </g>
-                            <defs>
-                              <clippath id="IconContainer_clip0-2123-1038">
-                                <rect fill="white" height="32" transform="translate(15.6641 16)" width="32"></rect>
-                              </clippath>
-                            </defs>
+                        <div class="icon-1x1-xxlarge w-embed"><svg xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 256 256" width="100%" height="100%">
+                            <path fill="#FF6F00" d="M22.82 108.79l9.31-7.81L113.8 54.89v23.4l-64.84 41.15z" />
+                            <path fill="#FFA800"
+                              d="M113.8 78.29l64.84 41.15v25.21L113.8 103.5zm0 25.21l47.58 30.13v25.21l-47.58-30.13z" />
+                            <path fill="#FF6F00"
+                              d="M113.8 128.71l47.58 30.13V184l-47.58-30.13zM66.42 127l47.38-30.01v25.12L66.42 152.1z" />
+                            <path fill="#FFD15B"
+                              d="M128 35.53L48.96 85.58v41.15l17.46-11.08v-19l61.58-39 61.58 39v60l-44.12 28v-19L113.8 145v9l23.18-14.7v50.41l-23.18 14.7v9.06l14.2 9.06 61.54-39.11V85.58z" />
+                            <path fill="#FF6F00"
+                              d="M128 35.53L113.8 44.53v180.1l14.2 9.06 14.2-9.06V44.53C142.2 35.53 128 35.53 128 35.53z" />
                           </svg></div>
                       </div>
                     </div>
@@ -1030,19 +979,12 @@
                       <div class="social-icon"><img alt="" class="icon-1x1-xxlarge is-logo" loading="lazy"
                           src="images/6986ab810085141ce873787b_mozilla.svg" /></div>
                       <div class="social-icon">
-                        <div class="icon-1x1-xxlarge w-embed"><svg fill="none" height="100%" style=""
-                            viewbox="0 0 64 64" width="100%" xmlns="http://www.w3.org/2000/svg">
-                            <rect fill="white" height="64" rx="8" width="64"></rect>
-                            <g clip-path="url(#IconContainer_clip0-2123-1063)">
-                              <path
-                                d="M47.307 32.723C47.307 30.2412 46.6653 27.9097 45.5402 25.8837C50.3362 15.0294 40.4012 16.6193 39.8481 16.7275C37.7433 17.1394 35.796 17.8006 33.9998 18.6388C33.7349 18.6239 33.4684 18.6157 33.1999 18.6157C26.4964 18.6157 20.8852 23.2913 19.449 29.5592C22.9822 25.5955 25.4549 23.9961 26.9356 23.3561C26.6992 23.5673 26.4679 23.7808 26.2403 23.996C26.1645 24.0675 26.0915 24.14 26.0168 24.212C25.8667 24.3564 25.717 24.5009 25.5707 24.6467C25.4837 24.7334 25.399 24.8209 25.3133 24.9082C25.1836 25.0403 25.0541 25.1722 24.9275 25.305C24.8375 25.3993 24.7498 25.494 24.6614 25.5885C24.5431 25.7151 24.4255 25.8419 24.3101 25.9692C24.2204 26.068 24.1322 26.1669 24.0442 26.2661C23.9348 26.3892 23.8264 26.5124 23.7195 26.6358C23.6309 26.7382 23.543 26.8406 23.4561 26.9431C23.3547 27.0627 23.2547 27.1824 23.1557 27.302C23.0681 27.4079 22.9808 27.5137 22.895 27.6194C22.8023 27.7338 22.7116 27.848 22.6211 27.9621C22.5333 28.0727 22.4456 28.1831 22.3599 28.2935C22.2783 28.3987 22.199 28.5034 22.1191 28.6083C22.029 28.7267 21.9382 28.8452 21.8505 28.9631C21.7877 29.0475 21.7275 29.131 21.6659 29.2151C21.1085 29.9756 20.5992 30.7216 20.1392 31.4381C20.1381 31.4398 20.1369 31.4416 20.1359 31.4433C20.0148 31.632 19.8979 31.8179 19.7834 32.0022C19.7772 32.0121 19.7708 32.0222 19.7647 32.0323C19.65 32.2173 19.5393 32.3991 19.4313 32.579C19.4275 32.5853 19.4236 32.5918 19.4198 32.5981C19.1296 33.0823 18.8605 33.5492 18.6181 33.9884C17.3476 36.2909 16.7291 37.8997 16.7023 37.9952C12.6901 52.3391 25.2122 46.2818 26.9596 45.3776C28.8411 46.3071 30.9592 46.8302 33.1999 46.8302C39.334 46.8302 44.5529 42.9147 46.4955 37.4468H39.0831C37.9863 39.2998 35.8748 40.5548 33.4489 40.5548C29.8947 40.5548 27.0136 37.8619 27.0136 34.5399H47.1914C47.2679 33.945 47.3076 33.3386 47.3076 32.723H47.307ZM44.6717 18.8406C45.8865 19.6606 46.8609 20.9482 45.1875 25.2847C43.5826 22.7036 41.1681 20.679 38.2982 19.5661C39.6037 18.9356 42.8367 17.602 44.6717 18.8406ZM18.8541 45.3486C17.8646 44.3339 17.6897 41.8624 19.873 37.3588C20.975 40.5269 23.1738 43.1815 26.0159 44.8663C24.6025 45.6442 20.8501 47.3958 18.8541 45.3486ZM26.9818 30.6818C27.0946 27.4531 29.9045 24.868 33.3569 24.868C36.8092 24.868 39.6193 27.4531 39.7321 30.6818H26.9818Z"
-                                fill="#1EBBEE"></path>
-                            </g>
-                            <defs>
-                              <clippath id="IconContainer_clip0-2123-1063">
-                                <rect fill="white" height="32" transform="translate(15.3281 16)" width="32.5631"></rect>
-                              </clippath>
-                            </defs>
+                        <div class="icon-1x1-xxlarge w-embed"><svg xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 256 256" width="100%" height="100%">
+                            <path fill="#3776AB"
+                              d="M128 15c-55.9 0-52 24.1-52 24.1v25.7h53.7v7.6H72.8C45.3 72.4 42 98.4 42 98.4s-3.7 26.5 24 35.5h16.2v-23S81 83 95.8 83h53s20.9-1.2 20.9-20.5V36.7C169.7 17.5 151 15 151 15h-23ZM101.4 34.3c4.1 0 7.4 3.3 7.4 7.4 0 4.1-3.3 7.4-7.4 7.4a7.4 7.4 0 0 1-7.4-7.4c0-4.1 3.3-7.4 7.4-7.4Z" />
+                            <path fill="#FFD43B"
+                              d="M128 241c55.9 0 52-24.1 52-24.1v-25.7H126.3v-7.6h56.9c27.5 0 30.8-26 30.8-26s3.7-26.5-24-35.5h-16.2v23s1.2 27.9-13.6 27.9h-53s-20.9 1.2-20.9 20.5v25.8c0 19.2 18.7 21.7 18.7 21.7h23Zm26.6-19.3a7.4 7.4 0 0 1-7.4-7.4c0-4.1 3.3-7.4 7.4-7.4 4.1 0 7.4 3.3 7.4 7.4 0 4.1-3.3 7.4-7.4 7.4Z" />
                           </svg></div>
                       </div>
                       <div class="social-icon">
@@ -1096,36 +1038,13 @@
                   </a><a class="ticker-card w-inline-block" href="/solutions/by-workflow?tab=document">
                     <div class="w-layout-hflex icon-flex">
                       <div class="social-icon">
-                        <div class="icon-1x1-xxlarge w-embed"><svg fill="none" height="100%" style=""
-                            viewbox="0 0 64 64" width="100%" xmlns="http://www.w3.org/2000/svg">
-                            <rect fill="white" height="64" rx="8" width="64"></rect>
-                            <g clip-path="url(#IconContainer_clip0-2123-1081)">
-                              <path d="M47.5478 20.6328H29.3438V43.6307H47.5478V20.6328Z" fill="white"></path>
-                              <path
-                                d="M28.2607 19.8516C27.5452 19.8516 26.9688 20.4253 26.9688 21.1394V42.8644C26.9688 43.5772 27.5452 44.1523 28.2607 44.1523H46.704C47.4195 44.1523 47.996 43.5772 47.996 42.8644V21.1394C47.996 20.4253 47.4195 19.8516 46.704 19.8516H28.2607ZM28.0018 20.9187H46.952V43.0729H28.0018V20.9187Z"
-                                fill="#2A5699"></path>
-                              <path d="M44.745 23.1953H31.4688V24.5729H44.745V23.1953Z" fill="#2A5699"></path>
-                              <path d="M44.745 29.6875H31.4688V31.0651H44.745V29.6875Z" fill="#2A5699"></path>
-                              <path d="M44.745 26.4453H31.4688V27.8229H44.745V26.4453Z" fill="#2A5699"></path>
-                              <path d="M44.745 32.9375H31.4688V34.3151H44.745V32.9375Z" fill="#2A5699"></path>
-                              <path d="M44.745 36.2812H31.4688V37.6589H44.745V36.2812Z" fill="#2A5699"></path>
-                              <path d="M44.745 39.5312H31.4688V40.9089H44.745V39.5312Z" fill="#2A5699"></path>
-                              <path d="M34.2048 47.1071V16.8984L16 19.9185V44.0857L34.2048 47.1071Z"
-                                fill="url(#IconContainer_paint0-linear-2123-1081)"></path>
-                              <path
-                                d="M19.1484 27.4727L20.9201 36.4811C21.5535 36.5381 22.1884 36.5758 22.824 36.5942L24.1214 30.67C24.1753 30.4819 24.1986 30.2764 24.2209 29.8822C24.2453 30.2796 24.2609 30.4226 24.319 30.67L25.6015 36.7591L27.6757 36.8831L29.9775 26.8281L27.9469 26.9494L26.779 33.6219C26.7215 33.893 26.6814 34.1666 26.6808 34.4082C26.7007 34.2088 26.6674 33.9415 26.5827 33.6219L25.2853 27.1075L23.4523 27.2165L22.0554 33.6219C22.0181 33.7477 21.9818 33.9744 21.9572 34.212C21.9477 34.0078 21.9159 33.7371 21.8591 33.4243L20.9147 27.3678L19.1484 27.4727Z"
-                                fill="white"></path>
-                            </g>
-                            <defs>
-                              <lineargradient gradientunits="userSpaceOnUse" id="IconContainer_paint0-linear-2123-1081"
-                                x1="34.2045" x2="16.0005" y1="32.0029" y2="32.0029">
-                                <stop stop-color="#285294"></stop>
-                                <stop offset="1" stop-color="#2C5A9E"></stop>
-                              </lineargradient>
-                              <clippath id="IconContainer_clip0-2123-1081">
-                                <rect fill="white" height="30.2087" transform="translate(16 16.8984)" width="32"></rect>
-                              </clippath>
-                            </defs>
+                        <div class="icon-1x1-xxlarge w-embed"><svg xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24" width="100%" height="100%" fill="none" stroke="#A78BFA"
+                            stroke-width="1.5">
+                            <path
+                              d="M14 6c0-2-1-3-3-3S8 4 8 6s.5 2 2 3c-1.5 1-2.5 3-2.5 5 0 3 2 5 4 5s4-2 4-5c0-2-1-4-2.5-5 1.5-1 2-1 2-3Z" />
+                            <circle cx="11.5" cy="11.5" r="1.5" />
+                            <path d="M11.5 13v3m-2-4.5H8m5 0h1.5" />
                           </svg></div>
                       </div>
                       <div class="social-icon">
@@ -1707,11 +1626,11 @@
           <div class="container">
             <div class="home-build-wrapper">
               <div class="home-build-content">
-                <h2>Build on ZeroDrift Infrastructure</h2>
+                <h2>Build on Sero Infrastructure</h2>
                 <div class="spacer-24"></div>
-                <p class="t-paragraph-18 text-color-7d7d7d">Add compliance checks to any AI agent, copilot, or internal
-                  tool with one API. Every piece of content validated against regulations and firm policies before it
-                  reaches users.</p>
+                <p class="t-paragraph-18 text-color-7d7d7d">Integrate clinical triage into your hospital workflows with
+                  one API. Every patient symptom validated against medical databases and protocols before they reach the
+                  ER.</p>
                 <div class="spacer-48"></div><a class="c-button w-button" data-wf--c-button--variant="dark"
                   href="/developers">Learn MORE</a>
               </div>
@@ -1722,34 +1641,34 @@
                     <p build-request="" class="t-paragraph-16 font-family-fono text-lottie-green"><span
                         class="text-lottie-blue">curl</span> <span class="text-color-white">-X</span> <span
                         class="text-lottie-yellow">POST</span> "api.zerodrift.ai/v1/validate" <span
-                        class="text-lottie-gray">\</span><br />       <span class="text-color-white">-H</span>
-                      "Authorization: Bearer zd_key_..." <span class="text-lottie-gray">\</span> <br />      <span
-                        class="text-color-white">-d</span> '{<br />               <span
+                        class="text-lottie-gray">\</span><br />      <span class="text-color-white">-H</span>
+                      "Authorization: Bearer zd_key_..." <span class="text-lottie-gray">\</span> <br />     <span
+                        class="text-color-white">-d</span> '{<br />              <span
                         class="text-lottie-blue">"text"</span>: "Our fund will outperform the market."<span
-                        class="text-lottie-gray">,</span><br />               <span
+                        class="text-lottie-gray">,</span><br />              <span
                         class="text-lottie-blue">"document_type"</span><span class="text-lottie-gray">:</span>
-                      "investor_letter"<span class="text-lottie-gray">,</span><br />               <span
+                      "investor_letter"<span class="text-lottie-gray">,</span><br />              <span
                         class="text-lottie-blue">"audience"</span><span class="text-lottie-gray">:</span>
-                      "retail_US"<span class="text-lottie-gray">,</span><br />               <span
+                      "retail_US"<span class="text-lottie-gray">,</span><br />              <span
                         class="text-lottie-blue">"rules"</span><span class="text-lottie-gray">:</span> <span
-                        class="text-color-white">[</span>"sec","finra"<span class="text-color-white">]</span><br />     
+                        class="text-color-white">[</span>"sec","finra"<span class="text-color-white">]</span><br />    
                        }'</p>
                   </div>
                 </div>
                 <div class="lottie-code-group">
                   <div class="t-paragraph-18 font-family-fono">Response</div>
                   <div class="lottie-code-wrapper">
-                    <p build-respond="" class="t-paragraph-16 font-family-fono text-lottie-blue">{     <br />  "status":
-                      <span class="text-lottie-yellow">"warning"</span>,<br />       "evidence_id": <span
-                        class="text-lottie-green">"ev_8f3k2j"</span>,<br />       "checks": <span
+                    <p build-respond="" class="t-paragraph-16 font-family-fono text-lottie-blue">{    <br />  "status":
+                      <span class="text-lottie-yellow">"warning"</span>,<br />      "evidence_id": <span
+                        class="text-lottie-green">"ev_8f3k2j"</span>,<br />      "checks": <span
                         class="text-color-white">{</span> "passed": <span class="text-lottie-purple">12</span>,
                       "failed": <span class="text-lottie-purple">1</span> <span class="text-color-white">},</span><br />
-                            "violations": <span class="text-color-white">[{</span><br />                 "rule": <span
-                        class="text-lottie-green">"no_performance_projection",</span><br />                 "ref": <span
-                        class="text-lottie-green">"FINRA 2210(d)(1)(F)",</span><br />                 "severity": <span
-                        class="text-lottie-red">"high",</span><br />                 "snippet": <span
-                        class="text-lottie-green">"will outperform the market",</span><br />                 "fix":
-                      <span class="text-lottie-green">"is designed to seek long-term growth"</span><br />   }]<br /> }
+                           "violations": <span class="text-color-white">[{</span><br />                "rule": <span
+                        class="text-lottie-green">"no_performance_projection",</span><br />                "ref": <span
+                        class="text-lottie-green">"FINRA 2210(d)(1)(F)",</span><br />                "severity": <span
+                        class="text-lottie-red">"high",</span><br />                "snippet": <span
+                        class="text-lottie-green">"will outperform the market",</span><br />                "fix":
+                      <span class="text-lottie-green">"is designed to seek long-term growth"</span><br />   }]<br />}
                     </p>
                   </div>
                 </div>
@@ -1758,38 +1677,18 @@
           </div>
         </div>
       </section>
-      <section class="section_home-engineered">
-        <div class="section-inner-white bg-grid bg-grid-top">
-          <div class="container">
-            <div class="home-engineered-wrapper">
-              <h2>Engineered For Regulated Institutions</h2>
-              <div class="home-engineered-badges"><img alt="" class="home-engineered-badge" loading="lazy"
-                  src="images/69852a8bcf31ec098f29802a_image%20440.avif" /><img alt="" class="home-engineered-badge"
-                  loading="lazy" src="images/69852a8b979e8f951aec56c2_image%20441.avif" /><img alt=""
-                  class="home-engineered-badge" loading="lazy" src="images/69852a8b01ae940fccc07121_image%20442.avif" />
-              </div>
-              <div class="home-engineered-bottom">
-                <p class="t-paragraph-20 font-color-7d7d7d">Built for firms where the stakes are high. SOC 2 certified.
-                  SEC and FINRA rules encoded. Ready for whatever comes next.</p><a class="c-button w-button"
-                  data-wf--c-button--variant="dark"
-                  href="https://app.vanta.com/zerodrift.ai/trust/8dwp517ay48r0q3abhwy09" target="_blank">View Trust
-                  Center</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+
       <section class="section_blocker">
         <div class="section-inner-dark">
           <div class="container z-index-2">
             <div class="home-blocker-wrapper">
               <div class="home-blocker-left">
                 <div class="home-blocker-left_content">
-                  <div class="t-paragraph-12 text-style-uppercase font-family-fono">30 minutes. Your content. Live
-                    Results.</div>
-                  <h2>See ZeroDrift On Your Communications</h2>
-                  <p class="t-paragraph-18">Run your real communications through ZeroDrift. Watch issues get caught and
-                    fixed at the source. See your team finally unblocked.</p>
+                  <div class="t-paragraph-12 text-style-uppercase font-family-fono">Instant Triage. Real Patient Data.
+                    Better Care.</div>
+                  <h2>See Sero In Your Emergency Room</h2>
+                  <p class="t-paragraph-18">Run your patient symptoms through Sero. Watch critical conditions get
+                    prioritized and resources allocated at the source. See your medical team finally unblocked.</p>
                 </div>
                 <div class="blocker-form w-form">
                   <form class="blocker-form-inner" data-name="Contact Form"
@@ -1826,16 +1725,18 @@
                     <div>Oops! Something went wrong. Try again.</div>
                   </div>
                 </div>
-                <div class="t-paragraph-12 text-style-uppercase font-family-fono">30 min - no prep - your data never
-                  stored - response in 2 hours</div>
+                <div class="t-paragraph-12 text-style-uppercase font-family-fono">HIPAA Compliant - no prep - secure
+                  data - instant triage</div>
               </div>
               <div class="home-blocker-right" id="w-node-_7c80b751-4af6-c833-bc3c-31012ae5c44a-d4cb9273">
-                <h5>“Our team moves faster because they know exactly what's compliant. And our compliance team finally
-                  focuses on real work, not chasing down emails.”</h5>
+                <h5>“Our ER staff moves faster because they know exactly who needs immediate care. And our doctors
+                  finally
+                  focus on treating patients, not chasing down paperwork.”</h5>
                 <div class="spacer-24"></div>
-                <div class="t-paragraph-12 text-style-uppercase font-family-fono text-weight-medium">Head of compliance
+                <div class="t-paragraph-12 text-style-uppercase font-family-fono text-weight-medium">Chief Medical
+                  Officer
                 </div>
-                <div class="t-paragraph-12">Large Broker-Dealer</div>
+                <div class="t-paragraph-12">Large Healthcare Network</div>
               </div>
             </div>
           </div>
@@ -1874,7 +1775,8 @@
               <a href="/index.html"
                 style="color: #a1a1a1; text-decoration: none; font-size: 0.95rem; transition: color 0.2s;">Home</a>
               <a href="/solutions.html"
-                style="color: #a1a1a1; text-decoration: none; font-size: 0.95rem; transition: color 0.2s;">Solutions</a>
+                style="color: #a1a1a1; text-decoration: none; font-size: 0.95rem; transition: color 0.2s;">AI
+                Consult</a>
             </div>
           </div>
           <!-- Column 3: Resources -->
@@ -2277,6 +2179,7 @@
       window.getUtmParams = getStoredUtms;
     })();
   </script>
+  <script type="module" src="js/auth-navbar.js"></script>
 </body>
 
 </html>

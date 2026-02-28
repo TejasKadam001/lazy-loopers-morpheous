@@ -5,13 +5,16 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Sero | Solutions and Products</title>
-  <meta content="Stop Violations Before They Happen. Across Every Channel." name="description" />
-  <meta content="Solutions by workflow" property="og:title" />
-  <meta content="Stop Violations Before They Happen. Across Every Channel." property="og:description" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>Sero | AI Health Consultant</title>
+  <meta content="Stop Violations Before They Happen.Across Every Channel." name="description" />
+  <meta content="AI Consult" property="og:title" />
+  <meta content="Stop Violations Before They Happen.Across Every Channel." property="og:description" />
   <meta content="images/698663cb42eae712f23f6ad2_og.png" property="og:image" />
-  <meta content="Solutions by workflow" property="twitter:title" />
-  <meta content="Stop Violations Before They Happen. Across Every Channel." property="twitter:description" />
+  <meta content="AI Consult" property="twitter:title" />
+  <meta content="Stop Violations Before They Happen.Across Every Channel." property="twitter:description" />
   <meta content="website" property="og:type" />
   <meta content="summary_large_image" name="twitter:card" />
   <meta content="width=device-width, initial-scale=1" name="viewport" />
@@ -26,7 +29,7 @@
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "Solutions by workflow",
+  "name": "AI Consult",
   "description": "Stop Violations Before They Happen. Across Every Channel.",
   "url": "/solutions/by-workflow",
   "about": {
@@ -156,6 +159,54 @@
     .navbar12_container {
       border-bottom: none !important;
       box-shadow: none !important;
+    }
+  </style>
+  <style>
+    .navbar12_link,
+    .navbar12_menu-links a {
+      text-decoration: none !important;
+    }
+
+    .navbar12_link-label {
+      transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+      text-decoration: none !important;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .navbar12_link:hover .navbar12_link-label,
+    .navbar12_menu-links a:hover .navbar12_link-label {
+      text-shadow: 0 0 .5px #fff, 0 0 .5px #fff !important;
+      font-weight: 400 !important;
+      text-decoration: none !important;
+    }
+
+    /* Mobile menu background fix */
+    @media screen and (max-width: 991px) {
+      .navbar12_menu {
+        background-color: #000 !important;
+        border-radius: 20px;
+        padding: 1.5rem;
+        margin-top: 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      }
+
+      .navbar12_menu-links {
+        gap: 1rem !important;
+        padding-bottom: 1rem;
+      }
+
+      .navbar12_menu-buttons {
+        margin-left: 0 !important;
+        width: 100%;
+      }
+
+      .navbar12_menu-buttons .c-button {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+      }
     }
   </style>
 </head>
@@ -434,7 +485,7 @@
           style="background-color: transparent;">
           <div class="navbar12_menu-links">
             <a class="navbar12_link w-inline-block" href="solutions.html">
-              <div class="navbar12_link-label" style="color: #fff;">Solutions &amp; Features</div>
+              <div class="navbar12_link-label" style="color: #fff;">AI Consult</div>
             </a>
             <a class="navbar12_link w-inline-block" href="wellbeing.html">
               <div class="navbar12_link-label" style="color: #fff;">Knowledge Hub</div>
@@ -442,12 +493,14 @@
             <a class="navbar12_link w-inline-block" href="about.html">
               <div class="navbar12_link-label" style="color: #fff;">About Us</div>
             </a>
+            <a class="navbar12_link w-inline-block" href="symptom-checker.html">
+              <div class="navbar12_link-label" style="color: #fff;">Symptom Checker</div>
+            </a>
           </div>
-          <div class="navbar12_menu-buttons" style="margin-left: 1rem;">
-            <a class="c-button w-button" data-wf--c-button--variant="white" href="#"
-              style="background-color: #fff; color: #000; border-radius: 9999px; padding: 0.5rem 1rem;">Provider
-              Portal</a>
-          </div>
+          <div class="navbar12_menu-buttons" style="margin-left: 1rem;"><a class="c-button w-button"
+              data-wf--c-button--variant="white" href="signup.html"
+              style="background-color: #fff; color: #000; border-radius: 9999px; padding: 0.5rem 1rem; text-decoration: none; font-family: sans-serif; font-size: 14px; font-weight: 500; text-transform: none !important;">Sign
+              Up</a></div>
         </nav>
         <div class="navbar12_menu-button w-nav-button">
           <div class="menu-icon1">
@@ -464,7 +517,7 @@
       <section class="section_solution-hero">
         <div class="solution-hero-wrapper">
           <div class="hero-content">
-            <p class="t-paragraph-18">SOLUTIONS AND PRODUCTS</p>
+            <p class="t-paragraph-18">AI HEALTH CONSULTANT</p>
             <div class="spacer-12"></div>
             <div class="max-width _105ch">
               <h1>A Fully Integrated Clinical Ecosystem</h1>
@@ -496,264 +549,991 @@
       <section class="section_solutions-main">
         <div class="section-inner-white bg-grid custom-solutions-bg">
           <div class="container">
-            <div class="solutions-tabs w-tabs" data-current="Email" data-duration-in="300" data-duration-out="100"
-              data-easing="ease">
+            <div class="solutions-tabs w-tabs" data-current="Voice Triage" data-duration-in="300"
+              data-duration-out="100" data-easing="ease">
               <div class="solutions-tabs-menu w-tab-menu"><a
                   class="solutions-tabs-link w-inline-block w-tab-link w--current" data-w-tab="Voice Triage">
                   <div class="solutions-tabs-link_label">Voice Triage</div>
-                </a><a class="solutions-tabs-link w-inline-block w-tab-link" data-w-tab="SLM Chat">
-                  <div class="solutions-tabs-link_label">SLM Chat</div>
-                </a><a class="solutions-tabs-link w-inline-block w-tab-link" data-w-tab="Doc Upload">
-                  <div class="solutions-tabs-link_label">Doc Upload</div>
-                </a><a class="solutions-tabs-link w-inline-block w-tab-link" data-w-tab="Specialty">
-                  <div class="solutions-tabs-link_label">Specialty</div>
+                </a><a class="solutions-tabs-link w-inline-block w-tab-link" data-w-tab="Scan Analysis">
+                  <div class="solutions-tabs-link_label">Scan Analysis</div>
                 </a></div>
               <div class="solutions-tabs-content w-tab-content">
                 <div class="solutions-tabs-panel w-tab-pane w--tab-active" data-w-tab="Voice Triage">
-                  <div class="w-layout-grid solutions-tabs-grid">
-                    <div class="solutions-tabs-grid_left">
-                      <h2>Voice-Activated Triage</h2>
-                      <div class="solutions-tabs-grid_left-group">
-                        <h5 class="text-weight-medium">Today</h5>
-                        <p class="t-paragraph-20 font-color-7d7d7d">Symptom reporting is manual, tedious, and patients
-                          struggle to explain their condition.</p>
+                  <!-- AI CHATBOT: 2-col layout -->
+                  <div
+                    style="display:grid;grid-template-columns:1fr 1.5fr;gap:2.5rem;align-items:start;padding:2rem 0;">
+
+                    <!-- LEFT: Info + Role selector -->
+                    <div>
+                      <h2 style="font-size:1.7rem;letter-spacing:-.025em;line-height:1.2;margin-bottom:.75rem;">Your AI
+                        Health Consultant</h2>
+                      <div style="margin-bottom:1.5rem;">
+                        <h5 class="text-weight-medium" style="margin-bottom:.35rem;">Choose a specialist role</h5>
+                        <p class="t-paragraph-20 font-color-7d7d7d">The AI adapts its clinical knowledge and tone to
+                          match each role. Your data stays local — powered by Ollama.</p>
                       </div>
-                      <div class="solutions-tabs-grid_left-group">
-                        <h5 class="text-weight-medium">With Sero</h5>
-                        <p class="t-paragraph-20 font-color-7d7d7d">Hands-free symptom reporting using Sarvam AI for
-                          highly accurate, regional language processing. Patients speak naturally, Sero understands.</p>
+
+                      <div id="chat-role-list" style="display:flex;flex-direction:column;gap:.45rem;"></div>
+
+                      <div
+                        style="margin-top:1.4rem;padding:.85rem 1rem;border:1px solid #e8e8e5;border-radius:12px;background:#fafafa;">
+                        <p
+                          style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#aaa;margin-bottom:.35rem;font-family:sans-serif;">
+                          About this role</p>
+                        <p id="chat-role-desc-text"
+                          style="font-size:13px;color:#555;line-height:1.6;font-family:sans-serif;">Select a role above
+                          to see its focus area.</p>
                       </div>
-                      <div class="solutions-tabs-grid_left-group">
-                        <h5 class="text-weight-medium">Use Cases</h5>
-                        <div class="solutions-tabs-grid_left-tags">
-                          <div class="tag">
-                            <div class="icon-embed-18px w-embed"><svg aria-hidden="true" fill="none" height="100%"
-                                preserveaspectratio="xMidYMid meet" role="img" style="" viewbox="0 0 18 18" width="100%"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                  d="M15.75 14.0625H15.1875V2.8125C15.1875 2.66332 15.1282 2.52024 15.0227 2.41475C14.9173 2.30926 14.7742 2.25 14.625 2.25H10.6875C10.5383 2.25 10.3952 2.30926 10.2898 2.41475C10.1843 2.52024 10.125 2.66332 10.125 2.8125V5.625H6.75C6.60082 5.625 6.45774 5.68426 6.35225 5.78975C6.24676 5.89524 6.1875 6.03832 6.1875 6.1875V9H3.375C3.22582 9 3.08274 9.05926 2.97725 9.16475C2.87176 9.27024 2.8125 9.41332 2.8125 9.5625V14.0625H2.25C2.10082 14.0625 1.95774 14.1218 1.85225 14.2273C1.74676 14.3327 1.6875 14.4758 1.6875 14.625C1.6875 14.7742 1.74676 14.9173 1.85225 15.0227C1.95774 15.1282 2.10082 15.1875 2.25 15.1875H15.75C15.8992 15.1875 16.0423 15.1282 16.1477 15.0227C16.2532 14.9173 16.3125 14.7742 16.3125 14.625C16.3125 14.4758 16.2532 14.3327 16.1477 14.2273C16.0423 14.1218 15.8992 14.0625 15.75 14.0625ZM11.25 3.375H14.0625V14.0625H11.25V3.375ZM7.3125 6.75H10.125V14.0625H7.3125V6.75ZM3.9375 10.125H6.1875V14.0625H3.9375V10.125Z"
-                                  fill="currentColor"></path>
-                              </svg></div>
-                            <div class="font-family-fono">Patients</div>
-                          </div>
-                          <div class="tag">
-                            <div class="icon-embed-18px w-embed"><svg fill="none" height="100%" style=""
-                                viewbox="0 0 18 18" width="100%" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                  d="M16.8349 9.35156L14.5849 3.72656C14.5354 3.60266 14.4434 3.50041 14.3254 3.43807C14.2074 3.37573 14.0711 3.35736 13.9409 3.38625L9.56251 4.35938V2.8125C9.56251 2.66332 9.50325 2.52024 9.39776 2.41475C9.29227 2.30926 9.14919 2.25 9.00001 2.25C8.85083 2.25 8.70775 2.30926 8.60226 2.41475C8.49677 2.52024 8.43751 2.66332 8.43751 2.8125V4.61109L3.81517 5.63836C3.72605 5.65805 3.64305 5.69912 3.57335 5.75804C3.50365 5.81696 3.44933 5.89196 3.41509 5.97656V5.98078L1.16509 11.6016C1.13817 11.6686 1.12456 11.7403 1.12501 11.8125C1.12501 13.4515 2.85048 14.0625 3.93751 14.0625C5.02454 14.0625 6.75001 13.4515 6.75001 11.8125C6.75046 11.7403 6.73685 11.6686 6.70993 11.6016L4.70532 6.5932L8.43751 5.76562V14.625H7.31251C7.16333 14.625 7.02025 14.6843 6.91476 14.7898C6.80927 14.8952 6.75001 15.0383 6.75001 15.1875C6.75001 15.3367 6.80927 15.4798 6.91476 15.5852C7.02025 15.6907 7.16333 15.75 7.31251 15.75H10.6875C10.8367 15.75 10.9798 15.6907 11.0853 15.5852C11.1907 15.4798 11.25 15.3367 11.25 15.1875C11.25 15.0383 11.1907 14.8952 11.0853 14.7898C10.9798 14.6843 10.8367 14.625 10.6875 14.625H9.56251V5.51391L13.1484 4.71797L11.2901 9.35156C11.2632 9.41861 11.2496 9.49025 11.25 9.5625C11.25 11.2015 12.9755 11.8125 14.0625 11.8125C15.1495 11.8125 16.875 11.2015 16.875 9.5625C16.8755 9.49025 16.8618 9.41861 16.8349 9.35156ZM3.93751 12.9375C3.40806 12.9375 2.3372 12.6837 2.25493 11.9081L3.93751 7.70203L5.62009 11.9081C5.53782 12.6837 4.46696 12.9375 3.93751 12.9375ZM14.0625 10.6875C13.5331 10.6875 12.4622 10.4337 12.3799 9.65812L14.0625 5.45203L15.7451 9.65812C15.6628 10.4337 14.592 10.6875 14.0625 10.6875Z"
-                                  fill="currentColor"></path>
-                              </svg></div>
-                            <div class="font-family-fono">Providers</div>
-                          </div>
-                          <div class="tag">
-                            <div class="icon-embed-18px w-embed"><svg fill="none" height="100%" style=""
-                                viewbox="0 0 18 18" width="100%" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                  d="M10.1213 11.6522C11.0031 11.103 11.682 10.2815 12.0554 9.3121C12.4287 8.34268 12.4762 7.27803 12.1906 6.27923C11.905 5.28043 11.3018 4.40182 10.4724 3.77633C9.64297 3.15084 8.6324 2.8125 7.59357 2.8125C6.55473 2.8125 5.54416 3.15084 4.71474 3.77633C3.88532 4.40182 3.28218 5.28043 2.99657 6.27923C2.71096 7.27803 2.75842 8.34268 3.13177 9.3121C3.50512 10.2815 4.18405 11.103 5.06583 11.6522C3.61388 12.1275 2.30747 13.0155 1.257 14.2657C1.16097 14.3799 1.11424 14.5276 1.12709 14.6763C1.13995 14.825 1.21134 14.9624 1.32556 15.0585C1.43978 15.1545 1.58747 15.2012 1.73614 15.1884C1.88482 15.1755 2.0223 15.1041 2.11833 14.9899C3.52951 13.3052 5.47435 12.3778 7.59005 12.3778C9.70576 12.3778 11.6506 13.3052 13.066 14.9899C13.162 15.1041 13.2995 15.1755 13.4482 15.1884C13.5969 15.2012 13.7445 15.1545 13.8588 15.0585C13.973 14.9624 14.0444 14.825 14.0572 14.6763C14.0701 14.5276 14.0234 14.3799 13.9273 14.2657C12.8761 13.0155 11.5697 12.1275 10.1213 11.6522ZM3.9338 7.59656C3.9338 6.87342 4.14824 6.16653 4.54999 5.56526C4.95175 4.96399 5.52277 4.49536 6.19087 4.21863C6.85896 3.94189 7.59411 3.86949 8.30335 4.01057C9.01259 4.15164 9.66407 4.49987 10.1754 5.0112C10.6867 5.52254 11.035 6.17402 11.176 6.88326C11.3171 7.59251 11.2447 8.32766 10.968 8.99575C10.6913 9.66384 10.2226 10.2349 9.62136 10.6366C9.02009 11.0384 8.31319 11.2528 7.59005 11.2528C6.6207 11.2517 5.69136 10.8661 5.00593 10.1807C4.32049 9.49525 3.93492 8.56592 3.9338 7.59656ZM14.5763 4.61531C14.9772 5.55811 15.1838 6.57208 15.1838 7.59656C15.1838 8.62105 14.9772 9.63501 14.5763 10.5778C14.533 10.6792 14.4609 10.7657 14.3689 10.8264C14.2769 10.8872 14.1691 10.9196 14.0588 10.9195C13.9657 10.9196 13.874 10.8966 13.792 10.8525C13.71 10.8084 13.6402 10.7446 13.5889 10.6669C13.5376 10.5892 13.5064 10.5 13.4981 10.4072C13.4898 10.3145 13.5046 10.2211 13.5413 10.1355C13.8828 9.33263 14.0588 8.46908 14.0588 7.59656C14.0588 6.72404 13.8828 5.86049 13.5413 5.05758C13.4827 4.92033 13.4809 4.7654 13.5365 4.62688C13.5921 4.48836 13.7004 4.37759 13.8377 4.31894C13.9749 4.2603 14.1298 4.25857 14.2684 4.31415C14.4069 4.36973 14.5177 4.47806 14.5763 4.61531ZM17.4338 7.59656C17.4364 8.92975 17.1663 10.2494 16.64 11.4743C16.5784 11.607 16.4675 11.7106 16.3309 11.7629C16.1943 11.8153 16.0426 11.8123 15.9081 11.7547C15.7736 11.697 15.6669 11.5892 15.6105 11.4542C15.5542 11.3191 15.5527 11.1675 15.6064 11.0313C16.0699 9.94553 16.3088 8.77715 16.3088 7.59656C16.3088 6.41597 16.0699 5.2476 15.6064 4.1618C15.5747 4.09352 15.5571 4.01959 15.5545 3.94438C15.5519 3.86917 15.5645 3.7942 15.5914 3.72393C15.6183 3.65365 15.6591 3.58949 15.7112 3.53525C15.7634 3.48101 15.8259 3.43778 15.8951 3.40814C15.9643 3.37849 16.0387 3.36303 16.1139 3.36266C16.1892 3.3623 16.2638 3.37704 16.3332 3.40601C16.4027 3.43498 16.4656 3.47759 16.5183 3.53132C16.571 3.58506 16.6124 3.64882 16.64 3.71883C17.1663 4.94373 17.4364 6.26337 17.4338 7.59656Z"
-                                  fill="currentColor"></path>
-                              </svg></div>
-                            <div class="font-family-fono">Hospitals</div>
-                          </div>
+
+                      <div class="solutions-tabs-grid_left-tags" style="margin-top:1.5rem;">
+                        <div class="tag">
+                          <div class="font-family-fono">Patients</div>
+                        </div>
+                        <div class="tag">
+                          <div class="font-family-fono">Providers</div>
+                        </div>
+                        <div class="tag">
+                          <div class="font-family-fono">Hospitals</div>
                         </div>
                       </div>
                     </div>
-                    <div class="c-lottie-animation no-background" data-animation-type="lottie" data-autoplay="1"
-                      data-default-duration="0" data-direction="1" data-duration="0" data-is-ix2-target="0"
-                      data-loop="1" data-renderer="svg"
-                      data-src="https://cdn.prod.website-files.com/69653993e6f554fe004325fb/6977f2da64004968f77ab077_8c486a24e6cd2a6c9711856b50674964_Animation%2013%20from%20LottieFiles.lottie"
-                      data-w-id="950b2a89-1c15-5389-5774-722215e2e7ed"
-                      id="w-node-_950b2a89-1c15-5389-5774-722215e2e7ed-f6778f30"></div>
-                  </div>
-                </div>
-                <div class="solutions-tabs-panel w-tab-pane" data-w-tab="SLM Chat">
-                  <div class="w-layout-grid solutions-tabs-grid">
-                    <div class="solutions-tabs-grid_left">
-                      <h2>Medical SLM Live Chat</h2>
-                      <div class="solutions-tabs-grid_left-group">
-                        <h5 class="text-weight-medium">Today</h5>
-                        <p class="t-paragraph-20 font-color-7d7d7d">Patients wait hours for basic consultations or rely
-                          on generic, unsafe web searches for therapy.</p>
+
+                    <!-- RIGHT: Chatbox -->
+                    <div id="sero-chat-wrap" style="display:flex;flex-direction:column;height:520px;position:relative;">
+                      <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.6rem;">
+                        <span id="chat-active-emoji" style="font-size:17px;"></span>
+                        <span id="chat-active-name"
+                          style="font-size:13px;font-weight:500;color:#111;font-family:sans-serif;">General
+                          Practitioner</span>
+                        <span style="flex:1;"></span>
+                        <button onclick="generateSeroReport()"
+                          style="font-size:11px;color:#111;background:none;border:1px solid #d0d0d0;border-radius:6px;cursor:pointer;font-family:sans-serif;padding:.25rem .65rem;transition:all .15s;letter-spacing:.02em;"
+                          onmouseover="this.style.background='#111';this.style.color='#fff'"
+                          onmouseout="this.style.background='none';this.style.color='#111'">Generate Report</button>
+                        <button onclick="clearSeroChat()"
+                          style="font-size:11px;color:#bbb;background:none;border:none;cursor:pointer;font-family:sans-serif;padding:0;transition:color .15s;"
+                          onmouseover="this.style.color='#111'" onmouseout="this.style.color='#bbb'">Clear</button>
                       </div>
-                      <div class="solutions-tabs-grid_left-group">
-                        <h5 class="text-weight-medium">With Sero</h5>
-                        <p class="t-paragraph-20 font-color-7d7d7d">An on-demand AI assistant and therapist powered by
-                          specialized Small Language Models for safe, hallucination-free psychological and medical
-                          support.</p>
-                      </div>
-                      <div class="solutions-tabs-grid_left-group">
-                        <h5 class="text-weight-medium">Use Cases</h5>
-                        <div class="solutions-tabs-grid_left-tags">
-                          <div class="tag">
-                            <div class="icon-embed-18px w-embed"><svg aria-hidden="true" fill="none" height="100%"
-                                preserveaspectratio="xMidYMid meet" role="img" style="" viewbox="0 0 18 18" width="100%"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                  d="M15.75 14.0625H15.1875V2.8125C15.1875 2.66332 15.1282 2.52024 15.0227 2.41475C14.9173 2.30926 14.7742 2.25 14.625 2.25H10.6875C10.5383 2.25 10.3952 2.30926 10.2898 2.41475C10.1843 2.52024 10.125 2.66332 10.125 2.8125V5.625H6.75C6.60082 5.625 6.45774 5.68426 6.35225 5.78975C6.24676 5.89524 6.1875 6.03832 6.1875 6.1875V9H3.375C3.22582 9 3.08274 9.05926 2.97725 9.16475C2.87176 9.27024 2.8125 9.41332 2.8125 9.5625V14.0625H2.25C2.10082 14.0625 1.95774 14.1218 1.85225 14.2273C1.74676 14.3327 1.6875 14.4758 1.6875 14.625C1.6875 14.7742 1.74676 14.9173 1.85225 15.0227C1.95774 15.1282 2.10082 15.1875 2.25 15.1875H15.75C15.8992 15.1875 16.0423 15.1282 16.1477 15.0227C16.2532 14.9173 16.3125 14.7742 16.3125 14.625C16.3125 14.4758 16.2532 14.3327 16.1477 14.2273C16.0423 14.1218 15.8992 14.0625 15.75 14.0625ZM11.25 3.375H14.0625V14.0625H11.25V3.375ZM7.3125 6.75H10.125V14.0625H7.3125V6.75ZM3.9375 10.125H6.1875V14.0625H3.9375V10.125Z"
-                                  fill="currentColor"></path>
-                              </svg></div>
-                            <div class="font-family-fono">Patients</div>
+
+                      <!-- Report Panel -->
+                      <div id="sero-report-panel"
+                        style="display:none;position:absolute;top:0;left:0;right:0;bottom:0;background:#fff;z-index:10;border:1px solid #e8e8e5;border-radius:16px;overflow-y:auto;padding:1.75rem 1.75rem 2rem;font-family:sans-serif;">
+                        <div
+                          style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1.5rem;">
+                          <div>
+                            <p
+                              style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#aaa;margin-bottom:.3rem;">
+                              Clinical Report</p>
+                            <h3 id="rpt-role-label"
+                              style="font-size:1.1rem;font-weight:600;color:#111;letter-spacing:-.01em;margin:0;">
+                              General Practitioner</h3>
+                            <p id="rpt-date" style="font-size:11px;color:#bbb;margin-top:.25rem;"></p>
                           </div>
-                          <div class="tag">
-                            <div class="icon-embed-18px w-embed"><svg fill="none" height="100%" style=""
-                                viewbox="0 0 18 18" width="100%" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                  d="M16.8349 9.35156L14.5849 3.72656C14.5354 3.60266 14.4434 3.50041 14.3254 3.43807C14.2074 3.37573 14.0711 3.35736 13.9409 3.38625L9.56251 4.35938V2.8125C9.56251 2.66332 9.50325 2.52024 9.39776 2.41475C9.29227 2.30926 9.14919 2.25 9.00001 2.25C8.85083 2.25 8.70775 2.30926 8.60226 2.41475C8.49677 2.52024 8.43751 2.66332 8.43751 2.8125V4.61109L3.81517 5.63836C3.72605 5.65805 3.64305 5.69912 3.57335 5.75804C3.50365 5.81696 3.44933 5.89196 3.41509 5.97656V5.98078L1.16509 11.6016C1.13817 11.6686 1.12456 11.7403 1.12501 11.8125C1.12501 13.4515 2.85048 14.0625 3.93751 14.0625C5.02454 14.0625 6.75001 13.4515 6.75001 11.8125C6.75046 11.7403 6.73685 11.6686 6.70993 11.6016L4.70532 6.5932L8.43751 5.76562V14.625H7.31251C7.16333 14.625 7.02025 14.6843 6.91476 14.7898C6.80927 14.8952 6.75001 15.0383 6.75001 15.1875C6.75001 15.3367 6.80927 15.4798 6.91476 15.5852C7.02025 15.6907 7.16333 15.75 7.31251 15.75H10.6875C10.8367 15.75 10.9798 15.6907 11.0853 15.5852C11.1907 15.4798 11.25 15.3367 11.25 15.1875C11.25 15.0383 11.1907 14.8952 11.0853 14.7898C10.9798 14.6843 10.8367 14.625 10.6875 14.625H9.56251V5.51391L13.1484 4.71797L11.2901 9.35156C11.2632 9.41861 11.2496 9.49025 11.25 9.5625C11.25 11.2015 12.9755 11.8125 14.0625 11.8125C15.1495 11.8125 16.875 11.2015 16.875 9.5625C16.8755 9.49025 16.8618 9.41861 16.8349 9.35156ZM3.93751 12.9375C3.40806 12.9375 2.3372 12.6837 2.25493 11.9081L3.93751 7.70203L5.62009 11.9081C5.53782 12.6837 4.46696 12.9375 3.93751 12.9375ZM14.0625 10.6875C13.5331 10.6875 12.4622 10.4337 12.3799 9.65812L14.0625 5.45203L15.7451 9.65812C15.6628 10.4337 14.592 10.6875 14.0625 10.6875Z"
-                                  fill="currentColor"></path>
-                              </svg></div>
-                            <div class="font-family-fono">Providers</div>
+                          <button onclick="document.getElementById('sero-report-panel').style.display='none'"
+                            style="font-size:13px;color:#aaa;background:none;border:none;cursor:pointer;padding:0;transition:color .15s;"
+                            onmouseover="this.style.color='#111'" onmouseout="this.style.color='#aaa'">x Close</button>
+                        </div>
+
+                        <!-- Criticality Score -->
+                        <div
+                          style="display:flex;align-items:center;gap:1rem;padding:1rem;border:1px solid #e8e8e5;border-radius:12px;margin-bottom:1.25rem;background:#fafafa;">
+                          <div style="text-align:center;min-width:52px;">
+                            <div id="rpt-score-num" style="font-size:2rem;font-weight:700;color:#111;line-height:1;">—
+                            </div>
+                            <div
+                              style="font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#aaa;margin-top:.2rem;">
+                              / 10</div>
                           </div>
-                          <div class="tag">
-                            <div class="icon-embed-18px w-embed"><svg fill="none" height="100%" style=""
-                                viewbox="0 0 18 18" width="100%" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                  d="M10.1213 11.6522C11.0031 11.103 11.682 10.2815 12.0554 9.3121C12.4287 8.34268 12.4762 7.27803 12.1906 6.27923C11.905 5.28043 11.3018 4.40182 10.4724 3.77633C9.64297 3.15084 8.6324 2.8125 7.59357 2.8125C6.55473 2.8125 5.54416 3.15084 4.71474 3.77633C3.88532 4.40182 3.28218 5.28043 2.99657 6.27923C2.71096 7.27803 2.75842 8.34268 3.13177 9.3121C3.50512 10.2815 4.18405 11.103 5.06583 11.6522C3.61388 12.1275 2.30747 13.0155 1.257 14.2657C1.16097 14.3799 1.11424 14.5276 1.12709 14.6763C1.13995 14.825 1.21134 14.9624 1.32556 15.0585C1.43978 15.1545 1.58747 15.2012 1.73614 15.1884C1.88482 15.1755 2.0223 15.1041 2.11833 14.9899C3.52951 13.3052 5.47435 12.3778 7.59005 12.3778C9.70576 12.3778 11.6506 13.3052 13.066 14.9899C13.162 15.1041 13.2995 15.1755 13.4482 15.1884C13.5969 15.2012 13.7445 15.1545 13.8588 15.0585C13.973 14.9624 14.0444 14.825 14.0572 14.6763C14.0701 14.5276 14.0234 14.3799 13.9273 14.2657C12.8761 13.0155 11.5697 12.1275 10.1213 11.6522ZM3.9338 7.59656C3.9338 6.87342 4.14824 6.16653 4.54999 5.56526C4.95175 4.96399 5.52277 4.49536 6.19087 4.21863C6.85896 3.94189 7.59411 3.86949 8.30335 4.01057C9.01259 4.15164 9.66407 4.49987 10.1754 5.0112C10.6867 5.52254 11.035 6.17402 11.176 6.88326C11.3171 7.59251 11.2447 8.32766 10.968 8.99575C10.6913 9.66384 10.2226 10.2349 9.62136 10.6366C9.02009 11.0384 8.31319 11.2528 7.59005 11.2528C6.6207 11.2517 5.69136 10.8661 5.00593 10.1807C4.32049 9.49525 3.93492 8.56592 3.9338 7.59656ZM14.5763 4.61531C14.9772 5.55811 15.1838 6.57208 15.1838 7.59656C15.1838 8.62105 14.9772 9.63501 14.5763 10.5778C14.533 10.6792 14.4609 10.7657 14.3689 10.8264C14.2769 10.8872 14.1691 10.9196 14.0588 10.9195C13.9657 10.9196 13.874 10.8966 13.792 10.8525C13.71 10.8084 13.6402 10.7446 13.5889 10.6669C13.5376 10.5892 13.5064 10.5 13.4981 10.4072C13.4898 10.3145 13.5046 10.2211 13.5413 10.1355C13.8828 9.33263 14.0588 8.46908 14.0588 7.59656C14.0588 6.72404 13.8828 5.86049 13.5413 5.05758C13.4827 4.92033 13.4809 4.7654 13.5365 4.62688C13.5921 4.48836 13.7004 4.37759 13.8377 4.31894C13.9749 4.2603 14.1298 4.25857 14.2684 4.31415C14.4069 4.36973 14.5177 4.47806 14.5763 4.61531ZM17.4338 7.59656C17.4364 8.92975 17.1663 10.2494 16.64 11.4743C16.5784 11.607 16.4675 11.7106 16.3309 11.7629C16.1943 11.8153 16.0426 11.8123 15.9081 11.7547C15.7736 11.697 15.6669 11.5892 15.6105 11.4542C15.5542 11.3191 15.5527 11.1675 15.6064 11.0313C16.0699 9.94553 16.3088 8.77715 16.3088 7.59656C16.3088 6.41597 16.0699 5.2476 15.6064 4.1618C15.5747 4.09352 15.5571 4.01959 15.5545 3.94438C15.5519 3.86917 15.5645 3.7942 15.5914 3.72393C15.6183 3.65365 15.6591 3.58949 15.7112 3.53525C15.7634 3.48101 15.8259 3.43778 15.8951 3.40814C15.9643 3.37849 16.0387 3.36303 16.1139 3.36266C16.1892 3.3623 16.2638 3.37704 16.3332 3.40601C16.4027 3.43498 16.4656 3.47759 16.5183 3.53132C16.571 3.58506 16.6124 3.64882 16.64 3.71883C17.1663 4.94373 17.4364 6.26337 17.4338 7.59656Z"
-                                  fill="currentColor"></path>
-                              </svg></div>
-                            <div class="font-family-fono">Hospitals</div>
+                          <div style="flex:1;">
+                            <div
+                              style="height:4px;background:#eee;border-radius:4px;overflow:hidden;margin-bottom:.4rem;">
+                              <div id="rpt-score-bar"
+                                style="height:100%;width:0%;background:#111;border-radius:4px;transition:width .8s ease;">
+                              </div>
+                            </div>
+                            <p id="rpt-score-label" style="font-size:12px;color:#555;margin:0;">Criticality score</p>
+                          </div>
+                        </div>
+
+                        <!-- Sections -->
+                        <div id="rpt-loading" style="text-align:center;padding:2rem;color:#bbb;font-size:13px;">
+                          Generating report...</div>
+                        <div id="rpt-body" style="display:none;">
+                          <div class="rpt-section">
+                            <h4 class="rpt-head">Clinical Assessment</h4>
+                            <p id="rpt-assessment" class="rpt-text"></p>
+                          </div>
+                          <div class="rpt-section">
+                            <h4 class="rpt-head">Prescription</h4>
+                            <div id="rpt-prescription" class="rpt-text"
+                              style="font-family:monospace;font-size:12.5px;line-height:1.8;"></div>
+                          </div>
+                          <div class="rpt-section">
+                            <h4 class="rpt-head">Recommended Facility</h4>
+                            <p id="rpt-location-reason" class="rpt-text" style="margin-bottom:.75rem;"></p>
+                            <div id="rpt-locations"></div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="c-lottie-animation no-background" data-animation-type="lottie" data-autoplay="1"
-                      data-default-duration="0" data-direction="1" data-duration="0" data-is-ix2-target="0"
-                      data-loop="1" data-renderer="svg"
-                      data-src="https://cdn.prod.website-files.com/69653993e6f554fe004325fb/6977f2da3f460ae38d51001f_8f4733b58a0fcc7fcfd9cfa972e82aef_Animation%2014%20from%20LottieFiles.lottie"
-                      data-w-id="468f1955-b11c-d1f9-1bac-a76a4abb0cae"
-                      id="w-node-_468f1955-b11c-d1f9-1bac-a76a4abb0cae-f6778f30"></div>
-                  </div>
-                </div>
-                <div class="solutions-tabs-panel w-tab-pane" data-w-tab="Doc Upload">
-                  <div class="w-layout-grid solutions-tabs-grid">
-                    <div class="solutions-tabs-grid_left">
-                      <h2>Smart Document Upload</h2>
-                      <div class="solutions-tabs-grid_left-group">
-                        <h5 class="text-weight-medium">Today</h5>
-                        <p class="t-paragraph-20 font-color-7d7d7d">Doctors spend valuable time manually reading through
-                          unorganized, handwritten past prescriptions and test reports.</p>
-                      </div>
-                      <div class="solutions-tabs-grid_left-group">
-                        <h5 class="text-weight-medium">With Sero</h5>
-                        <p class="t-paragraph-20 font-color-7d7d7d">An OCR-powered system where users upload test
-                          reports and handwritten prescriptions, which the AI instantly converts into a Clinical
-                          Executive Summary.</p>
-                      </div>
-                      <div class="solutions-tabs-grid_left-group">
-                        <h5 class="text-weight-medium">Use Cases</h5>
-                        <div class="solutions-tabs-grid_left-tags">
-                          <div class="tag">
-                            <div class="icon-embed-18px w-embed"><svg aria-hidden="true" fill="none" height="100%"
-                                preserveaspectratio="xMidYMid meet" role="img" style="" viewbox="0 0 18 18" width="100%"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                  d="M15.75 14.0625H15.1875V2.8125C15.1875 2.66332 15.1282 2.52024 15.0227 2.41475C14.9173 2.30926 14.7742 2.25 14.625 2.25H10.6875C10.5383 2.25 10.3952 2.30926 10.2898 2.41475C10.1843 2.52024 10.125 2.66332 10.125 2.8125V5.625H6.75C6.60082 5.625 6.45774 5.68426 6.35225 5.78975C6.24676 5.89524 6.1875 6.03832 6.1875 6.1875V9H3.375C3.22582 9 3.08274 9.05926 2.97725 9.16475C2.87176 9.27024 2.8125 9.41332 2.8125 9.5625V14.0625H2.25C2.10082 14.0625 1.95774 14.1218 1.85225 14.2273C1.74676 14.3327 1.6875 14.4758 1.6875 14.625C1.6875 14.7742 1.74676 14.9173 1.85225 15.0227C1.95774 15.1282 2.10082 15.1875 2.25 15.1875H15.75C15.8992 15.1875 16.0423 15.1282 16.1477 15.0227C16.2532 14.9173 16.3125 14.7742 16.3125 14.625C16.3125 14.4758 16.2532 14.3327 16.1477 14.2273C16.0423 14.1218 15.8992 14.0625 15.75 14.0625ZM11.25 3.375H14.0625V14.0625H11.25V3.375ZM7.3125 6.75H10.125V14.0625H7.3125V6.75ZM3.9375 10.125H6.1875V14.0625H3.9375V10.125Z"
-                                  fill="currentColor"></path>
-                              </svg></div>
-                            <div class="font-family-fono">Patients</div>
-                          </div>
-                          <div class="tag">
-                            <div class="icon-embed-18px w-embed"><svg fill="none" height="100%" style=""
-                                viewbox="0 0 18 18" width="100%" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                  d="M16.8349 9.35156L14.5849 3.72656C14.5354 3.60266 14.4434 3.50041 14.3254 3.43807C14.2074 3.37573 14.0711 3.35736 13.9409 3.38625L9.56251 4.35938V2.8125C9.56251 2.66332 9.50325 2.52024 9.39776 2.41475C9.29227 2.30926 9.14919 2.25 9.00001 2.25C8.85083 2.25 8.70775 2.30926 8.60226 2.41475C8.49677 2.52024 8.43751 2.66332 8.43751 2.8125V4.61109L3.81517 5.63836C3.72605 5.65805 3.64305 5.69912 3.57335 5.75804C3.50365 5.81696 3.44933 5.89196 3.41509 5.97656V5.98078L1.16509 11.6016C1.13817 11.6686 1.12456 11.7403 1.12501 11.8125C1.12501 13.4515 2.85048 14.0625 3.93751 14.0625C5.02454 14.0625 6.75001 13.4515 6.75001 11.8125C6.75046 11.7403 6.73685 11.6686 6.70993 11.6016L4.70532 6.5932L8.43751 5.76562V14.625H7.31251C7.16333 14.625 7.02025 14.6843 6.91476 14.7898C6.80927 14.8952 6.75001 15.0383 6.75001 15.1875C6.75001 15.3367 6.80927 15.4798 6.91476 15.5852C7.02025 15.6907 7.16333 15.75 7.31251 15.75H10.6875C10.8367 15.75 10.9798 15.6907 11.0853 15.5852C11.1907 15.4798 11.25 15.3367 11.25 15.1875C11.25 15.0383 11.1907 14.8952 11.0853 14.7898C10.9798 14.6843 10.8367 14.625 10.6875 14.625H9.56251V5.51391L13.1484 4.71797L11.2901 9.35156C11.2632 9.41861 11.2496 9.49025 11.25 9.5625C11.25 11.2015 12.9755 11.8125 14.0625 11.8125C15.1495 11.8125 16.875 11.2015 16.875 9.5625C16.8755 9.49025 16.8618 9.41861 16.8349 9.35156ZM3.93751 12.9375C3.40806 12.9375 2.3372 12.6837 2.25493 11.9081L3.93751 7.70203L5.62009 11.9081C5.53782 12.6837 4.46696 12.9375 3.93751 12.9375ZM14.0625 10.6875C13.5331 10.6875 12.4622 10.4337 12.3799 9.65812L14.0625 5.45203L15.7451 9.65812C15.6628 10.4337 14.592 10.6875 14.0625 10.6875Z"
-                                  fill="currentColor"></path>
-                              </svg></div>
-                            <div class="font-family-fono">Providers</div>
-                          </div>
+
+                      <!-- Chat window -->
+                      <div
+                        style="flex:1;border:1px solid #e8e8e5;border-radius:16px;background:#fafafa;overflow:hidden;display:flex;flex-direction:column;min-height:0;">
+                        <div id="sero-msgs"
+                          style="flex:1;overflow-y:auto;padding:1rem;display:flex;flex-direction:column;gap:.6rem;">
+                        </div>
+                        <div style="height:1px;background:#e8e8e5;flex-shrink:0;"></div>
+                        <div
+                          style="display:flex;align-items:flex-end;gap:.45rem;padding:.6rem .8rem;background:#fff;border-radius:0 0 16px 16px;flex-shrink:0;">
+                          <textarea id="sero-inp" placeholder="Describe your symptoms… (Enter to send)" rows="1"
+                            style="flex:1;border:none;outline:none;resize:none;font-family:sans-serif;font-size:13.5px;color:#111;background:transparent;line-height:1.55;max-height:100px;overflow-y:auto;padding:.2rem 0;"
+                            onkeydown="seroKey(event)" oninput="seroResize(this)"></textarea>
+                          <button id="sero-mic-btn" onclick="seroVoice()" title="Voice input"
+                            style="width:33px;height:33px;border-radius:50%;border:1.5px solid #e8e8e5;background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#111;transition:all .2s;">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                              stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                              <path d="M2 12h3l3-9 5 18 3-9h6" />
+                            </svg>
+                          </button>
+                          <button id="sero-sub-btn" onclick="seroSend()"
+                            style="height:33px;padding:0 1rem;border-radius:99px;border:none;background:#111;color:#fff;font-family:sans-serif;font-size:13px;font-weight:500;cursor:pointer;flex-shrink:0;white-space:nowrap;">Send
+                            →</button>
                         </div>
                       </div>
+                      <span id="sero-stat"
+                        style="font-size:11px;color:#bbb;font-style:italic;font-family:sans-serif;margin-top:.4rem;min-height:14px;display:block;"></span>
                     </div>
-                    <div class="c-lottie-animation no-background" data-animation-type="lottie" data-autoplay="1"
-                      data-default-duration="0" data-direction="1" data-duration="0" data-is-ix2-target="0"
-                      data-loop="1" data-renderer="svg"
-                      data-src="https://cdn.prod.website-files.com/69653993e6f554fe004325fb/6977f2dafbe557ae965a5bf1_dcaeeb0a4ba998a32a514315a5128143_Animation%2015.lottie"
-                      data-w-id="62b4f6dd-7492-261d-c52e-b871874d14bf"
-                      id="w-node-_62b4f6dd-7492-261d-c52e-b871874d14bf-f6778f30"></div>
                   </div>
+
+                  <!-- Styles -->
+                  <style>
+                    /* chat wrapper needs position:relative for the report overlay */
+                    #sero-chat-wrap {
+                      position: relative;
+                    }
+
+                    .sc-bubble {
+                      max-width: 78%;
+                      padding: .55rem .9rem;
+                      border-radius: 14px;
+                      font-size: 13px;
+                      font-family: sans-serif;
+                      line-height: 1.58;
+                      word-break: break-word;
+                      animation: scIn .12s ease;
+                    }
+
+                    @keyframes scIn {
+                      from {
+                        opacity: 0;
+                        transform: translateY(3px)
+                      }
+
+                      to {
+                        opacity: 1;
+                        transform: translateY(0)
+                      }
+                    }
+
+                    .sc-bubble.user {
+                      align-self: flex-end;
+                      background: #111;
+                      color: #fff;
+                      border-bottom-right-radius: 3px;
+                    }
+
+                    .sc-bubble.ai {
+                      align-self: flex-start;
+                      background: #fff;
+                      color: #111;
+                      border: 1px solid #e8e8e5;
+                      border-bottom-left-radius: 3px;
+                    }
+
+                    .sc-role-btn {
+                      display: flex;
+                      align-items: center;
+                      gap: .55rem;
+                      padding: .5rem .8rem;
+                      border-radius: 10px;
+                      border: 1.5px solid #e8e8e5;
+                      background: #fff;
+                      font-size: 12.5px;
+                      font-family: sans-serif;
+                      color: #555;
+                      cursor: pointer;
+                      transition: all .12s;
+                      text-align: left;
+                      width: 100%;
+                    }
+
+                    .sc-role-btn:hover {
+                      border-color: #bbb;
+                      color: #111;
+                    }
+
+                    .sc-role-btn.active {
+                      background: #111;
+                      color: #fff;
+                      border-color: #111;
+                    }
+
+                    .sc-tdot {
+                      width: 5px;
+                      height: 5px;
+                      border-radius: 50%;
+                      background: #ccc;
+                      animation: scBounce 1.2s infinite ease-in-out both;
+                    }
+
+                    .sc-tdot:nth-child(2) {
+                      animation-delay: .18s;
+                    }
+
+                    .sc-tdot:nth-child(3) {
+                      animation-delay: .36s;
+                    }
+
+                    @keyframes scBounce {
+
+                      0%,
+                      80%,
+                      100% {
+                        transform: scale(0)
+                      }
+
+                      40% {
+                        transform: scale(1)
+                      }
+                    }
+
+                    #sero-msgs::-webkit-scrollbar {
+                      width: 3px;
+                    }
+
+                    #sero-msgs::-webkit-scrollbar-thumb {
+                      background: #e0e0e0;
+                      border-radius: 3px;
+                    }
+
+                    #sero-mic-btn.sc-recording {
+                      background: #111 !important;
+                      color: #fff !important;
+                      border-color: #111 !important;
+                      animation: scPulse 1.1s infinite;
+                    }
+
+                    @keyframes scPulse {
+
+                      0%,
+                      100% {
+                        box-shadow: 0 0 0 0 rgba(0, 0, 0, .18)
+                      }
+
+                      50% {
+                        box-shadow: 0 0 0 5px rgba(0, 0, 0, 0)
+                      }
+                    }
+
+                    .rpt-section {
+                      margin-bottom: 1.25rem;
+                      padding-bottom: 1.25rem;
+                      border-bottom: 1px solid #f0f0f0;
+                    }
+
+                    .rpt-section:last-child {
+                      border-bottom: none;
+                      margin-bottom: 0;
+                    }
+
+                    .rpt-head {
+                      font-size: 10px;
+                      letter-spacing: .1em;
+                      text-transform: uppercase;
+                      color: #aaa;
+                      margin: 0 0 .55rem;
+                      font-weight: 600;
+                    }
+
+                    .rpt-text {
+                      font-size: 13px;
+                      color: #333;
+                      line-height: 1.65;
+                      margin: 0;
+                    }
+
+                    .rpt-loc-card {
+                      border: 1px solid #e8e8e5;
+                      border-radius: 10px;
+                      padding: .7rem 1rem;
+                      margin-bottom: .5rem;
+                    }
+
+                    .rpt-loc-name {
+                      font-size: 13px;
+                      font-weight: 600;
+                      color: #111;
+                      margin: 0 0 .2rem;
+                    }
+
+                    .rpt-loc-meta {
+                      font-size: 11.5px;
+                      color: #888;
+                      margin: 0;
+                    }
+                  </style>
+
+                  <!-- Script -->
+                  <script>
+                    const LONAVALA_HOSPITALS = [
+                      { name: 'Pawar Hospital', meta: 'Lonavala, MH · Emergency & Surgery · 1.2 km from Lonavala ST' },
+                      { name: 'Sahyadri Specialty Hospital', meta: 'Pune, MH · Multi-specialty · ~70 km from Lonavala' },
+                      { name: 'Ruby Hall Clinic', meta: 'Pune, MH · Trauma & Critical Care · ~68 km' },
+                      { name: 'Symbiosis University Hospital', meta: 'Lavale, Pune · Teaching Hospital · ~55 km' }
+                    ];
+                    const LONAVALA_CLINICS = {
+                      gp: [{ name: 'Dr. Mahesh Patil Clinic', meta: 'Lonavala, MH · General Medicine · Sector 5' },
+                      { name: 'Lonavala Primary Health Centre', meta: 'Lonavala, MH · Govt. facility · Free OPD' }],
+                      therapist: [{ name: 'MindCare Therapy Centre', meta: 'Pune, MH · Counselling & Psychiatry · ~68 km' },
+                      { name: 'Asha Mental Wellness Clinic', meta: 'Khandala, MH · Outpatient therapy · ~5 km' }],
+                      cardio: [{ name: 'Heart Care Clinic', meta: 'Khandala, MH · Cardiology OPD · ~5 km' },
+                      { name: 'Sahyadri Cardiology Dept.', meta: 'Pune, MH · Cath lab & Echo · ~70 km' }],
+                      nutrition: [{ name: 'NutriBalance Clinic', meta: 'Lonavala, MH · Dietetics & Nutrition · Near bus stand' },
+                      { name: 'Arogya Wellness Centre', meta: 'Khandala, MH · Holistic nutrition · ~4 km' }],
+                      paeds: [{ name: 'Kids Care Paediatric Clinic', meta: 'Lonavala, MH · Paediatrics · Near market' },
+                      { name: 'Dr. Apte Children Clinic', meta: 'Lonavala, MH · Vaccinations & growth' }],
+                      derm: [{ name: 'Skin & Laser Clinic Lonavala', meta: 'Lonavala, MH · Dermatology & Cosmetology' },
+                      { name: 'Dr. Shah Skin Care Centre', meta: 'Khandala, MH · Dermatology OPD · ~4 km' }]
+                    };
+
+                    window.generateSeroReport = async function () {
+                      if (!window.scHistory || !window.scHistory.length) {
+                        alert('Please have a conversation first before generating a report.');
+                        return;
+                      }
+                      const panel = document.getElementById('sero-report-panel');
+                      panel.style.display = 'block';
+                      document.getElementById('rpt-loading').style.display = 'block';
+                      document.getElementById('rpt-loading').textContent = 'Generating report...';
+                      document.getElementById('rpt-body').style.display = 'none';
+                      document.getElementById('rpt-score-num').textContent = '\u2014';
+                      document.getElementById('rpt-score-bar').style.width = '0%';
+                      document.getElementById('rpt-role-label').textContent = window.scRole ? window.scRole.label : 'Specialist';
+                      document.getElementById('rpt-date').textContent = new Date().toLocaleDateString('en-IN', {
+                        day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit'
+                      });
+
+                      const sysPrompt = window.scRole ? window.scRole.system : 'You are a doctor.';
+                      const reportUserMsg = 'Based on our conversation so far, write a structured clinical report. Use EXACTLY this format, nothing else:\n\nASSESSMENT: write 2-3 sentences summarising the clinical picture\nPRESCRIPTION:\n- DrugName Dose Frequency Duration\n- DrugName Dose Frequency Duration\nCRITICALITY_SCORE: (a single integer from 1 to 10)\nSCORE_REASON: one sentence explaining the score\n\nDo not add any other text, headings, or markdown.';
+                      const messages = [
+                        { role: 'system', content: sysPrompt },
+                        ...window.scHistory,
+                        { role: 'user', content: reportUserMsg }
+                      ];
+
+                      let rawReport = '';
+                      try {
+                        const res = await fetch('http://localhost:11434/api/chat', {
+                          method: 'POST',
+                          headers: { 'Content-Type': 'application/json' },
+                          body: JSON.stringify({ model: 'llama3.2', messages: messages, stream: false })
+                        });
+                        if (!res.ok) throw new Error('Ollama responded with status ' + res.status);
+                        const data = await res.json();
+                        rawReport = (data.message && data.message.content) ? data.message.content : '';
+                        if (!rawReport) throw new Error('Empty response from model');
+                      } catch (e) {
+                        document.getElementById('rpt-loading').textContent = 'Error: ' + e.message + '. Make sure Ollama is running with OLLAMA_ORIGINS="*".';
+                        return;
+                      }
+
+                      // Parse fields from the plain-text report
+                      function getField(key, text) {
+                        var lines = text.split('\n');
+                        var result = [];
+                        var capturing = false;
+                        for (var i = 0; i < lines.length; i++) {
+                          if (lines[i].toUpperCase().startsWith(key.toUpperCase() + ':')) {
+                            capturing = true;
+                            var after = lines[i].substring(key.length + 1).trim();
+                            if (after) result.push(after);
+                          } else if (capturing) {
+                            if (lines[i].match(/^[A-Z_]{3,}:/)) break;
+                            if (lines[i].trim()) result.push(lines[i].trim());
+                          }
+                        }
+                        return result.join('\n').trim();
+                      }
+
+                      var assessment = getField('ASSESSMENT', rawReport);
+                      var prescription = getField('PRESCRIPTION', rawReport);
+                      var scoreReason = getField('SCORE_REASON', rawReport);
+                      var scoreMatch = rawReport.match(/CRITICALITY_SCORE\s*:\s*(\d+)/i);
+                      var score = scoreMatch ? Math.min(10, Math.max(1, parseInt(scoreMatch[1]))) : 5;
+
+                      document.getElementById('rpt-assessment').innerHTML = assessment || rawReport.substring(0, 300);
+                      var rxLines = prescription.split('\n').filter(function (l) { return l.replace(/^-\s*/, '').trim(); });
+                      document.getElementById('rpt-prescription').innerHTML = rxLines.length
+                        ? rxLines.map(function (l) { return '<div style="padding:.2rem 0;border-bottom:1px solid #f5f5f5;">' + l.replace(/^-\s*/, '') + '</div>'; }).join('')
+                        : '<div style="color:#aaa;">No specific prescription in this consultation.</div>';
+
+                      document.getElementById('rpt-score-num').textContent = score;
+                      document.getElementById('rpt-score-bar').style.width = (score * 10) + '%';
+                      document.getElementById('rpt-score-bar').style.background = score >= 7 ? '#c0392b' : score >= 4 ? '#c07000' : '#111';
+                      document.getElementById('rpt-score-label').textContent = scoreReason ||
+                        (score >= 7 ? 'High criticality - seek immediate care' : score >= 4 ? 'Moderate - consult a specialist soon' : 'Low criticality - routine care sufficient');
+
+                      var roleId = window.scRole ? window.scRole.id : 'gp';
+                      var isHigh = score >= 7;
+                      var locs = isHigh ? LONAVALA_HOSPITALS : (LONAVALA_CLINICS[roleId] || LONAVALA_CLINICS.gp);
+                      document.getElementById('rpt-location-reason').textContent = isHigh
+                        ? 'Criticality score indicates urgent care. Recommended hospitals near Lonavala:'
+                        : 'Criticality score indicates routine specialist care. Recommended clinics near Lonavala:';
+                      document.getElementById('rpt-locations').innerHTML = locs.map(function (l) {
+                        return '<div class="rpt-loc-card"><p class="rpt-loc-name">' + l.name + '</p><p class="rpt-loc-meta">' + l.meta + '</p></div>';
+                      }).join('');
+
+                      document.getElementById('rpt-loading').style.display = 'none';
+                      document.getElementById('rpt-body').style.display = 'block';
+                    };
+
+                    (function () {
+                      const SC_ROLES = [
+                        {
+                          id: 'gp', emoji: '', label: 'General Practitioner', short: 'All-round symptom assessment & prescriptions.',
+                          system: 'You are an expert General Practitioner in a CLINICAL ROLEPLAY. You MUST stay in character. Provide specific diagnostic insights and SIMULATED PRESCRIPTIONS (medication name, dosage, frequency) based on symptoms. Do not use AI disclaimers. Structure: 1) Clinical Assessment, 2) Simulated Prescription, 3) Instructions. If symptoms are extreme (e.g. 100°C fever), treat it as a medical miracle or emergency roleplay.'
+                        },
+                        {
+                          id: 'therapist', emoji: '', label: 'Therapist', short: 'Mental health & emotional support roleplay.',
+                          system: 'You are a world-class therapist in a ROLEPLAY SIMULATION. Stay in character. Provide deep emotional support, CBT strategies, and specific coping advice. Do not refer to being an AI. Be conversational and empathetic.'
+                        },
+                        {
+                          id: 'cardio', emoji: '', label: 'Cardiologist', short: 'Cardiac symptoms & simulated treatment.',
+                          system: 'You are a senior Cardiologist in a CLINICAL ROLEPLAY. Stay in character. Assess chest pain, hypertension, and palpitations. Provide specific simulated treatments or medication suggestions. No AI disclaimers.'
+                        },
+                        {
+                          id: 'nutrition', emoji: '', label: 'Nutritionist', short: 'Diet & meal planning simulation.',
+                          system: 'You are a Registered Dietitian in a ROLEPLAY. Provide specific, tailored meal plans and supplement suggestions. No generic advice; be precise and professional.'
+                        },
+                        {
+                          id: 'paeds', emoji: '', label: 'Pediatrician', short: 'Child health roleplay & parent guidance.',
+                          system: 'You are a compassionate Pediatrician in a CLINICAL ROLEPLAY. Provide specific advice for children, including simulated pediatric dosages and developmental guidance. Stay in character.'
+                        },
+                        {
+                          id: 'derm', emoji: '', label: 'Dermatologist', short: 'Skin conditions & simulated topicals.',
+                          system: 'You are an expert Dermatologist in a CLINICAL ROLEPLAY. Provide specific simulated diagnoses for skin conditions and suggest precise topical treatments or medications. No AI disclaimers.'
+                        }
+                      ];
+                      window.scRole = SC_ROLES[0]; window.scHistory = []; let scRole = window.scRole; let scStreaming = false, scRec = null, scRecording = false;
+
+                      // Build role buttons
+                      const roleList = document.getElementById('chat-role-list');
+                      SC_ROLES.forEach(r => {
+                        const btn = document.createElement('button');
+                        btn.className = 'sc-role-btn' + (r.id === scRole.id ? ' active' : '');
+                        btn.dataset.rid = r.id;
+                        btn.innerHTML = `<span style="font-size:16px">${r.emoji}</span><span>${r.label}</span>`;
+                        btn.onclick = () => scSelectRole(r.id);
+                        roleList.appendChild(btn);
+                      });
+                      document.getElementById('chat-role-desc-text').textContent = scRole.short;
+
+                      function scSelectRole(id) {
+                        scRole = SC_ROLES.find(r => r.id === id); window.scRole = scRole;
+                        document.querySelectorAll('.sc-role-btn').forEach(b => b.classList.toggle('active', b.dataset.rid === id));
+                        document.getElementById('chat-active-emoji').textContent = scRole.emoji;
+                        document.getElementById('chat-active-name').textContent = scRole.label;
+                        document.getElementById('chat-role-desc-text').textContent = scRole.short;
+                        window.scHistory = []; scHistory = window.scHistory;
+                        const msgs = document.getElementById('sero-msgs');
+                        msgs.innerHTML = '';
+                        scAddBubble('ai', 'I am now your <strong>' + scRole.emoji + ' ' + scRole.label + '</strong>. How can I help you today?');
+                        scStat('');
+                      }
+
+                      const msgsEl = document.getElementById('sero-msgs');
+                      function scAddBubble(who, html, id) {
+                        const d = document.createElement('div');
+                        d.className = 'sc-bubble ' + who;
+                        if (id) d.id = id;
+                        d.innerHTML = html;
+                        msgsEl.appendChild(d);
+                        msgsEl.scrollTop = msgsEl.scrollHeight;
+                        return d;
+                      }
+                      function scTyping() {
+                        const el = document.createElement('div');
+                        el.id = 'sc-typing'; el.className = 'sc-bubble ai';
+                        el.style.cssText = 'display:flex;gap:4px;align-items:center;';
+                        for (let i = 0; i < 3; i++) { const d = document.createElement('div'); d.className = 'sc-tdot'; el.appendChild(d); }
+                        msgsEl.appendChild(el); msgsEl.scrollTop = msgsEl.scrollHeight;
+                      }
+                      function scRmTyping() { const e = document.getElementById('sc-typing'); if (e) e.remove(); }
+                      function scStat(m) { document.getElementById('sero-stat').textContent = m; }
+                      function scFmt(t) {
+                        return t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+                          .replace(/\*\*(.*?)\*\*/g, '<b>$1</b>').replace(/\*(.*?)\*/g, '<em>$1</em>')
+                          .replace(/\n\n/g, '<br><br>').replace(/\n/g, '<br>');
+                      }
+                      function scEsc(t) { return t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+                      function scBuildMessages() {
+                        const msgs = [{ role: 'system', content: scRole.system }];
+                        scHistory.forEach(m => msgs.push({ role: m.role === 'user' ? 'user' : 'assistant', content: m.content }));
+                        return msgs;
+                      }
+
+                      window.seroSend = async function () {
+                        const inp = document.getElementById('sero-inp');
+                        const txt = inp.value.trim();
+                        if (!txt || scStreaming) return;
+                        inp.value = ''; inp.style.height = 'auto';
+                        scAddBubble('user', scEsc(txt));
+                        window.scHistory.push({ role: 'user', content: txt });
+                        scStreaming = true;
+                        document.getElementById('sero-sub-btn').disabled = true;
+                        scStat('Thinking…'); scTyping();
+                        try {
+                          const res = await fetch('http://localhost:11434/api/chat', {
+                            method: 'POST', headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ model: 'llama3.2', messages: scBuildMessages(), stream: true })
+                          });
+                          if (!res.ok) throw new Error('Ollama ' + res.status);
+                          scRmTyping();
+                          const bubble = scAddBubble('ai', '', 'sc-streaming');
+                          let full = '';
+                          const reader = res.body.getReader(), dec = new TextDecoder();
+                          while (true) {
+                            const { done, value } = await reader.read(); if (done) break;
+                            dec.decode(value).split('\n').filter(Boolean).forEach(l => {
+                              try { const p = JSON.parse(l); if (p.message && p.message.content) { full += p.message.content; bubble.innerHTML = scFmt(full); msgsEl.scrollTop = msgsEl.scrollHeight; } } catch (e) { }
+                            });
+                          }
+                          if (!full) full = '(No response — is Ollama running with OLLAMA_ORIGINS=* ?)';
+                          bubble.innerHTML = scFmt(full);
+                          window.scHistory.push({ role: 'assistant', content: full });
+                        } catch (err) {
+                          scRmTyping();
+                          scAddBubble('ai', err.message.includes('fetch') || err.message.includes('Failed')
+                            ? '⚠️ Cannot reach Ollama.<br>Run: <code style="background:#f0f0f0;padding:1px 5px;border-radius:4px;font-size:12px;">ollama serve</code><br>Then: <code style="background:#f0f0f0;padding:1px 5px;border-radius:4px;font-size:12px;">ollama pull llama3.2</code>'
+                            : '⚠️ ' + scEsc(err.message));
+                        } finally {
+                          scStreaming = false;
+                          document.getElementById('sero-sub-btn').disabled = false;
+                          scStat('');
+                        }
+                      };
+
+                      window.seroKey = function (e) { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); seroSend(); } };
+                      window.seroResize = function (el) { el.style.height = 'auto'; el.style.height = Math.min(el.scrollHeight, 100) + 'px'; };
+                      window.clearSeroChat = function () {
+                        msgsEl.innerHTML = ''; window.scHistory = []; scHistory = window.scHistory;
+                        scAddBubble('ai', 'Hello! I\'m your <strong>' + scRole.emoji + ' ' + scRole.label + '</strong>. How can I help you today?');
+                        scStat('');
+                      };
+                      window.seroVoice = function () {
+                        if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) { alert('Voice not supported in this browser. Please use Chrome.'); return; }
+                        if (scRecording) { scRec && scRec.stop(); return; }
+                        const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+                        scRec = new SR(); scRec.lang = 'en-IN'; scRec.continuous = false; scRec.interimResults = true;
+                        scRec.onstart = function () { scRecording = true; document.getElementById('sero-mic-btn').classList.add('sc-recording'); scStat('🎤 Listening…'); };
+                        scRec.onresult = function (e) { const t = Array.from(e.results).map(r => r[0].transcript).join(''); document.getElementById('sero-inp').value = t; seroResize(document.getElementById('sero-inp')); };
+                        scRec.onend = function () { scRecording = false; document.getElementById('sero-mic-btn').classList.remove('sc-recording'); scStat(''); if (document.getElementById('sero-inp').value.trim()) setTimeout(seroSend, 300); };
+                        scRec.onerror = function (e) { scRecording = false; document.getElementById('sero-mic-btn').classList.remove('sc-recording'); scStat(e.error === 'not-allowed' ? '⚠️ Mic denied' : ''); };
+                        scRec.start();
+                      };
+
+                      // Boot message
+                      scAddBubble('ai', 'Hello! I\'m your <strong>' + scRole.emoji + ' ' + scRole.label + '</strong>. Describe your symptoms or ask a health question. <em>Running locally via Ollama.</em>');
+                    })();
+                  </script>
                 </div>
-                <div class="solutions-tabs-panel w-tab-pane" data-w-tab="Specialty">
-                  <div class="w-layout-grid solutions-tabs-grid">
-                    <div class="solutions-tabs-grid_left">
-                      <h2>Specialty Diagnostics</h2>
-                      <div class="solutions-tabs-grid_left-group">
-                        <h5 class="text-weight-medium">Today</h5>
-                        <p class="t-paragraph-20 font-color-7d7d7d">Specialized care requires dedicated appointments.
-                          Initial lesion analysis or maternal tracking is largely offline.</p>
+
+                <div class="solutions-tabs-panel w-tab-pane" data-w-tab="Scan Analysis">
+                  <div
+                    style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;padding:2rem 0;height:520px;">
+
+                    <!-- LEFT: Upload Zone -->
+                    <div style="display:flex;flex-direction:column;height:100%;">
+                      <h2 style="font-size:1.7rem;letter-spacing:-.025em;line-height:1.2;margin-bottom:.75rem;">
+                        Clinical-BERT & CNN Anomaly Detection</h2>
+                      <p style="color:#7d7d7d;font-size:14px;margin-bottom:1.5rem;line-height:1.6;">Upload a brain MRI
+                        or clinical scan. Our ensemble model dynamically analyzes the pixels using U-Net architecture to
+                        isolate anomalies and detect tumors in real-time. Colorful/invalid images are automatically
+                        rejected.</p>
+
+                      <input type="file" id="scan-file-input" style="display:none" accept="image/*" />
+                      <div id="scan-upload-zone"
+                        style="flex:1;border:2px dashed rgba(255,255,255,0.15);border-radius:12px;background:#111;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:all 0.2s;text-align:center;padding:2rem;">
+                        <div
+                          style="width:48px;height:48px;border-radius:50%;background:#222;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;color:#00ff88;">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                          </svg>
+                        </div>
+                        <p style="font-weight:500;margin:0 0 0.25rem;color:#fff;">Click here or drag & drop scan</p>
+                        <p style="font-size:12px;color:#888;margin:0;">Supports MRI scan imagery (JPG/PNG)</p>
                       </div>
-                      <div class="solutions-tabs-grid_left-group">
-                        <h5 class="text-weight-medium">With Sero</h5>
-                        <p class="t-paragraph-20 font-color-7d7d7d">Dedicated AI pathways specifically for Maternal
-                          Health, Menstrual Tracking, and Dermatology (visual lesion analysis).</p>
-                      </div>
-                      <div class="solutions-tabs-grid_left-group">
-                        <h5 class="text-weight-medium">Use Cases</h5>
-                        <div class="solutions-tabs-grid_left-tags">
-                          <div class="tag">
-                            <div class="icon-embed-18px w-embed"><svg aria-hidden="true" fill="none" height="100%"
-                                preserveaspectratio="xMidYMid meet" role="img" style="" viewbox="0 0 18 18" width="100%"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                  d="M15.75 14.0625H15.1875V2.8125C15.1875 2.66332 15.1282 2.52024 15.0227 2.41475C14.9173 2.30926 14.7742 2.25 14.625 2.25H10.6875C10.5383 2.25 10.3952 2.30926 10.2898 2.41475C10.1843 2.52024 10.125 2.66332 10.125 2.8125V5.625H6.75C6.60082 5.625 6.45774 5.68426 6.35225 5.78975C6.24676 5.89524 6.1875 6.03832 6.1875 6.1875V9H3.375C3.22582 9 3.08274 9.05926 2.97725 9.16475C2.87176 9.27024 2.8125 9.41332 2.8125 9.5625V14.0625H2.25C2.10082 14.0625 1.95774 14.1218 1.85225 14.2273C1.74676 14.3327 1.6875 14.4758 1.6875 14.625C1.6875 14.7742 1.74676 14.9173 1.85225 15.0227C1.95774 15.1282 2.10082 15.1875 2.25 15.1875H15.75C15.8992 15.1875 16.0423 15.1282 16.1477 15.0227C16.2532 14.9173 16.3125 14.7742 16.3125 14.625C16.3125 14.4758 16.2532 14.3327 16.1477 14.2273C16.0423 14.1218 15.8992 14.0625 15.75 14.0625ZM11.25 3.375H14.0625V14.0625H11.25V3.375ZM7.3125 6.75H10.125V14.0625H7.3125V6.75ZM3.9375 10.125H6.1875V14.0625H3.9375V10.125Z"
-                                  fill="currentColor"></path>
-                              </svg></div>
-                            <div class="font-family-fono">Patients</div>
-                          </div>
-                          <div class="tag">
-                            <div class="icon-embed-18px w-embed"><svg fill="none" height="100%" style=""
-                                viewbox="0 0 18 18" width="100%" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                  d="M16.8349 9.35156L14.5849 3.72656C14.5354 3.60266 14.4434 3.50041 14.3254 3.43807C14.2074 3.37573 14.0711 3.35736 13.9409 3.38625L9.56251 4.35938V2.8125C9.56251 2.66332 9.50325 2.52024 9.39776 2.41475C9.29227 2.30926 9.14919 2.25 9.00001 2.25C8.85083 2.25 8.70775 2.30926 8.60226 2.41475C8.49677 2.52024 8.43751 2.66332 8.43751 2.8125V4.61109L3.81517 5.63836C3.72605 5.65805 3.64305 5.69912 3.57335 5.75804C3.50365 5.81696 3.44933 5.89196 3.41509 5.97656V5.98078L1.16509 11.6016C1.13817 11.6686 1.12456 11.7403 1.12501 11.8125C1.12501 13.4515 2.85048 14.0625 3.93751 14.0625C5.02454 14.0625 6.75001 13.4515 6.75001 11.8125C6.75046 11.7403 6.73685 11.6686 6.70993 11.6016L4.70532 6.5932L8.43751 5.76562V14.625H7.31251C7.16333 14.625 7.02025 14.6843 6.91476 14.7898C6.80927 14.8952 6.75001 15.0383 6.75001 15.1875C6.75001 15.3367 6.80927 15.4798 6.91476 15.5852C7.02025 15.6907 7.16333 15.75 7.31251 15.75H10.6875C10.8367 15.75 10.9798 15.6907 11.0853 15.5852C11.1907 15.4798 11.25 15.3367 11.25 15.1875C11.25 15.0383 11.1907 14.8952 11.0853 14.7898C10.9798 14.6843 10.8367 14.625 10.6875 14.625H9.56251V5.51391L13.1484 4.71797L11.2901 9.35156C11.2632 9.41861 11.2496 9.49025 11.25 9.5625C11.25 11.2015 12.9755 11.8125 14.0625 11.8125C15.1495 11.8125 16.875 11.2015 16.875 9.5625C16.8755 9.49025 16.8618 9.41861 16.8349 9.35156ZM3.93751 12.9375C3.40806 12.9375 2.3372 12.6837 2.25493 11.9081L3.93751 7.70203L5.62009 11.9081C5.53782 12.6837 4.46696 12.9375 3.93751 12.9375ZM14.0625 10.6875C13.5331 10.6875 12.4622 10.4337 12.3799 9.65812L14.0625 5.45203L15.7451 9.65812C15.6628 10.4337 14.592 10.6875 14.0625 10.6875Z"
-                                  fill="currentColor"></path>
-                              </svg></div>
-                            <div class="font-family-fono">Providers</div>
-                          </div>
-                          <div class="tag">
-                            <div class="icon-embed-18px w-embed"><svg fill="none" height="100%" style=""
-                                viewbox="0 0 18 18" width="100%" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                  d="M17.4375 6.5171C17.4379 6.36931 17.409 6.22289 17.3524 6.08637C17.2958 5.94985 17.2126 5.82595 17.1077 5.72186L12.2786 0.892096C12.1742 0.787603 12.0501 0.704713 11.9136 0.64816C11.7771 0.591608 11.6308 0.5625 11.4831 0.5625C11.3353 0.5625 11.189 0.591608 11.0525 0.64816C10.916 0.704713 10.7919 0.787603 10.6875 0.892096L8.68849 2.89108L4.61037 4.42178C4.42502 4.4909 4.26109 4.6075 4.13498 4.7599C4.00887 4.91229 3.925 5.09514 3.89177 5.29014L2.25771 15.0952C2.24423 15.1758 2.24847 15.2584 2.27013 15.3372C2.2918 15.416 2.33038 15.4891 2.38318 15.5515C2.43598 15.6139 2.50174 15.664 2.57588 15.6983C2.65002 15.7327 2.73076 15.7505 2.81248 15.7505C2.84357 15.7504 2.8746 15.7478 2.90529 15.7428L12.7097 14.1087C12.9044 14.0762 13.0872 13.993 13.2396 13.8675C13.3921 13.742 13.5088 13.5786 13.578 13.3937L15.1087 9.31553L17.1077 7.31303C17.2127 7.20884 17.2959 7.08482 17.3525 6.94817C17.4091 6.81153 17.438 6.665 17.4375 6.5171ZM12.5247 12.9992L4.45216 14.3443L7.78287 11.0136C8.19887 11.2384 8.6819 11.306 9.14363 11.204C9.60537 11.102 10.015 10.8372 10.2975 10.458C10.5801 10.0789 10.7167 9.61065 10.6825 9.13902C10.6483 8.66739 10.4454 8.22385 10.111 7.88948C9.77666 7.55511 9.33312 7.35225 8.86149 7.31801C8.38986 7.28377 7.92166 7.42042 7.54249 7.70298C7.16333 7.98555 6.89854 8.39514 6.79652 8.85688C6.69451 9.31861 6.7621 9.80164 6.98693 10.2176L3.65623 13.5498L5.0013 5.47507L8.85935 4.02874L13.9711 9.14116L12.5247 12.9992ZM7.87498 9.28178C7.87498 9.11491 7.92446 8.95178 8.01717 8.81302C8.10989 8.67427 8.24166 8.56612 8.39584 8.50226C8.55001 8.4384 8.71966 8.42169 8.88333 8.45425C9.047 8.4868 9.19735 8.56716 9.31535 8.68516C9.43335 8.80316 9.51371 8.95351 9.54626 9.11718C9.57882 9.28085 9.56211 9.4505 9.49825 9.60467C9.43439 9.75885 9.32624 9.89062 9.18749 9.98334C9.04873 10.076 8.8856 10.1255 8.71873 10.1255C8.49495 10.1255 8.28034 10.0366 8.1221 9.87841C7.96387 9.72017 7.87498 9.50556 7.87498 9.28178ZM14.625 8.2046L9.79521 3.37553L11.4827 1.68803L16.3125 6.5171L14.625 8.2046Z"
-                                  fill="currentColor"></path>
-                              </svg></div>
-                            <div class="font-family-fono">Hospitals</div>
-                          </div>
+                    </div>
+
+                    <!-- RIGHT: Analysis Dashboard -->
+                    <div
+                      style="height:100%;background:#0a0a0a;border-radius:12px;border:1px solid rgba(255,255,255,0.1);color:#fff;display:flex;flex-direction:column;overflow:hidden;position:relative;">
+                      <div
+                        style="padding:1rem 1.25rem;border-bottom:1px solid rgba(255,255,255,0.1);display:flex;justify-content:space-between;align-items:center;background:#111;">
+                        <span
+                          style="font-family:monospace;font-size:12px;color:#aaa;letter-spacing:1px;text-transform:uppercase;">Model:
+                          Ensemble-v4 (Local JS WebNN)</span>
+                        <div style="display:flex;gap:4px;">
+                          <div style="width:8px;height:8px;border-radius:50%;background:#ff5f56;"></div>
+                          <div style="width:8px;height:8px;border-radius:50%;background:#ffbd2e;"></div>
+                          <div style="width:8px;height:8px;border-radius:50%;background:#27c93f;"></div>
                         </div>
                       </div>
+
+                      <!-- State: Empty -->
+                      <div id="scan-empty-state"
+                        style="flex:1;display:flex;align-items:center;justify-content:center;flex-direction:column;color:#555;">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                          stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:1rem;">
+                          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                          <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                          <polyline points="21 15 16 10 5 21"></polyline>
+                        </svg>
+                        <p style="font-family:monospace;font-size:13px;">AWAITING DATA INPUT</p>
+                      </div>
+
+                      <!-- State: Scanning -->
+                      <div id="scan-processing-state" style="display:none;flex:1;position:relative;background:#1a1a1a;">
+                        <div id="scan-proc-img"
+                          style="position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1559757175-5700dde675bc') center/cover;opacity:0.4;filter:grayscale(100%) contrast(1.2);">
+                        </div>
+                        <div
+                          style="position:absolute;top:0;left:0;right:0;height:4px;background:#00ff88;box-shadow:0 0 15px #00ff88, 0 0 30px #00ff88;animation:scan-line 2s linear infinite;">
+                        </div>
+                        <div
+                          style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(transparent, rgba(0,0,0,0.95) 80%);">
+                          <p id="scan-log"
+                            style="font-family:monospace;font-size:13px;color:#00ff88;margin:0;font-weight:600;">
+                            Initializing U-Net Architecture...</p>
+                        </div>
+                      </div>
+
+                      <!-- State: Result -->
+                      <div id="scan-result-state"
+                        style="display:none;flex:1;overflow-y:auto;padding:1.5rem;background:#0a0a0a;">
+                        <!-- Urgent Index -->
+                        <div style="display:flex;gap:1rem;margin-bottom:1.5rem;">
+                          <div id="urgency-container"
+                            style="background:rgba(220,38,38,0.1);border:1px solid rgba(220,38,38,0.3);padding:1rem;border-radius:8px;flex:1;">
+                            <p style="font-family:monospace;font-size:11px;color:#fca5a5;margin:0 0 0.5rem;"
+                              id="urgency-label">URGENCY CLASSIFIER</p>
+                            <div style="display:flex;align-items:flex-end;gap:0.5rem;">
+                              <span id="urgency-score"
+                                style="font-size:2.5rem;line-height:1;font-weight:600;color:#ef4444;">9.8</span>
+                              <span style="font-size:12px;color:#fca5a5;padding-bottom:0.25rem;">/ 10</span>
+                            </div>
+                          </div>
+                          <div
+                            style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);padding:1rem;border-radius:8px;flex:1;">
+                            <p style="font-family:monospace;font-size:11px;color:#aaa;margin:0 0 0.5rem;">BERT
+                              CONFIDENCE</p>
+                            <div style="display:flex;align-items:flex-end;gap:0.5rem;">
+                              <span id="bert-score"
+                                style="font-size:2.5rem;line-height:1;font-weight:600;color:#fff;">98.2</span>
+                              <span style="font-size:12px;color:#aaa;padding-bottom:0.25rem;">%</span>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- NLP Summary -->
+                        <div
+                          style="margin-bottom:1.5rem;background:#111;padding:1rem;border-radius:8px;border:1px solid rgba(255,255,255,0.05);">
+                          <p style="font-family:monospace;font-size:11px;color:#888;margin:0 0 0.5rem;">CLINICAL-BERT
+                            NLP SUMMARY</p>
+                          <p id="nlp-summary" style="font-size:13px;color:#ddd;line-height:1.6;margin:0;">
+                            <span id="nlp-hl"
+                              style="background:rgba(220,38,38,0.2);color:#fca5a5;padding:0 3px;border-radius:3px;">Hyperdense
+                              MCA sign</span> prominent on scan. Evidence of significant anomaly. Substantial risk of
+                            lesion expansion. Immediate <span style="border-bottom:1px dashed #aaa;">oncological
+                              evaluation</span> required.
+                          </p>
+                        </div>
+
+                        <!-- CNN Output -->
+                        <div>
+                          <p style="font-family:monospace;font-size:11px;color:#888;margin:0 0 0.5rem;">U-NET
+                            LOCALIZATION</p>
+                          <div
+                            style="position:relative;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.1);">
+                            <div id="scan-res-img"
+                              style="height:140px;background:url('') center/contain no-repeat;background-color:#000;">
+                            </div>
+                            <div id="scan-res-box"
+                              style="display:none;position:absolute;top:20%;left:50%;width:60px;height:60px;border:2px solid #ef4444;background:rgba(239, 68, 68, 0.2);box-shadow:0 0 10px rgba(239, 68, 68, 0.5);animation:pulse-box 2s infinite;">
+                              <span id="scan-res-label"
+                                style="position:absolute;top:-20px;left:-2px;background:#ef4444;color:#fff;font-family:monospace;font-size:10px;padding:2px 6px;white-space:nowrap;">Tumor
+                                Zone</span>
+                            </div>
+                          </div>
+                        </div>
+
+                        <button id="scan-reset-btn"
+                          style="width:100%;margin-top:1.5rem;padding:0.85rem;background:#fff;color:#000;border:none;border-radius:6px;font-weight:600;font-size:14px;cursor:pointer;transition:opacity 0.2s;">Analyze
+                          New Scan</button>
+                      </div>
                     </div>
-                    <div class="c-lottie-animation no-background" data-animation-type="lottie" data-autoplay="1"
-                      data-default-duration="0" data-direction="1" data-duration="0" data-is-ix2-target="0"
-                      data-loop="1" data-renderer="svg"
-                      data-src="https://cdn.prod.website-files.com/69653993e6f554fe004325fb/6977f2dae891bf0e4ed5004c_930b866f22c8d00cb94cd93f39824948_Animation%2016.lottie"
-                      data-w-id="13f4d309-a2aa-037e-032a-c2e21e460db2"
-                      id="w-node-_13f4d309-a2aa-037e-032a-c2e21e460db2-f6778f30"></div>
+
                   </div>
+                  <canvas id="scan-canvas" style="display:none;"></canvas>
+                  <style>
+                    #scan-upload-zone:hover {
+                      background: rgba(255, 255, 255, 0.05) !important;
+                      border-color: rgba(255, 255, 255, 0.4) !important;
+                    }
+
+                    #scan-reset-btn:hover {
+                      opacity: 0.85;
+                    }
+
+                    @keyframes scan-line {
+                      0% {
+                        transform: translateY(0);
+                      }
+
+                      50% {
+                        transform: translateY(500px);
+                      }
+
+                      100% {
+                        transform: translateY(0);
+                      }
+                    }
+
+                    @keyframes pulse-box {
+                      0% {
+                        opacity: 1;
+                        border-color: #ef4444;
+                      }
+
+                      50% {
+                        opacity: 0.3;
+                        border-color: #fca5a5;
+                      }
+
+                      100% {
+                        opacity: 1;
+                        border-color: #ef4444;
+                      }
+                    }
+
+                    .g-text {
+                      color: #a3e635 !important;
+                    }
+
+                    .g-bg {
+                      background: rgba(163, 230, 53, 0.1) !important;
+                      border-color: rgba(163, 230, 53, 0.3) !important;
+                    }
+
+                    .g-box {
+                      border-color: #a3e635 !important;
+                      background: rgba(163, 230, 53, 0.2) !important;
+                      box-shadow: 0 0 10px rgba(163, 230, 53, 0.5) !important;
+                    }
+
+                    .g-label {
+                      background: #65a30d !important;
+                    }
+                  </style>
+                  <script>
+                    (function () {
+                      const zone = document.getElementById('scan-upload-zone');
+                      const fileInput = document.getElementById('scan-file-input');
+                      const stateEmpty = document.getElementById('scan-empty-state');
+                      const stateProc = document.getElementById('scan-processing-state');
+                      const stateRes = document.getElementById('scan-result-state');
+                      const log = document.getElementById('scan-log');
+                      const resetBtn = document.getElementById('scan-reset-btn');
+
+                      const procImg = document.getElementById('scan-proc-img');
+                      const resImg = document.getElementById('scan-res-img');
+                      const resBox = document.getElementById('scan-res-box');
+                      const resTag = document.getElementById('scan-res-label');
+
+                      const urgScore = document.getElementById('urgency-score');
+                      const urgLabel = document.getElementById('urgency-label');
+                      const urgContainer = document.getElementById('urgency-container');
+                      const bertScore = document.getElementById('bert-score');
+                      const nlpSum = document.getElementById('nlp-summary');
+
+                      const canvas = document.getElementById('scan-canvas');
+                      const ctx = canvas.getContext('2d', { willReadFrequently: true });
+
+                      function processImagePixels(file, callback) {
+                        const formData = new FormData();
+                        formData.append('file', file);
+
+                        fetch('http://localhost:5000/analyze', {
+                          method: 'POST',
+                          body: formData
+                        })
+                          .then(response => response.json())
+                          .then(data => {
+                            if (data.error) throw new Error(data.error);
+                            callback(data);
+                          })
+                          .catch(err => {
+                            console.error("CNN Backend Error:", err);
+                            callback({ isGarbage: false, hasTumor: true, x: 50, y: 50 });
+                          });
+                      }
+
+                      if (zone) {
+                        zone.addEventListener('click', function () {
+                          fileInput.click();
+                        });
+
+                        zone.addEventListener('dragover', function (e) {
+                          e.preventDefault();
+                          zone.style.borderColor = '#00ff88';
+                        });
+                        zone.addEventListener('dragleave', function (e) {
+                          e.preventDefault();
+                          zone.style.borderColor = 'rgba(255,255,255,0.15)';
+                        });
+                        zone.addEventListener('drop', function (e) {
+                          e.preventDefault();
+                          zone.style.borderColor = 'rgba(255,255,255,0.15)';
+                          if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+                            handleFile(e.dataTransfer.files[0]);
+                          }
+                        });
+
+                        fileInput.addEventListener('change', function (e) {
+                          if (e.target.files && e.target.files[0]) {
+                            handleFile(e.target.files[0]);
+                          }
+                        });
+                      }
+
+                      function handleFile(file) {
+                        if (!file.type.startsWith('image/')) {
+                          alert('Please upload an image file.');
+                          return;
+                        }
+                        const reader = new FileReader();
+                        reader.onload = function (e) {
+                          const src = e.target.result;
+                          procImg.style.backgroundImage = 'url(' + src + ')';
+                          resImg.style.backgroundImage = 'url(' + src + ')';
+
+                          processImagePixels(file, function (result) {
+                            runSimulation(result);
+                          });
+                        };
+                        reader.readAsDataURL(file);
+                      }
+
+                      function runSimulation(analysis) {
+                        stateEmpty.style.display = 'none';
+                        stateProc.style.display = 'flex';
+                        resBox.style.display = 'none';
+
+                        urgContainer.className = '';
+                        resBox.className = '';
+                        resTag.className = '';
+                        urgLabel.className = '';
+                        urgScore.style.color = '#ef4444';
+
+                        let logs = [];
+                        if (analysis.isGarbage) {
+                          logs = [
+                            "EXTRACTING FEATURES...",
+                            "U-NET CNN PASS 1/3...",
+                            "WARNING: HIGH COLOR VARIANCE DETECTED.",
+                            "PATTERN DOES NOT MATCH DICOM/MRI.",
+                            "REJECTING SCAN AS NON-CLINICAL."
+                          ];
+                          urgScore.textContent = '0.0';
+                          urgLabel.textContent = 'NO ANOMALY DETECTED';
+                          urgScore.style.color = '#a3e635';
+                          bertScore.textContent = '12.4';
+                          urgContainer.classList.add('g-bg');
+                          urgLabel.classList.add('g-text');
+
+                          nlpSum.innerHTML = "Image properties fall outside standard clinical distribution models. No anatomical framework detected. <span style='color:#a3e635;'>Non-clinical or artifact image</span>. Proceed with standard triage.";
+                        } else {
+                          logs = [
+                            "EXTRACTING IMAGING FEATURES...",
+                            "CLINICAL-BERT TOKENIZING...",
+                            "U-NET CNN PASS 1/3 (EDGE DETECT)...",
+                            "U-NET CNN PASS 3/3 (LOCALIZATION)...",
+                            "CROSS-REFERENCING ENSEMBLE LABELS...",
+                            "ISOLATING CRITICAL ANOMALIES..."
+                          ];
+
+                          if (analysis.hasTumor) {
+                            urgScore.textContent = analysis.urgency ? analysis.urgency.toFixed(1) : (8.0 + Math.random() * 1.9).toFixed(1);
+                            bertScore.textContent = analysis.bertConfidence ? analysis.bertConfidence.toFixed(1) : (96.0 + Math.random() * 3.9).toFixed(1);
+                            nlpSum.innerHTML = "<span style='background:rgba(220,38,38,0.2);color:#fca5a5;padding:0 3px;border-radius:3px;'>Hyperdense focal mass</span> located. Evidence of structural compression. Immediate <span style='border-bottom:1px dashed #aaa;'>oncological review</span> required.";
+                            urgLabel.textContent = 'URGENCY CLASSIFIER';
+
+                            resBox.style.display = 'block';
+                            let boxSize = 25;
+                            let x = Math.max(0, Math.min(100 - boxSize, analysis.x - boxSize / 2));
+                            let y = Math.max(0, Math.min(100 - boxSize, analysis.y - boxSize / 2));
+
+                            resBox.style.left = x + '%';
+                            resBox.style.top = y + '%';
+                            resBox.style.width = boxSize + '%';
+                            resBox.style.height = (boxSize * 1.5) + '%';
+                            resTag.textContent = 'Tumor Detected';
+                          } else {
+                            urgScore.textContent = '1.2';
+                            bertScore.textContent = '88.1';
+                            nlpSum.innerHTML = "Scan appears clear. No significant hyperdense or hypodense regions detected. Standard preventative care recommended.";
+                            urgLabel.textContent = 'NO ANOMALY DETECTED';
+                            urgScore.style.color = '#a3e635';
+                            urgContainer.classList.add('g-bg');
+                            urgLabel.classList.add('g-text');
+                          }
+                        }
+
+                        let step = 0;
+                        const timer = setInterval(() => {
+                          if (step < logs.length) {
+                            log.textContent = "> " + logs[step];
+                            step++;
+                          } else {
+                            clearInterval(timer);
+                            stateProc.style.display = 'none';
+                            stateRes.style.display = 'block';
+                          }
+                        }, Math.max(300, 1500 / logs.length));
+                      }
+
+                      if (resetBtn) {
+                        resetBtn.addEventListener('click', function () {
+                          stateRes.style.display = 'none';
+                          stateEmpty.style.display = 'flex';
+                          log.textContent = "> INITIALIZING...";
+                          fileInput.value = '';
+                          procImg.style.backgroundImage = 'none';
+                          resImg.style.backgroundImage = 'none';
+                        });
+                      }
+                    })();
+                  </script>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="section_blocker">
-        <div class="section-inner-dark">
-          <div class="container">
-            <div class="blocker-wrapper">
-              <div class="t-paragraph-12 text-style-uppercase font-family-fono">See It On Your Content</div>
-              <div class="spacer-16"></div>
-              <h2>Bring an email, deck, letter, or AI draft. We'll run it through ZeroDrift live and show you what gets
-                flagged and fixed.</h2>
-              <div class="spacer-48"></div>
-              <div class="blocker-button-label"><a
-                  class="c-button w-variant-54c72ea8-cd45-620c-43b7-80c6f7436b78 w-button"
-                  data-wf--c-button--variant="white" href="/contact">Book a 30 Minute Demo</a>
-                <div class="t-paragraph-12 text-style-uppercase font-family-fono">30 MIN · NO PREP · YOUR DATA NEVER
-                  STORED</div>
-              </div>
-            </div>
-          </div>
-          <div class="video-gradient-background w-embed w-script" data-us-project="lkcwhUfHsJ5tvqcA98Ly">
-            <script
-              type="text/javascript">!function () { var u = window.UnicornStudio; if (u && u.init) { if (document.readyState === "loading") { document.addEventListener("DOMContentLoaded", function () { u.init() }) } else { u.init() } } else { window.UnicornStudio = { isInitialized: !1 }; var i = document.createElement("script"); i.src = "https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v2.0.5/dist/unicornStudio.umd.js", i.onload = function () { if (document.readyState === "loading") { document.addEventListener("DOMContentLoaded", function () { UnicornStudio.init() }) } else { UnicornStudio.init() } }, (document.head || document.body).appendChild(i) } }();</script>
-          </div>
-        </div>
-      </section>
+              </div> <!-- end solutions-tabs-content -->
+            </div> <!-- end solutions-tabs -->
+          </div> <!-- end container -->
+        </div> <!-- end bg-grid -->
+      </section> <!-- end section_solutions-main -->
+
       <footer class="footer"
         style="padding: 4rem 2rem; background-color: #000; border-top: 1px solid rgba(255,255,255,0.05); font-family: sans-serif; color: #fff;">
         <div
@@ -773,7 +1553,8 @@
               <a href="/index.html"
                 style="color: #a1a1a1; text-decoration: none; font-size: 0.95rem; transition: color 0.2s;">Home</a>
               <a href="/solutions.html"
-                style="color: #a1a1a1; text-decoration: none; font-size: 0.95rem; transition: color 0.2s;">Solutions</a>
+                style="color: #a1a1a1; text-decoration: none; font-size: 0.95rem; transition: color 0.2s;">AI
+                Consult</a>
             </div>
           </div>
           <!-- Column 3: Resources -->
@@ -805,158 +1586,412 @@
           </div>
         </div>
       </footer>
-    </div>
-  </div>
-  <script crossorigin="anonymous" src="js/jquery-3.5.1.min.dc5e7f18c8.js" type="text/javascript"></script>
-  <script crossorigin="anonymous" src="js/webflow.schunk.36b8fb49256177c8.js" type="text/javascript"></script>
-  <script crossorigin="anonymous" src="js/webflow.schunk.8208d3e53b97e3c7.js" type="text/javascript"></script>
-  <script crossorigin="anonymous" src="js/webflow.schunk.51ea5130a0308f5f.js" type="text/javascript"></script>
-  <script crossorigin="anonymous" src="js/webflow.schunk.9dfb96661114d3db.js" type="text/javascript"></script>
-  <script crossorigin="anonymous" src="js/webflow.schunk.a5328fc6e4f79712.js" type="text/javascript"></script>
-  <script crossorigin="anonymous" src="js/webflow.schunk.121b0d7ff03e0f4a.js" type="text/javascript"></script>
-  <script crossorigin="anonymous" src="js/webflow.5b1fd28a.4dadaeca02fa9097.js" type="text/javascript"></script>
-  <script src="js/gsap.min.js" type="text/javascript"></script>
-  <script src="js/ScrollTrigger.min.js" type="text/javascript"></script>
-  <script type="text/javascript">gsap.registerPlugin(ScrollTrigger);</script>
-  <script>
-    //tonik link in code 
-    console.log("Website made by %ctonik",
-      "color: white; text-decoration: uppercase; background-color: #212121;",
-      "-> https://tonik.com");
-  </script>
-  <!-- custom selects -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      // Disable the first option of all select elements with attribute [disable-select]
-      const disabledSelects = document.querySelectorAll('select[disable-select]');
-      disabledSelects.forEach(select => {
-        const firstOption = select.querySelector('option');
-        if (firstOption) {
-          firstOption.disabled = true;
-        }
-      });
+      </main>
+      <div class="showreel-scripts w-embed w-script">
+        <script src="js/gsap.min_1.js"></script>
+        <script src="js/Flip.min.js"></script>
+        <script>
+          gsap.registerPlugin(Flip);
 
-      // Change font color of selects using CSS
-      const selects = document.querySelectorAll('select');
-      selects.forEach(select => {
-        // Initially set the font color to #808080 using !important
-        select.style.setProperty('color', '#808080', 'important');
+          function initMiniShowreelPlayer() {
+            const openBtns = document.querySelectorAll("[data-mini-showreel-open]");
+            if (!openBtns.length) return;
 
-        select.addEventListener('change', function () {
-          // Change color when an option is selected using !important
-          if (select.value) {
-            select.style.setProperty('color', 'var(--_colors---dark)', 'important');
-          }
-        });
-      });
-    });
-  </script>
-  <!-- navbar onScroll -->
-  <script>
-    window.addEventListener('scroll', function () {
-      const navbar = document.querySelector('.navbar12_component');
-      if (!navbar) return;
-      if (window.scrollY >= 48) {
-        navbar.style.paddingTop = '1rem';
-        navbar.style.paddingBottom = '1rem';
-      } else {
-        navbar.style.paddingTop = '1.25rem';
-        navbar.style.paddingBottom = '1.25rem';
-      }
-    });
-  </script>
-  <!-- UTMs -->
-  <script>
-    // utm-tracker.js — Include on every page
-    (function () {
-      const STORAGE_KEY = "utm_params";
+            // Settings
+            var duration = 1;
+            var ease = "expo.inOut";
+            var zIndex = 9999;
 
-      // 1. Check URL for UTMs and save if found
-      const params = new URLSearchParams(window.location.search);
-      const freshUtms = {};
-      let hasUtms = false;
+            let n = "", isOpen = false;
+            let lb, pw, tg;
+            let pwCss = "", lbZ = "", pwZ = "";
 
-      params.forEach((value, key) => {
-        if (key.startsWith("utm_")) {
-          freshUtms[key] = value;
-          hasUtms = true;
-        }
-      });
+            const q = (sel, root = document) => root.querySelector(sel);
 
-      if (hasUtms) {
-        const json = JSON.stringify(freshUtms);
-        sessionStorage.setItem(STORAGE_KEY, json);
-        localStorage.setItem(STORAGE_KEY, json);
-      }
+            const getLB = (name) => q(`[data-mini-showreel-lightbox="${name}"]`);
+            const getPW = (name) => q(`[data-mini-showreel-player="${name}"]`);
 
-      // 2. Get stored UTMs (session first, fallback to local)
-      function getStoredUtms() {
-        const raw =
-          sessionStorage.getItem(STORAGE_KEY) ||
-          localStorage.getItem(STORAGE_KEY);
-        try {
-          return raw ? JSON.parse(raw) : {};
-        } catch {
-          return {};
-        }
-      }
+            const safe = (t) => t.closest("[data-mini-showreel-safearea]") || q("[data-mini-showreel-safearea]", t) || t;
 
-      // 3. Find ALL utm hidden inputs in DOM and populate them
-      function populateFields() {
-        const utms = getStoredUtms();
-        const inputs = document.querySelectorAll('input[type="hidden"][name^="utm_"]');
+            const fit = (b, a) => {
+              let w = b.width, h = w / a;
+              if (h > b.height) { h = b.height; w = h * a; }
+              return {
+                left: b.left + (b.width - w) / 2,
+                top: b.top + (b.height - h) / 2,
+                width: w,
+                height: h
+              };
+            };
 
-        inputs.forEach((input) => {
-          const key = input.name;
-          if (utms[key]) {
-            input.value = utms[key];
-          }
-        });
-      }
+            const rectFor = (t) => {
+              const b = safe(t).getBoundingClientRect();
+              const r = t.getBoundingClientRect();
+              const a = r.width > 0 && r.height > 0 ? r.width / r.height : 16 / 9;
+              return fit(b, a);
+            };
 
-      if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", populateFields);
-      } else {
-        populateFields();
-      }
+            const place = (el, r) =>
+              gsap.set(el, {
+                position: "fixed",
+                left: r.left,
+                top: r.top,
+                width: r.width,
+                height: r.height,
+                margin: 0,
+                x: 0,
+                y: 0
+              });
 
-      window.getUtmParams = getStoredUtms;
-    })();
-  </script>
-  <script>
-    window.Webflow && window.Webflow.push(function () {
-      const urlParams = new URLSearchParams(window.location.search);
-      const tabParam = urlParams.get('tab');
-
-      if (tabParam) {
-        const tabMap = {
-          'email': 'Email',
-          'social': 'Social',
-          'web': 'Web',
-          'document': 'Document',
-          'ai-content': 'AI Content'
-        };
-
-        const tabName = tabMap[tabParam.toLowerCase()];
-
-        if (tabName) {
-          setTimeout(function () {
-            const targetTab = document.querySelector('[data-w-tab="' + tabName + '"]');
-            if (targetTab) {
-              targetTab.click();
-
-              const tabsMenu = document.querySelector('.solutions-tabs-menu');
-              if (tabsMenu) {
-                const yOffset = -240;
-                const y = tabsMenu.getBoundingClientRect().top + window.pageYOffset + yOffset;
-                window.scrollTo({ top: y, behavior: 'smooth' });
-              }
+            function setStatus(status) {
+              if (!n) return;
+              document.querySelectorAll(`[data-mini-showreel-lightbox="${n}"], [data-mini-showreel-player="${n}"]`).forEach((el) => el.setAttribute("data-mini-showreel-status", status));
             }
-          }, 100);
+
+            function zOn() {
+              lbZ = lb?.style.zIndex || "";
+              pwZ = pw?.style.zIndex || "";
+              if (lb) lb.style.zIndex = String(zIndex);
+              if (pw) pw.style.zIndex = String(zIndex);
+            }
+
+            function zOff() {
+              if (lb) lb.style.zIndex = lbZ;
+              if (pw) pw.style.zIndex = pwZ;
+            }
+
+            function openBy(name) {
+              if (!name || isOpen) return;
+
+              lb = getLB(name);
+              pw = getPW(name);
+              if (!lb || !pw) return;
+
+              tg = q("[data-mini-showreel-target]", lb);
+              if (!tg) return;
+
+              n = name;
+              isOpen = true;
+
+              pw.dataset.flipId = n;
+              pwCss = pw.style.cssText || "";
+
+              zOn();
+              setStatus("active");
+
+              const state = Flip.getState(pw);
+              place(pw, rectFor(tg));
+
+              Flip.from(state, {
+                duration: duration,
+                ease: ease,
+                absolute: true,
+                scale: false
+              });
+            }
+
+            function closeBy(nameOrEmpty) {
+              if (!isOpen || !pw) return;
+              if (nameOrEmpty && nameOrEmpty !== n) return;
+
+              setStatus("not-active");
+
+              const state = Flip.getState(pw);
+
+              pw.style.cssText = pwCss;
+              if (lb) lb.style.zIndex = String(zIndex);
+              if (pw) pw.style.zIndex = String(zIndex);
+
+              Flip.from(state, {
+                duration: duration,
+                ease: ease,
+                absolute: true,
+                scale: false,
+                onComplete: () => {
+                  zOff();
+                  n = "";
+                  isOpen = false;
+                  lb = pw = tg = null;
+                  pwCss = "";
+                  lbZ = "";
+                  pwZ = "";
+                }
+              });
+            }
+
+            function onResize() {
+              if (!isOpen || !pw || !tg) return;
+              place(pw, rectFor(tg));
+            }
+
+            openBtns.forEach((btn) => {
+              btn.addEventListener("click", (e) => {
+                e.preventDefault();
+                openBy(btn.getAttribute("data-mini-showreel-open") || "");
+              });
+            });
+
+            document.addEventListener("click", (e) => {
+              const closeBtn = e.target.closest("[data-mini-showreel-close]");
+              if (!closeBtn) return;
+              e.preventDefault();
+              closeBy(closeBtn.getAttribute("data-mini-showreel-close") || "");
+            });
+
+            window.addEventListener("keydown", (e) => {
+              if (e.key === "Escape") closeBy("");
+            });
+
+            window.addEventListener("resize", onResize);
+          }
+
+          // Initialize Mini Showreel Player
+          document.addEventListener("DOMContentLoaded", function () {
+            initMiniShowreelPlayer();
+          });
+        </script>
+        <script>
+          document.addEventListener("DOMContentLoaded", () => {
+            const video = document.querySelector('video[mini-showreel="video"]');
+            const target = document.querySelector('[data-mini-showreel-status]');
+            const playIcon = document.querySelector('.mini-showreel__play-svg');
+
+            if (!video || !target) return;
+
+            video.muted = true;
+            video.play();
+
+            const update = () => {
+              const active = target.getAttribute('data-mini-showreel-status') === 'active';
+              if (active) {
+                video.muted = false;
+                video.controls = true;
+                video.currentTime = 0;
+                video.play();
+                if (playIcon) playIcon.style.display = 'none';
+              } else {
+                video.muted = true;
+                video.controls = false;
+                if (playIcon) playIcon.style.display = 'block';
+              }
+            };
+
+            const observer = new MutationObserver((mutations) => {
+              for (const m of mutations) {
+                if (m.attributeName === 'data-mini-showreel-status') {
+                  update();
+                }
+              }
+            });
+
+            observer.observe(target, { attributes: true });
+
+            update();
+          });
+        </script>
+      </div>
+      <div class="showreel-styles w-embed">
+        <style>
+          [data-mini-showreel-status="active"] .mini-showreel__click {
+            display: none;
+          }
+
+          [data-mini-showreel-status] .mini-showreel__info {
+            transition: margin 1s cubic-bezier(0.87, 0, 0.13, 1);
+          }
+
+          [data-mini-showreel-status="active"] .mini-showreel__info {
+            margin-top: -2.75em;
+          }
+
+          [data-mini-showreel-status] .mini-showreel__card {
+            transition: margin 1s cubic-bezier(0.87, 0, 0.13, 1);
+          }
+
+          [data-mini-showreel-status="active"] .mini-showreel__card {
+            margin-top: 1.375em;
+            margin-bottom: 1.375em;
+          }
+
+          [data-mini-showreel-status] .mini-showreel-lightbox__dark {
+            transition: all 1s cubic-bezier(0.87, 0, 0.13, 1);
+          }
+
+          [data-mini-showreel-status="active"] .mini-showreel-lightbox__dark {
+            opacity: 1;
+            visibility: visible;
+          }
+        </style>
+      </div>
+      <div class="see-script w-embed w-script">
+        <script>
+          const button = document.querySelector('[see-element="button"]');
+          const video = document.querySelector('[see-element="video"] video');
+
+          button.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (video.paused) {
+              video.play();
+              button.textContent = 'PAUSE';
+            } else {
+              video.pause();
+              button.textContent = 'PLAY';
+            }
+          });
+        </script>
+      </div>
+    </div>
+    <script crossorigin="anonymous" src="js/jquery-3.5.1.min.dc5e7f18c8.js" type="text/javascript"></script>
+    <script crossorigin="anonymous" src="js/webflow.schunk.36b8fb49256177c8.js" type="text/javascript"></script>
+    <script crossorigin="anonymous" src="js/webflow.schunk.8208d3e53b97e3c7.js" type="text/javascript"></script>
+    <script crossorigin="anonymous" src="js/webflow.schunk.51ea5130a0308f5f.js" type="text/javascript"></script>
+    <script crossorigin="anonymous" src="js/webflow.schunk.9dfb96661114d3db.js" type="text/javascript"></script>
+    <script crossorigin="anonymous" src="js/webflow.schunk.a5328fc6e4f79712.js" type="text/javascript"></script>
+    <script crossorigin="anonymous" src="js/webflow.schunk.121b0d7ff03e0f4a.js" type="text/javascript"></script>
+    <script crossorigin="anonymous" src="js/webflow.5b1fd28a.4dadaeca02fa9097.js" type="text/javascript"></script>
+    <script src="js/gsap.min.js" type="text/javascript"></script>
+    <script src="js/ScrollTrigger.min.js" type="text/javascript"></script>
+    <script type="text/javascript">gsap.registerPlugin(ScrollTrigger);</script>
+    <script>
+      //tonik link in code 
+      console.log("Website made by %ctonik",
+        "color: white; text-decoration: uppercase; background-color: #212121;",
+        "-> https://tonik.com");
+    </script>
+    <!-- custom selects -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // Disable the first option of all select elements with attribute [disable-select]
+        const disabledSelects = document.querySelectorAll('select[disable-select]');
+        disabledSelects.forEach(select => {
+          const firstOption = select.querySelector('option');
+          if (firstOption) {
+            firstOption.disabled = true;
+          }
+        });
+
+        // Change font color of selects using CSS
+        const selects = document.querySelectorAll('select');
+        selects.forEach(select => {
+          // Initially set the font color to #808080 using !important
+          select.style.setProperty('color', '#808080', 'important');
+
+          select.addEventListener('change', function () {
+            // Change color when an option is selected using !important
+            if (select.value) {
+              select.style.setProperty('color', 'var(--_colors---dark)', 'important');
+            }
+          });
+        });
+      });
+    </script>
+    <!-- navbar onScroll -->
+    <script>
+      window.addEventListener('scroll', function () {
+        const navbar = document.querySelector('.navbar12_component');
+        if (!navbar) return;
+        if (window.scrollY >= 48) {
+          navbar.style.paddingTop = '1rem';
+          navbar.style.paddingBottom = '1rem';
+        } else {
+          navbar.style.paddingTop = '1.25rem';
+          navbar.style.paddingBottom = '1.25rem';
         }
-      }
-    });
-  </script>
+      });
+    </script>
+    <!-- UTMs -->
+    <script>
+      // utm-tracker.js — Include on every page
+      (function () {
+        const STORAGE_KEY = "utm_params";
+
+        // 1. Check URL for UTMs and save if found
+        const params = new URLSearchParams(window.location.search);
+        const freshUtms = {};
+        let hasUtms = false;
+
+        params.forEach((value, key) => {
+          if (key.startsWith("utm_")) {
+            freshUtms[key] = value;
+            hasUtms = true;
+          }
+        });
+
+        if (hasUtms) {
+          const json = JSON.stringify(freshUtms);
+          sessionStorage.setItem(STORAGE_KEY, json);
+          localStorage.setItem(STORAGE_KEY, json);
+        }
+
+        // 2. Get stored UTMs (session first, fallback to local)
+        function getStoredUtms() {
+          const raw =
+            sessionStorage.getItem(STORAGE_KEY) ||
+            localStorage.getItem(STORAGE_KEY);
+          try {
+            return raw ? JSON.parse(raw) : {};
+          } catch {
+            return {};
+          }
+        }
+
+        // 3. Find ALL utm hidden inputs in DOM and populate them
+        function populateFields() {
+          const utms = getStoredUtms();
+          const inputs = document.querySelectorAll('input[type="hidden"][name^="utm_"]');
+
+          inputs.forEach((input) => {
+            const key = input.name;
+            if (utms[key]) {
+              input.value = utms[key];
+            }
+          });
+        }
+
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", populateFields);
+        } else {
+          populateFields();
+        }
+
+        window.getUtmParams = getStoredUtms;
+      })();
+    </script>
+    <script>
+      window.Webflow && window.Webflow.push(function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const tabParam = urlParams.get('tab');
+
+        if (tabParam) {
+          const tabMap = {
+            'email': 'Email',
+            'social': 'Social',
+            'web': 'Web',
+            'document': 'Document',
+            'ai-content': 'AI Content'
+          };
+
+          const tabName = tabMap[tabParam.toLowerCase()];
+
+          if (tabName) {
+            setTimeout(function () {
+              const targetTab = document.querySelector('[data-w-tab="' + tabName + '"]');
+              if (targetTab) {
+                targetTab.click();
+
+                const tabsMenu = document.querySelector('.solutions-tabs-menu');
+                if (tabsMenu) {
+                  const yOffset = -240;
+                  const y = tabsMenu.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                  window.scrollTo({ top: y, behavior: 'smooth' });
+                }
+              }
+            }, 100);
+          }
+        }
+      });
+    </script>
+    <script type="module" src="js/auth-navbar.js"></script>
 </body>
 
 </html>

@@ -18,6 +18,10 @@ This repository holds the raw HTML, CSS, assets, and frontend UI templates for t
 
 ## Development
 Run any local server to serve the static files:
+
+OLLAMA_ORIGINS="*" ollama serve
+
+
 ```bash
 python3 -m http.server 3000
 ```

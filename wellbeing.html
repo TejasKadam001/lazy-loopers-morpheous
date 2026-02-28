@@ -172,6 +172,54 @@
       -webkit-text-stroke: 0.6px currentColor !important;
     }
   </style>
+  <style>
+    .navbar12_link,
+    .navbar12_menu-links a {
+      text-decoration: none !important;
+    }
+
+    .navbar12_link-label {
+      transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+      text-decoration: none !important;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .navbar12_link:hover .navbar12_link-label,
+    .navbar12_menu-links a:hover .navbar12_link-label {
+      text-shadow: 0 0 .5px #fff, 0 0 .5px #fff !important;
+      font-weight: 400 !important;
+      text-decoration: none !important;
+    }
+
+    /* Mobile menu background fix */
+    @media screen and (max-width: 991px) {
+      .navbar12_menu {
+        background-color: #000 !important;
+        border-radius: 20px;
+        padding: 1.5rem;
+        margin-top: 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      }
+
+      .navbar12_menu-links {
+        gap: 1rem !important;
+        padding-bottom: 1rem;
+      }
+
+      .navbar12_menu-buttons {
+        margin-left: 0 !important;
+        width: 100%;
+      }
+
+      .navbar12_menu-buttons .c-button {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -448,7 +496,7 @@
           style="background-color: transparent;">
           <div class="navbar12_menu-links">
             <a class="navbar12_link w-inline-block" href="solutions.html">
-              <div class="navbar12_link-label" style="color: #fff;">Solutions &amp; Features</div>
+              <div class="navbar12_link-label" style="color: #fff;">AI Consult</div>
             </a>
             <a class="navbar12_link w-inline-block" href="wellbeing.html">
               <div class="navbar12_link-label" style="color: #fff;">Knowledge Hub</div>
@@ -456,12 +504,14 @@
             <a class="navbar12_link w-inline-block" href="about.html">
               <div class="navbar12_link-label" style="color: #fff;">About Us</div>
             </a>
+            <a class="navbar12_link w-inline-block" href="symptom-checker.html">
+              <div class="navbar12_link-label" style="color: #fff;">Symptom Checker</div>
+            </a>
           </div>
-          <div class="navbar12_menu-buttons" style="margin-left: 1rem;">
-            <a class="c-button w-button" data-wf--c-button--variant="white" href="#"
-              style="background-color: #fff; color: #000; border-radius: 9999px; padding: 0.5rem 1rem;">Provider
-              Portal</a>
-          </div>
+          <div class="navbar12_menu-buttons" style="margin-left: 1rem;"><a class="c-button w-button"
+              data-wf--c-button--variant="white" href="signup.html"
+              style="background-color: #fff; color: #000; border-radius: 9999px; padding: 0.5rem 1rem; text-decoration: none; font-family: sans-serif; font-size: 14px; font-weight: 500; text-transform: none !important;">Sign
+              Up</a></div>
         </nav>
         <div class="navbar12_menu-button w-nav-button">
           <div class="menu-icon1">
@@ -489,10 +539,9 @@
                     their foundational health.</p>
                 </div>
                 <div class="button-group"><a class="c-button w-button" data-wf--c-button--variant="dark"
-                    href="/contact">Check Symptoms</a><a
+                    href="symptom-checker.html">Check Symptoms</a><a
                     class="c-button w-variant-0e2b3110-a26e-c4c4-e2ca-e103844291b1 w-button"
-                    data-wf--c-button--variant="dark-outlined"
-                    href="https://zerodrift.mintlify.app/api-reference/introduction" target="_blank">Connect to
+                    data-wf--c-button--variant="dark-outlined" href="solutions.html" target="_blank">Connect to
                     Expert</a></div>
               </div>
               <div class="developers-hero-img w-background-video w-background-video-atom" data-autoplay="true"
@@ -517,7 +566,7 @@
         <div class="section-inner-white padding-2rem">
           <div class="container">
             <div class="developers-build-wrapper">
-              <h2>Common Health Pathways</h2>
+              <h2>Understanding Your Clinical Reports</h2>
               <div class="developers-build-grid">
                 <div class="developers-build-item">
                   <div class="developers-build-item_content">
@@ -529,10 +578,11 @@
                           fill="black"></path>
                       </svg></div>
                     <div class="developers-build-item_spacer"></div>
-                    <div class="t-paragraph-20">Hypertension (High Blood Pressure)</div>
+                    <div class="t-paragraph-20">Complete Blood Count (CBC)</div>
                     <div class="spacer-4"></div>
-                    <p class="text-color-7d7d7d">Symptoms often include frequent headaches and shortness of breath.
-                      Solutions involve targeted dietary changes, low-sodium intake, and strict medication management.
+                    <p class="text-color-7d7d7d">A CBC evaluates overall health and detects a wide range of disorders.
+                      Key markers include RBCs (oxygen delivery), WBCs (immune function), and Platelets (blood
+                      clotting).
                     </p>
                   </div>
                   <div class="developers-build-item_gradient w-background-video w-background-video-atom"
@@ -561,10 +611,10 @@
                           fill="black"></path>
                       </svg></div>
                     <div class="developers-build-item_spacer"></div>
-                    <div class="t-paragraph-20">Type 2 Diabetes</div>
+                    <div class="t-paragraph-20">Core Metabolic Biomarkers</div>
                     <div class="spacer-4"></div>
-                    <p class="text-color-7d7d7d">Monitored through increased thirst, fatigue, and frequent urination.
-                      Solutions include comprehensive blood sugar tracking and insulin-sensitive exercise routines.</p>
+                    <p class="text-color-7d7d7d">Understanding your Lipid Panel (Cholesterol, Triglycerides) and HbA1c
+                      (3-month blood sugar average). High LDL or HbA1c may indicate cardiovascular or diabetic risk.</p>
                   </div>
                   <div class="developers-build-item_gradient w-background-video w-background-video-atom"
                     data-autoplay="true" data-loop="true"
@@ -591,10 +641,11 @@
                           fill="black"></path>
                       </svg></div>
                     <div class="developers-build-item_spacer"></div>
-                    <div class="t-paragraph-20">Anxiety &amp; Depression</div>
+                    <div class="t-paragraph-20">Kidney & Liver Function</div>
                     <div class="spacer-4"></div>
-                    <p class="text-color-7d7d7d">Presents as persistent sadness, extreme restlessness, or insomnia.
-                      Solutions integrate CBT, regulated clinical therapy, and monitored mindfulness practices.</p>
+                    <p class="text-color-7d7d7d">BUN and Creatinine measure kidney filtration, while AST and ALT
+                      indicate liver stress. Elevated levels often require dietary adjustment and hydration tracking.
+                    </p>
                   </div>
                   <div class="developers-build-item_gradient w-background-video w-background-video-atom"
                     data-autoplay="true" data-loop="true"
@@ -621,10 +672,10 @@
                           fill="black"></path>
                       </svg></div>
                     <div class="developers-build-item_spacer"></div>
-                    <div class="t-paragraph-20">Chronic Migraines</div>
+                    <div class="t-paragraph-20">Endocrine Health (Thyroid)</div>
                     <div class="spacer-4"></div>
-                    <p class="text-color-7d7d7d">Characterized by intense throbbing pain and distinct light sensitivity.
-                      Solutions rely on identifying specific situational triggers and localized neurological therapies.
+                    <p class="text-color-7d7d7d">TSH, T3, and T4 hormones regulate metabolism, energy, and mood.
+                      Abnormalities can cause unexplained weight changes, fatigue, or rapid heart rates.
                     </p>
                   </div>
                   <div class="developers-build-item_gradient w-background-video w-background-video-atom"
@@ -676,11 +727,11 @@
           <div class="container">
             <div class="home-build-wrapper">
               <div class="home-build-content">
-                <h2>One Single Intake. Full Clinical Summary.</h2>
+                <h2>Deep Dive: Preventative Health Tracking.</h2>
                 <div class="spacer-24"></div>
-                <p class="t-paragraph-18 text-color-7d7d7d">Log your symptoms through our safe, private portal. Receive
-                  detailed diagnostic breakdowns, verified pathways, and an organized clinical record prepared entirely
-                  for your physician. No stress.</p>
+                <p class="t-paragraph-18 text-color-7d7d7d">Track your macro and micro nutrient intake, sleep cycles,
+                  and daily activity. Our Knowledge Hub correlates these lifestyle factors with your clinical
+                  assessments, giving you a holistic view of your wellbeing.</p>
               </div>
               <div class="c-lottie-animation" data-animation-type="lottie" data-autoplay="1" data-default-duration="0"
                 data-direction="1" data-duration="0" data-is-ix2-target="0" data-loop="1" data-renderer="svg"
@@ -699,11 +750,11 @@
                 data-src="https://cdn.prod.website-files.com/69653993e6f554fe004325fb/6977f2dac804e7693f69c129_Animation%2009.lottie"
                 data-w-id="4d67251c-5a34-e8c6-bd59-cc161d867993"></div>
               <div class="home-build-content">
-                <h2>Built for Universal Care</h2>
+                <h2>Decoding Medical Jargon</h2>
                 <div class="spacer-24"></div>
-                <p class="t-paragraph-18 text-color-7d7d7d">Seamless onboarding into the Sero ecosystem. Every patient
-                  gets their own personalized tracking graph, individualized small language models, and private
-                  communication loops.</p>
+                <p class="t-paragraph-18 text-color-7d7d7d">Don't let medical reports confuse you. Sero's AI breaks down
+                  complex doctor's notes, lab results, and MRI/CT scan summaries into plain, actionable language you can
+                  actually understand.</p>
               </div>
             </div>
           </div>
@@ -715,7 +766,7 @@
             <div class="container height-full">
               <div class="developers-2col-content">
                 <div class="home-build-content align-top">
-                  <h3>Diagnosis</h3>
+                  <h3>Actionable Insights</h3>
                   <div class="spacer-32 fill"></div>
                   <div class="developers-build-illu_wrapper">
                     <div class="video-gradient-background w-background-video w-background-video-atom"
@@ -742,7 +793,7 @@
             <div class="container height-full">
               <div class="developers-2col-content">
                 <div class="home-build-content align-top">
-                  <h3>Treatment</h3>
+                  <h3>Nutrition Planning</h3>
                   <div class="spacer-32 fill"></div>
                   <div class="developers-build-illu_wrapper">
                     <div class="video-gradient-background w-background-video w-background-video-atom"
@@ -769,7 +820,7 @@
             <div class="container height-full">
               <div class="developers-2col-content">
                 <div class="home-build-content align-top">
-                  <h3>Recovery</h3>
+                  <h3>Mental Resilience</h3>
                   <div class="spacer-32 fill"></div>
                   <div class="developers-build-illu_wrapper">
                     <div class="video-gradient-background w-background-video w-background-video-atom"
@@ -805,8 +856,7 @@
               <div class="button-group"><a class="c-button w-variant-54c72ea8-cd45-620c-43b7-80c6f7436b78 w-button"
                   data-wf--c-button--variant="white" href="/contact">GET DEMO</a><a
                   class="c-button w-variant-8af0021d-cbb5-5c90-90d0-57f7e005f91b w-button"
-                  data-wf--c-button--variant="white-outlined"
-                  href="https://zerodrift.mintlify.app/api-reference/introduction" target="_blank">VIEW PLAN</a></div>
+                  data-wf--c-button--variant="white-outlined" href="solutions.html" target="_blank">VIEW PLAN</a></div>
             </div>
           </div>
           <div class="video-gradient-background w-embed w-script" data-us-project="lkcwhUfHsJ5tvqcA98Ly">
@@ -834,7 +884,8 @@
               <a href="/index.html"
                 style="color: #a1a1a1; text-decoration: none; font-size: 0.95rem; transition: color 0.2s;">Home</a>
               <a href="/solutions.html"
-                style="color: #a1a1a1; text-decoration: none; font-size: 0.95rem; transition: color 0.2s;">Solutions</a>
+                style="color: #a1a1a1; text-decoration: none; font-size: 0.95rem; transition: color 0.2s;">AI
+                Consult</a>
             </div>
           </div>
           <!-- Column 3: Resources -->
@@ -983,6 +1034,7 @@
       window.getUtmParams = getStoredUtms;
     })();
   </script>
+  <script type="module" src="js/auth-navbar.js"></script>
 </body>
 
 </html>

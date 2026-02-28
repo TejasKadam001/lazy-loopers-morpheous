@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sero — Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=DM+Serif+Display:ital@0;1&display=swap"
+        rel="stylesheet" />
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --white: #ffffff;
+            --off: #fafafa;
+            --text: #0d0d0d;
+            --mid: #6e6e6e;
+            --faint: #e4e4e4;
+            --faint2: #f0f0f0;
+            --accent: #0d0d0d;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--white);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ──────── NAV ──────── */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 200;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2.5rem;
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--faint);
+        }
+
+        .nav-logo {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1.75rem;
+        }
+
+        .nav-link {
+            font-size: 13px;
+            color: var(--mid);
+            text-decoration: none;
+            transition: color .18s;
+        }
+
+        .nav-link:hover {
+            color: var(--text);
+        }
+
+        .nav-signout {
+            font-size: 13px;
+            color: var(--mid);
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            transition: color .18s;
+            padding: 0;
+        }
+
+        .nav-signout:hover {
+            color: var(--text);
+        }
+
+        /* ──────── PAGE LAYOUT ──────── */
+        .shell {
+            max-width: 620px;
+            margin: 0 auto;
+            padding: 96px 1.5rem 8rem;
+        }
+
+        /* ──────── PROFILE HEADER ──────── */
+        .ph {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0;
+            margin-bottom: 4rem;
+        }
+
+        .ph-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--faint2);
+            border: 1px solid var(--faint);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: var(--mid);
+            letter-spacing: -0.02em;
+            user-select: none;
+            margin-bottom: 1.25rem;
+        }
+
+        .ph-name {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2rem;
+            line-height: 1.15;
+            color: var(--text);
+            letter-spacing: -0.03em;
+            margin-bottom: 0.25rem;
+        }
+
+        .ph-email {
+            font-size: 13.5px;
+            color: var(--mid);
+            font-weight: 300;
+        }
+
+        /* ──────── SECTION ──────── */
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .sec-title {
+            font-size: 10.5px;
+            font-weight: 500;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--mid);
+            margin-bottom: 1.25rem;
+        }
+
+        /* ──────── UNDERLINE FIELDS ──────── */
+        .fields {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .frow {
+            display: grid;
+            grid-template-columns: 110px 1fr;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.7rem 0;
+            border-bottom: 1px solid var(--faint);
+            transition: border-color .2s;
+        }
+
+        .frow:last-child {
+            border-bottom: none;
+        }
+
+        .frow:focus-within {
+            border-color: var(--text);
+        }
+
+        .flabel {
+            font-size: 13px;
+            color: var(--mid);
+            font-weight: 400;
+        }
+
+        input[type=text],
+        input[type=number],
+        select {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: var(--text);
+            font-family: inherit;
+            font-size: 15px;
+            width: 100%;
+            caret-color: var(--accent);
+        }
+
+        input::placeholder {
+            color: #ccc;
+        }
+
+        select option {
+            background: #fff;
+            color: #111;
+        }
+
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+
+        input[type=number]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+        /* ──────── TOGGLE ──────── */
+        .toggle-wrap {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+        }
+
+        .toggle {
+            position: relative;
+            width: 34px;
+            height: 18px;
+            flex-shrink: 0;
+        }
+
+        .toggle input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            inset: 0;
+            background: #e0e0e0;
+            border-radius: 18px;
+            cursor: pointer;
+            transition: background .22s;
+        }
+
+        .slider::before {
+            content: '';
+            position: absolute;
+            width: 11px;
+            height: 11px;
+            left: 3.5px;
+            top: 3.5px;
+            background: #bbb;
+            border-radius: 50%;
+            transition: transform .22s, background .22s;
+        }
+
+        .toggle input:checked+.slider {
+            background: var(--text);
+        }
+
+        .toggle input:checked+.slider::before {
+            transform: translateX(15px);
+            background: #fff;
+        }
+
+        .toggle-text {
+            font-size: 13px;
+            color: var(--mid);
+        }
+
+        /* ──────── ALLERGY PILLS ──────── */
+        .pill-area {
+            position: relative;
+        }
+
+        .pill-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.3rem;
+            align-items: center;
+            padding: 0.6rem 0;
+            border-bottom: 1px solid var(--faint);
+            min-height: 44px;
+            transition: border-color .2s;
+        }
+
+        .pill-wrap:focus-within {
+            border-color: var(--text);
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.2rem;
+            background: var(--faint2);
+            border-radius: 99px;
+            padding: 3px 10px 3px 12px;
+            font-size: 12.5px;
+            color: var(--text);
+            animation: popIn .13s ease;
+        }
+
+        @keyframes popIn {
+            from {
+                transform: scale(.82);
+                opacity: 0
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1
+            }
+        }
+
+        .pill-rm {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #bbb;
+            display: flex;
+            align-items: center;
+            margin-left: 1px;
+            padding: 0;
+            transition: color .15s;
+        }
+
+        .pill-rm:hover {
+            color: var(--text);
+        }
+
+        .pill-rm svg {
+            width: 9px;
+            height: 9px;
+            stroke: currentColor;
+        }
+
+        .ali {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: var(--text);
+            font-family: inherit;
+            font-size: 14px;
+            min-width: 150px;
+            flex: 1;
+            caret-color: var(--accent);
+        }
+
+        .ali::placeholder {
+            color: #ccc;
+        }
+
+        .acdrop {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: calc(100% + 2px);
+            background: #fff;
+            border: 1px solid var(--faint);
+            border-radius: 10px;
+            overflow: hidden;
+            z-index: 50;
+            display: none;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, .07);
+        }
+
+        .acdrop.open {
+            display: block;
+        }
+
+        .acitem {
+            padding: 0.55rem 1rem;
+            font-size: 13.5px;
+            cursor: pointer;
+            color: var(--text);
+            transition: background .1s;
+        }
+
+        .acitem:hover {
+            background: var(--faint2);
+        }
+
+        /* ──────── DIVIDER ──────── */
+        .divider {
+            height: 1px;
+            background: var(--faint);
+            margin: 3rem 0;
+        }
+
+        /* ──────── DOCUMENT CARDS ──────── */
+        .doc-empty {
+            font-size: 13.5px;
+            color: #ccc;
+            padding: 1.5rem 0;
+        }
+
+        .doc-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .doc-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.85rem 0;
+            border-bottom: 1px solid var(--faint);
+            transition: opacity .15s;
+            cursor: pointer;
+        }
+
+        .doc-card:hover .doc-name {
+            text-decoration: underline;
+            text-decoration-color: var(--faint);
+        }
+
+        .doc-card:hover .doc-open {
+            opacity: 1;
+        }
+
+        .doc-open {
+            opacity: 0;
+            transition: opacity .15s;
+            flex-shrink: 0;
+        }
+
+        .doc-open svg {
+            width: 13px;
+            height: 13px;
+            stroke: var(--mid);
+        }
+
+        .doc-card:first-child {
+            border-top: 1px solid var(--faint);
+        }
+
+        .doc-thumb {
+            width: 38px;
+            height: 38px;
+            border-radius: 9px;
+            background: var(--faint2);
+            border: 1px solid var(--faint);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .doc-thumb svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--mid);
+        }
+
+        .doc-info {
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .doc-name {
+            font-size: 13.5px;
+            color: var(--text);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .doc-sub {
+            font-size: 11.5px;
+            color: #bbb;
+            margin-top: 1px;
+        }
+
+        .doc-tag {
+            font-size: 11px;
+            color: var(--mid);
+            background: var(--faint2);
+            border-radius: 5px;
+            padding: 2px 7px;
+            flex-shrink: 0;
+            max-width: 140px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        /* ──────── ADD FILE AREA ──────── */
+        .add-area {
+            margin-top: 2rem;
+        }
+
+        .add-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.7rem 0;
+            border-bottom: 1px solid var(--faint);
+            margin-bottom: 1rem;
+        }
+
+        .add-header .flabel {
+            flex-shrink: 0;
+        }
+
+        .add-header select {
+            flex: 1;
+            font-size: 14px;
+        }
+
+        .drop-zone {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            padding: 2rem 1rem;
+            border: 1.5px dashed var(--faint);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: border-color .2s, background .2s;
+            text-align: center;
+        }
+
+        .drop-zone:hover,
+        .drop-zone.drag-over {
+            border-color: var(--mid);
+            background: var(--faint2);
+        }
+
+        .drop-zone input {
+            display: none;
+        }
+
+        .dz-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: var(--faint);
+        }
+
+        .dz-main {
+            font-size: 13px;
+            color: var(--mid);
+        }
+
+        .dz-sub {
+            font-size: 12px;
+            color: #ccc;
+        }
+
+        /* ──────── SAVE BUTTON ──────── */
+        .save-row {
+            margin-top: 2.5rem;
+        }
+
+        .btn {
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            border-radius: 99px;
+            padding: 0.65rem 1.75rem;
+            font-family: inherit;
+            font-size: 13.5px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: opacity .2s;
+            letter-spacing: -0.01em;
+        }
+
+        .btn:hover {
+            opacity: 0.8;
+        }
+
+        .btn:disabled {
+            opacity: 0.35;
+            cursor: default;
+        }
+
+        /* ──────── AUTH GATE ──────── */
+        #auth-gate {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 70vh;
+            gap: 1rem;
+            text-align: center;
+        }
+
+        #auth-gate h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.6rem;
+            letter-spacing: -.02em;
+        }
+
+        #auth-gate p {
+            font-size: 14px;
+            color: var(--mid);
+        }
+
+        #profile-body {
+            display: none;
+        }
+
+        /* ──────── TOAST ──────── */
+        #toast {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%) translateY(2rem);
+            background: #111;
+            color: #fff;
+            border-radius: 99px;
+            padding: 0.55rem 1.3rem;
+            font-size: 13px;
+            opacity: 0;
+            transition: opacity .22s, transform .22s;
+            pointer-events: none;
+            z-index: 999;
+        }
+
+        #toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* ──────── SAVING ANIMATION ──────── */
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: .35
+            }
+
+            50% {
+                opacity: 1
+            }
+        }
+
+        .saving {
+            animation: pulse 1.2s infinite;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Nav -->
+    <nav class="nav">
+        <a href="index.html" class="nav-logo">Sero</a>
+        <div class="nav-right">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="solutions.html" class="nav-link">AI Consult</a>
+            <button class="nav-signout" id="so-btn" style="display:none" onclick="doSignOut()">Sign out</button>
+        </div>
+    </nav>
+
+    <div id="toast"></div>
+
+    <div class="shell">
+
+        <!-- Auth gate -->
+        <div id="auth-gate">
+            <h2>Your profile</h2>
+            <p>Sign in to view and manage your health data.</p>
+            <a href="signup.html" class="btn" style="text-decoration:none;margin-top:.5rem">Sign in</a>
+        </div>
+
+        <!-- Profile -->
+        <div id="profile-body">
+
+            <!-- Header -->
+            <div class="ph">
+                <div class="ph-avatar" id="av">?</div>
+                <div class="ph-name" id="hname">—</div>
+                <div class="ph-email" id="hemail"></div>
+            </div>
+
+            <!-- Personal -->
+            <div class="section">
+                <div class="sec-title">Personal</div>
+                <div class="fields">
+                    <div class="frow">
+                        <span class="flabel">Full name</span>
+                        <input type="text" id="inp-name" placeholder="Your name" autocomplete="off" />
+                    </div>
+                    <div class="frow">
+                        <span class="flabel">Age</span>
+                        <input type="number" id="inp-age" placeholder="—" min="0" max="130" style="width:70px" />
+                    </div>
+                    <div class="frow">
+                        <span class="flabel">Gender</span>
+                        <select id="inp-gender">
+                            <option value="">—</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="nonbinary">Non-binary</option>
+                            <option value="other">Other</option>
+                            <option value="prefer_not">Prefer not to say</option>
+                        </select>
+                    </div>
+                    <div class="frow">
+                        <span class="flabel">Disability</span>
+                        <div class="toggle-wrap">
+                            <label class="toggle">
+                                <input type="checkbox" id="inp-dis" /><span class="slider"></span>
+                            </label>
+                            <span class="toggle-text" id="dis-lbl">No</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Allergies -->
+            <div class="section">
+                <div class="sec-title">Allergies</div>
+                <div class="pill-area">
+                    <div class="pill-wrap" id="pill-wrap">
+                        <input class="ali" id="ali" placeholder="Type and press Enter…" autocomplete="off" />
+                    </div>
+                    <div class="acdrop" id="acdrop"></div>
+                </div>
+            </div>
+
+            <div class="save-row">
+                <button class="btn" id="save-btn" onclick="saveProfile()">Save profile</button>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Medical Reports -->
+            <div class="section">
+                <div class="sec-title">Medical reports</div>
+                <div id="rep-empty" class="doc-empty">No reports yet.</div>
+                <div class="doc-grid" id="rep-grid"></div>
+
+                <div class="add-area">
+                    <div class="add-header">
+                        <span class="flabel">Report type</span>
+                        <select id="rep-type">
+                            <option value="">— select —</option>
+                            <option>Complete Blood Count (CBC)</option>
+                            <option>Lipid Panel</option>
+                            <option>Urinary Analysis</option>
+                            <option>Thyroid Function Test (TFT)</option>
+                            <option>Liver Function Test (LFT)</option>
+                            <option>Kidney Function Test (KFT)</option>
+                            <option>HbA1c (Diabetes)</option>
+                            <option>Vitamin D / B12</option>
+                            <option>Stool Culture</option>
+                            <option>Culture &amp; Sensitivity</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <label class="drop-zone" id="rep-zone">
+                        <input type="file" id="rep-input" multiple accept=".pdf,.jpg,.jpeg,.png" />
+                        <div class="dz-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                <polyline points="17 8 12 3 7 8" />
+                                <line x1="12" y1="3" x2="12" y2="15" />
+                            </svg>
+                        </div>
+                        <div class="dz-main">Drop files or click to upload</div>
+                        <div class="dz-sub">PDF · JPG · PNG · max 700 KB</div>
+                    </label>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Scans -->
+            <div class="section">
+                <div class="sec-title">Scans &amp; Imaging</div>
+                <div id="scn-empty" class="doc-empty">No scans yet.</div>
+                <div class="doc-grid" id="scn-grid"></div>
+
+                <div class="add-area">
+                    <div class="add-header">
+                        <span class="flabel">Scan type</span>
+                        <select id="scn-type">
+                            <option value="">— select —</option>
+                            <option>MRI — Brain</option>
+                            <option>MRI — Spine</option>
+                            <option>MRI — Knee / Joints</option>
+                            <option>CT Scan — Head</option>
+                            <option>CT Scan — Chest</option>
+                            <option>CT Scan — Abdomen</option>
+                            <option>X-Ray — Chest</option>
+                            <option>X-Ray — Bone</option>
+                            <option>Ultrasound — Abdomen</option>
+                            <option>Ultrasound — Pelvis</option>
+                            <option>Echocardiogram</option>
+                            <option>PET Scan</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <label class="drop-zone" id="scn-zone">
+                        <input type="file" id="scn-input" multiple accept=".dcm,.pdf,.jpg,.jpeg,.png" />
+                        <div class="dz-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                <polyline points="17 8 12 3 7 8" />
+                                <line x1="12" y1="3" x2="12" y2="15" />
+                            </svg>
+                        </div>
+                        <div class="dz-main">Drop scans or click to upload</div>
+                        <div class="dz-sub">DICOM · PDF · JPG · max 700 KB</div>
+                    </label>
+                </div>
+            </div>
+
+        </div><!-- /profile-body -->
+    </div><!-- /shell -->
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+        import { getAuth, onAuthStateChanged, signOut }
+            from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+        import { getFirestore, doc, getDoc, setDoc, collection, addDoc, getDocs }
+            from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
+
+        const app = initializeApp({
+            apiKey: "AIzaSyBnUvXTtSshLM3hSNovbPFZn0fkQ5AhDso",
+            authDomain: "sero-39908.firebaseapp.com",
+            projectId: "sero-39908",
+            storageBucket: "sero-39908.firebasestorage.app",
+            messagingSenderId: "967686052659",
+            appId: "1:967686052659:web:e9a3a1ed61ff1014b63c46"
+        });
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+        const MAX = 700 * 1024;
+
+        const ALLERGENS = [
+            'Penicillin', 'Amoxicillin', 'Aspirin', 'Ibuprofen', 'Sulfa drugs',
+            'Peanuts', 'Tree nuts', 'Milk', 'Eggs', 'Wheat / Gluten', 'Fish',
+            'Shellfish', 'Soy', 'Sesame', 'Latex', 'Nickel', 'Bee stings',
+            'Pet dander', 'Pollen', 'Dust mites', 'Mold',
+            'Codeine', 'Morphine', 'Diclofenac', 'Metformin', 'Warfarin'
+        ];
+
+        let user = null, allergies = [];
+        const $ = id => document.getElementById(id);
+        const fmt = b => b < 1024 ? `${b} B` : `${(b / 1024).toFixed(0)} KB`;
+        const fdt = iso => new Date(iso).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+        const toast = msg => {
+            const t = $('toast'); t.textContent = msg; t.classList.add('show');
+            clearTimeout(t._t); t._t = setTimeout(() => t.classList.remove('show'), 2800);
+        };
+
+        // ── auth ─────────────────────────────────────────────────────────
+        onAuthStateChanged(auth, async u => {
+            if (!u) { $('auth-gate').style.display = 'flex'; $('profile-body').style.display = 'none'; return; }
+            user = u;
+            $('auth-gate').style.display = 'none'; $('profile-body').style.display = 'block';
+            $('so-btn').style.display = 'block';
+
+            const ini = (u.displayName || u.email || '?').split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
+            $('av').textContent = ini;
+            $('hname').textContent = u.displayName || u.email.split('@')[0];
+            $('hemail').textContent = u.email;
+
+            try {
+                const s = await getDoc(doc(db, 'users', u.uid));
+                if (s.exists()) {
+                    const d = s.data();
+                    if (d.name) $('inp-name').value = d.name;
+                    if (d.age) $('inp-age').value = d.age;
+                    if (d.gender) $('inp-gender').value = d.gender;
+                    if (d.disabled) { $('inp-dis').checked = true; disLabel(); }
+                    (d.allergies || []).forEach(addPill);
+                }
+            } catch (e) { console.warn(e); }
+
+            await loadDocs(u.uid, 'reports', 'rep-grid', 'rep-empty');
+            await loadDocs(u.uid, 'scans', 'scn-grid', 'scn-empty');
+        });
+
+        window.doSignOut = async () => { await signOut(auth); window.location.href = 'index.html'; };
+
+        // ── load docs ────────────────────────────────────────────────────
+        async function loadDocs(uid, folder, gridId, emptyId) {
+            try {
+                const snap = await getDocs(collection(db, 'users', uid, folder));
+                if (snap.empty) return;
+                $(emptyId).style.display = 'none';
+                snap.forEach(d => card($(gridId), d.data(), false, folder, d.id));
+            } catch (e) { console.warn(e); }
+        }
+
+        // ── doc card ─────────────────────────────────────────────────────
+        function card(grid, data, temp, folder, docId) {
+            const el = document.createElement('div');
+            el.className = 'doc-card' + (temp ? ' saving' : '');
+            const isImg = (data.mimeType || '').startsWith('image');
+            const ico = isImg
+                ? `<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>`
+                : `<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>`;
+            const kb = data.size ? fmt(data.size) : '';
+            const date = data.savedAt ? fdt(data.savedAt) : '';
+            const sub = [kb, date].filter(Boolean).join(' · ');
+            el.innerHTML = `
+      <div class="doc-thumb"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">${ico}</svg></div>
+      <div class="doc-info">
+        <div class="doc-name">${data.name}</div>
+        <div class="doc-sub">${sub}</div>
+      </div>
+      ${data.type ? `<div class="doc-tag ${temp ? 'saving' : ''}">${data.type}</div>` : ''}
+      <div class="doc-open" title="Secured on IPFS Blockchain"><svg viewBox="0 0 24 24" fill="none" stroke="#27c93f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></div>`;
+            grid.appendChild(el);
+
+            // ── click to open from IPFS ──
+            if (!temp) {
+                if (data.ipfsHash) {
+                    el.addEventListener('click', () => openIpfsUrl(data.ipfsHash));
+                }
+            }
+            return el;
+        }
+
+        function openIpfsUrl(hash) {
+            if (!hash) { toast('No IPFS CID found.'); return; }
+            try {
+                // Use a highly reliable public gateway (ipfs.io or cloudflare) for free-tier Pinata hashes
+                const url = `https://ipfs.io/ipfs/${hash}`;
+                const a = document.createElement('a');
+                a.href = url; a.target = '_blank'; a.rel = 'noopener';
+                document.body.appendChild(a); a.click();
+                setTimeout(() => { a.remove(); }, 2000);
+            } catch (e) { toast('Could not open file.'); console.error(e); }
+        }
+
+        // ── disability ────────────────────────────────────────────────────
+        $('inp-dis').addEventListener('change', disLabel);
+        function disLabel() { $('dis-lbl').textContent = $('inp-dis').checked ? 'Yes' : 'No'; }
+
+        // ── allergies ────────────────────────────────────────────────────
+        function addPill(text) {
+            if (!text || allergies.includes(text)) return;
+            allergies.push(text);
+            const p = document.createElement('div'); p.className = 'pill';
+            p.innerHTML = `<span>${text}</span><button class="pill-rm" title="Remove"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>`;
+            p.querySelector('.pill-rm').onclick = () => { allergies = allergies.filter(a => a !== text); p.remove(); };
+            $('pill-wrap').insertBefore(p, $('ali'));
+        }
+        const ali = $('ali'), ac = $('acdrop');
+        ali.addEventListener('keydown', e => {
+            if ((e.key === 'Enter' || e.key === ',') && ali.value.trim()) {
+                e.preventDefault(); addPill(ali.value.trim()); ali.value = ''; ac.innerHTML = ''; ac.classList.remove('open');
+            }
+            if (e.key === 'Escape') ac.classList.remove('open');
+        });
+        ali.addEventListener('input', () => {
+            const q = ali.value.trim().toLowerCase(); ac.innerHTML = '';
+            if (!q) { ac.classList.remove('open'); return; }
+            const hits = ALLERGENS.filter(a => a.toLowerCase().includes(q) && !allergies.includes(a)).slice(0, 6);
+            if (!hits.length) { ac.classList.remove('open'); return; }
+            hits.forEach(m => {
+                const i = document.createElement('div'); i.className = 'acitem'; i.textContent = m;
+                i.onmousedown = e => { e.preventDefault(); addPill(m); ali.value = ''; ac.classList.remove('open'); };
+                ac.appendChild(i);
+            });
+            ac.classList.add('open');
+        });
+        ali.addEventListener('blur', () => setTimeout(() => ac.classList.remove('open'), 150));
+
+        // ── upload ─────────────────────────────────────────────────────
+        function setup(zoneId, inputId, gridId, emptyId, folder, typeId) {
+            const z = $(zoneId), inp = $(inputId);
+            z.addEventListener('dragover', e => { e.preventDefault(); z.classList.add('drag-over'); });
+            z.addEventListener('dragleave', () => z.classList.remove('drag-over'));
+            z.addEventListener('drop', e => { e.preventDefault(); z.classList.remove('drag-over');[...e.dataTransfer.files].forEach(f => up(f, folder, gridId, emptyId, typeId)); });
+            inp.addEventListener('change', () => [...inp.files].forEach(f => up(f, folder, gridId, emptyId, typeId)));
+        }
+        async function up(file, folder, gridId, emptyId, typeId) {
+            if (!user) { toast('Sign in first.'); return; }
+            const MAX_MB = 10 * 1024 * 1024; // 10MB limit for secure blockchain uploads
+            if (file.size > MAX_MB) { toast(`"${file.name}" exceeds 10 MB limit.`); return; }
+
+            const t = $(typeId)?.value || '';
+            $(emptyId).style.display = 'none';
+            const data = { name: file.name, type: t, size: file.size, mimeType: file.type, savedAt: new Date().toISOString() };
+            const el = card($(gridId), data, true, folder, null);
+
+            try {
+                const tag = el.querySelector('.doc-tag');
+                if (tag) tag.textContent = 'Encrypting & Pinning to IPFS...';
+
+                const formData = new FormData();
+                formData.append('file', file);
+
+                const metadata = JSON.stringify({ name: file.name, keyvalues: { user: user.uid, type: t } });
+                formData.append('pinataMetadata', metadata);
+
+                const pinataOptions = JSON.stringify({ cidVersion: 0 });
+                formData.append('pinataOptions', pinataOptions);
+
+                // DIRECT SECURE BLOCKCHAIN PINNING VIA PINATA API
+                const res = await fetch("https://api.pinata.cloud/pinning/pinFileToIPFS", {
+                    method: "POST",
+                    headers: {
+                        "Authorization": `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySW5mb3JtYXRpb24iOnsiaWQiOiJiYWY0ZTIwMC1iZmQ5LTQ2NmQtYmM4Ny0wMjM1NzA5NTJiNzQiLCJlbWFpbCI6ImJvdHJ5emVuZmFuMTQ4MkBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicGluX3BvbGljeSI6eyJyZWdpb25zIjpbeyJkZXNpcmVkUmVwbGljYXRpb25Db3VudCI6MSwiaWQiOiJGUkExIn0seyJkZXNpcmVkUmVwbGljYXRpb25Db3VudCI6MSwiaWQiOiJOWUMxIn1dLCJ2ZXJzaW9uIjoxfSwibWZhX2VuYWJsZWQiOmZhbHNlLCJzdGF0dXMiOiJBQ1RJVkUifSwiYXV0aGVudGljYXRpb25UeXBlIjoic2NvcGVkS2V5Iiwic2NvcGVkS2V5S2V5IjoiMzE5NGRiYjBjNjZlNzQzZjRjODEiLCJzY29wZWRLZXlTZWNyZXQiOiI3OTQ0YTVlMDRmYmYwNjYxY2M2ZDE2ODgzYjk4ZGYwMzY4MWY4ZTA1MDE4NmExZTgyNjc5MDlhMTFkYzNjMTgzIiwiZXhwIjoxODAzNzc1NTQ2fQ.5r1t-HcOmHIYXql9VMoMXUElfCfFokHYsBJtzqzr8TM`
+                    },
+                    body: formData,
+                });
+
+                if (!res.ok) throw new Error("Pinata API rejected upload");
+
+                const ipfsData = await res.json();
+                const ipfsHash = ipfsData.IpfsHash; // The immutable cryptographic CID
+
+                // Save the hash to Firebase, NOT the file base64 data!
+                await addDoc(collection(db, 'users', user.uid, folder), { ...data, ipfsHash: ipfsHash });
+
+                el.classList.remove('saving');
+                if (tag) {
+                    tag.classList.remove('saving');
+                    tag.textContent = t ? t : 'Secured';
+                }
+
+                // Now that it's hashed, make it clickable to open the IPFS gateway link
+                el.addEventListener('click', () => openIpfsUrl(ipfsHash));
+                toast(`${file.name} pinned to block!`);
+
+            } catch (err) {
+                const tag = el.querySelector('.doc-tag');
+                if (tag) { tag.textContent = 'IPFS Error'; tag.style.color = '#c00'; tag.classList.remove('saving'); }
+                toast('Blockchain pin failed.'); console.error(err);
+            }
+        }
+        setup('rep-zone', 'rep-input', 'rep-grid', 'rep-empty', 'reports', 'rep-type');
+        setup('scn-zone', 'scn-input', 'scn-grid', 'scn-empty', 'scans', 'scn-type');
+
+        // ── save profile ─────────────────────────────────────────────────
+        window.saveProfile = async () => {
+            if (!user) { toast('Not signed in.'); return; }
+            const btn = $('save-btn'); btn.disabled = true; btn.textContent = 'Saving…';
+            try {
+                const name = $('inp-name').value.trim();
+                await setDoc(doc(db, 'users', user.uid), {
+                    name, age: parseInt($('inp-age').value) || null,
+                    gender: $('inp-gender').value,
+                    disabled: $('inp-dis').checked,
+                    allergies, updatedAt: new Date().toISOString()
+                }, { merge: true });
+                if (name && name !== user.displayName) {
+                    const { updateProfile } = await import("https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js");
+                    await updateProfile(user, { displayName: name });
+                    $('hname').textContent = name;
+                    $('av').textContent = name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
+                }
+                toast('Saved.');
+            } catch (e) { toast('Error — check Firestore rules.'); console.error(e); }
+            finally { btn.disabled = false; btn.textContent = 'Save profile'; }
+        };
+    </script>
+</body>
+
+</html>

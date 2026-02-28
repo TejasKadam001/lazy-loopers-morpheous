@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Microphone Test Page</title>
+    <style>
+        body {
+            background: #111;
+            color: #fff;
+            font-family: -apple-system, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        #log {
+            width: 90%;
+            max-width: 600px;
+            background: #222;
+            border: 1px solid #444;
+            border-radius: 8px;
+            padding: 15px;
+            font-family: monospace;
+            font-size: 13px;
+            line-height: 1.6;
+            max-height: 400px;
+            overflow-y: auto;
+            margin-top: 20px;
+        }
+
+        .log-ok {
+            color: #00ff88;
+        }
+
+        .log-err {
+            color: #ff5252;
+        }
+
+        .log-warn {
+            color: #ffeb3b;
+        }
+
+        .log-info {
+            color: #64b5f6;
+        }
+
+        button {
+            padding: 15px 40px;
+            font-size: 18px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            background: linear-gradient(135deg, #ff7b00, #ff007b);
+            color: white;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        #volume-bar-container {
+            width: 90%;
+            max-width: 600px;
+            height: 20px;
+            background: #333;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 15px;
+            display: none;
+        }
+
+        #volume-bar {
+            height: 100%;
+            width: 0%;
+            background: #00ff88;
+            transition: width 0.05s linear;
+        }
+
+        #transcript-box {
+            width: 90%;
+            max-width: 600px;
+            min-height: 60px;
+            background: #1a1a2e;
+            border: 1px solid #444;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            font-size: 16px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🎤 Microphone & Speech Debug Tool</h1>
+    <p style="color:#888; text-align:center;">Click the button below. This page tests your mic + speech recognition step
+        by step.</p>
+
+    <button id="startBtn" onclick="runFullTest()">START MIC TEST</button>
+
+    <div id="volume-bar-container">
+        <div id="volume-bar"></div>
+    </div>
+    <p id="volume-label" style="color:#888; font-size:12px; display:none;">Live Volume Level</p>
+
+    <div id="transcript-box"></div>
+
+    <div id="log"></div>
+
+    <script>
+        const logEl = document.getElementById('log');
+        function log(msg, type = 'info') {
+            const span = document.createElement('div');
+            span.className = 'log-' + type;
+            span.textContent = '[' + new Date().toLocaleTimeString() + '] ' + msg;
+            logEl.appendChild(span);
+            logEl.scrollTop = logEl.scrollHeight;
+        }
+
+        async function runFullTest() {
+            logEl.innerHTML = '';
+            log('=== FULL MICROPHONE TEST STARTED ===', 'info');
+
+            // Step 1: Check browser info
+            log('Browser: ' + navigator.userAgent, 'info');
+            log('Protocol: ' + window.location.protocol, 'info');
+            log('Host: ' + window.location.host, 'info');
+
+            // Step 2: Check isSecureContext
+            log('Secure Context: ' + window.isSecureContext, window.isSecureContext ? 'ok' : 'err');
+            if (!window.isSecureContext) {
+                log('PROBLEM: Page is NOT in a Secure Context. Mic APIs may be blocked.', 'err');
+                log('FIX: Use http://localhost:8000 or http://127.0.0.1:8000', 'warn');
+            }
+
+            // Step 3: Check navigator.mediaDevices
+            if (!navigator.mediaDevices) {
+                log('FAIL: navigator.mediaDevices is undefined!', 'err');
+                log('This means your browser blocks mic APIs on this URL.', 'err');
+                return;
+            }
+            log('navigator.mediaDevices exists.', 'ok');
+
+            // Step 4: Enumerate devices
+            try {
+                const devices = await navigator.mediaDevices.enumerateDevices();
+                const audioInputs = devices.filter(d => d.kind === 'audioinput');
+                log('Found ' + audioInputs.length + ' audio input device(s):', 'ok');
+                audioInputs.forEach((d, i) => {
+                    log('  [' + i + '] ' + (d.label || 'Unnamed Device') + ' (id: ' + d.deviceId.substring(0, 8) + '...)', 'info');
+                });
+                if (audioInputs.length === 0) {
+                    log('PROBLEM: No audio input devices found!', 'err');
+                    log('Check System Settings > Sound > Input', 'warn');
+                }
+            } catch (e) {
+                log('enumerateDevices error: ' + e.message, 'err');
+            }
+
+            // Step 5: Try getUserMedia
+            log('Requesting microphone access via getUserMedia...', 'info');
+            let stream = null;
+            try {
+                stream = await navigator.mediaDevices.getUserMedia({ audio: true, video: false });
+                log('getUserMedia SUCCESS! Mic stream acquired.', 'ok');
+
+                // Show volume bar
+                const volumeContainer = document.getElementById('volume-bar-container');
+                const volumeBar = document.getElementById('volume-bar');
+                const volumeLabel = document.getElementById('volume-label');
+                volumeContainer.style.display = 'block';
+                volumeLabel.style.display = 'block';
+
+                const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                const analyser = audioCtx.createAnalyser();
+                analyser.fftSize = 256;
+                const source = audioCtx.createMediaStreamSource(stream);
+                source.connect(analyser);
+                const dataArray = new Uint8Array(analyser.frequencyBinCount);
+
+                let maxVolume = 0;
+                let frames = 0;
+
+                function updateVolume() {
+                    analyser.getByteFrequencyData(dataArray);
+                    let sum = 0;
+                    for (let i = 0; i < dataArray.length; i++) sum += dataArray[i];
+                    let avg = sum / dataArray.length;
+                    let pct = Math.min(100, avg * 2);
+                    volumeBar.style.width = pct + '%';
+
+                    if (pct > 50) volumeBar.style.background = '#00ff88';
+                    else if (pct > 15) volumeBar.style.background = '#ffeb3b';
+                    else volumeBar.style.background = '#ff007b';
+
+                    if (avg > maxVolume) maxVolume = avg;
+                    frames++;
+
+                    // Log every 60 frames (~1 second)
+                    if (frames % 60 === 0) {
+                        log('Volume: avg=' + avg.toFixed(1) + ' max=' + maxVolume.toFixed(1) + ' (0=silence, 50+=loud)', avg > 5 ? 'ok' : 'warn');
+                    }
+
+                    requestAnimationFrame(updateVolume);
+                }
+                updateVolume();
+
+                log('Volume meter active. SPEAK NOW and watch the bar above.', 'warn');
+                log('Waiting 3 seconds to measure silence vs speech...', 'info');
+
+                await new Promise(r => setTimeout(r, 3000));
+
+                if (maxVolume < 2) {
+                    log('WARNING: Max volume was ' + maxVolume.toFixed(1) + ' after 3 sec. Your mic is hearing DEAD SILENCE.', 'err');
+                    log('FIX: Go to macOS System Settings > Sound > Input. Make sure your Built-in Microphone is selected and input volume is up.', 'warn');
+                } else if (maxVolume < 10) {
+                    log('Volume is very low (' + maxVolume.toFixed(1) + '). Mic might be muted or very quiet.', 'warn');
+                } else {
+                    log('Mic volume looks good! Max: ' + maxVolume.toFixed(1), 'ok');
+                }
+
+            } catch (e) {
+                log('getUserMedia FAILED: ' + e.name + ': ' + e.message, 'err');
+                if (e.name === 'NotAllowedError') {
+                    log('FIX: Click the padlock icon in your URL bar and Allow microphone.', 'warn');
+                }
+                return;
+            }
+
+            // Step 6: Test SpeechRecognition
+            log('--- Testing SpeechRecognition API ---', 'info');
+
+            if (!('SpeechRecognition' in window) && !('webkitSpeechRecognition' in window)) {
+                log('SpeechRecognition NOT supported in this browser.', 'err');
+                log('Use Chrome or Safari.', 'warn');
+                return;
+            }
+            log('SpeechRecognition API is available.', 'ok');
+
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            const recognition = new SpeechRecognition();
+            recognition.continuous = false;
+            recognition.interimResults = true;
+            recognition.lang = 'en-US';
+
+            const transcriptBox = document.getElementById('transcript-box');
+            transcriptBox.style.display = 'block';
+            transcriptBox.innerHTML = '<span style="color:#888;">Waiting for speech recognition...</span>';
+
+            recognition.onstart = () => {
+                log('SpeechRecognition.onstart fired! Engine is listening.', 'ok');
+            };
+
+            recognition.onaudiostart = () => {
+                log('SpeechRecognition.onaudiostart: Audio capture started.', 'ok');
+            };
+
+            recognition.onsoundstart = () => {
+                log('SpeechRecognition.onsoundstart: Sound detected!', 'ok');
+            };
+
+            recognition.onspeechstart = () => {
+                log('SpeechRecognition.onspeechstart: Human speech detected!', 'ok');
+            };
+
+            recognition.onresult = (event) => {
+                let text = '';
+                for (let i = 0; i < event.results.length; i++) {
+                    text += event.results[i][0].transcript;
+                }
+                log('TRANSCRIPTION: "' + text + '" (confidence: ' + (event.results[0][0].confidence * 100).toFixed(1) + '%)', 'ok');
+                transcriptBox.innerHTML = '<strong style="color:#00ff88;">' + text + '</strong>';
+            };
+
+            recognition.onerror = (event) => {
+                log('SpeechRecognition.onerror: ' + event.error, 'err');
+                if (event.error === 'network') {
+                    log('DIAGNOSIS: "network" error = Chrome needs INTERNET to transcribe speech.', 'err');
+                    log('Chrome sends audio to Google servers. Without internet, it cannot work.', 'warn');
+                    log('FIX: Use Safari (which uses offline macOS dictation) or connect to internet.', 'warn');
+                } else if (event.error === 'no-speech') {
+                    log('DIAGNOSIS: "no-speech" = Engine heard silence. Your mic input might be muted or wrong device.', 'err');
+                    log('FIX: Check System Settings > Sound > Input. Ensure correct mic is selected.', 'warn');
+                } else if (event.error === 'not-allowed') {
+                    log('DIAGNOSIS: Microphone permission denied by browser.', 'err');
+                    log('FIX: Click padlock/settings next to URL and allow microphone.', 'warn');
+                }
+            };
+
+            recognition.onend = () => {
+                log('SpeechRecognition.onend: Session ended.', 'info');
+            };
+
+            log('Starting SpeechRecognition... SAY SOMETHING NOW!', 'warn');
+            try {
+                recognition.start();
+            } catch (e) {
+                log('recognition.start() threw: ' + e.message, 'err');
+            }
+        }
+    </script>
+</body>
+
+</html>
