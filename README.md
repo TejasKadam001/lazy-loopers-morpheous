@@ -29,4 +29,4 @@ Then navigate to `localhost:3000` in your browser.
 
 
 ---
-*Made by Team Lazy Loopers for the SIT Lonavala Hackathon Morpheous*
+*Made by Team Lazy Loopers for the Innovate Hackathon
